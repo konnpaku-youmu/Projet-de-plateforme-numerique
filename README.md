@@ -1,1 +1,1 @@
-# Plagrism is a crime!
+# Plagiarism is a crime!
