@@ -17,14 +17,16 @@ module tb_montgomery();
     
     reg  [1023:0] expected;
     reg          result_ok;
-
-//    wire a_i;
-//    wire div_clk;
-//    wire done_b;
-//    wire done_m;
-//    wire [1027:0] b_out;
-//    wire [1027:0] m_out;
-//    wire [1026:0] c_out;
+    
+    wire [9:0]  shift_counter_out;
+    
+    //    wire a_i;
+    //    wire div_clk;
+    //    wire done_b;
+    //    wire done_m;
+    //    wire [1027:0] b_out;
+    //    wire [1027:0] m_out;
+    //    wire [1026:0] c_out;
     
     //Instantiating montgomery module
     montgomery montgomery_instance(.clk    (clk),
@@ -34,15 +36,16 @@ module tb_montgomery();
     .in_b   (in_b),
     .in_m   (in_m),
     .result (result),
-    .done   (done));
-//    .a_i  (a_i),
-//    .div_clk (div_clk),
-//    .done_b  (done_b),
-//    .done_m (done_m),
-//    .adder_b_out (b_out),
-//    .adder_m_out (m_out),
-//    .C_out (c_out));
-   
+    .done   (done), 
+    .shift_counter_out (shift_counter_out));
+    //    .a_i  (a_i),
+    //    .div_clk (div_clk),
+    //    .done_b  (done_b),
+    //    .done_m (done_m),
+    //    .adder_b_out (b_out),
+    //    .adder_m_out (m_out),
+    //    .C_out (c_out));
+    
     //Generate a clock
     initial begin
         clk                    = 0;
