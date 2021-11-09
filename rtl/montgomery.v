@@ -1,117 +1,81 @@
 `timescale 1ns / 1ps
 
-module montgomery(input clk,
-                  input resetn,
-                  input start,
-                  input [1023:0] in_a,
-                  input [1023:0] in_b,
-                  input [1023:0] in_m,
-                  output [1023:0] result,
-                  output done,
-                  output [9:0] shift_counter_out);
-//                  output a_i,
-//                  output div_clk,
-//                  output done_b,
-//                  output done_m,
-//                  output [1027:0] adder_b_out,
-//                  output [1027:0] adder_m_out,
-//                  output [1026:0] C_out);
+module multiplication (
+    input clk,
+    input resetn,
+    input start,
+    input wire [1023:0] in_a,
+    input wire [1023:0] in_b,
+    input wire [1023:0] in_m,
+    output wire [1027:0] result,
+    output wire done);
+
+    reg [10:0] shift_counter;
     
-    /*
-     Student tasks:
-     1. Instantiate an Adder
-     2. Use the Adder to implement the Montgomery multiplier in hardware.
-     3. Use tb_montgomery.v to simulate your design.
-     */
+    wire adder_m_done;
+    reg adder_m_done_reg;
     
-    // clock divider
-    reg clk_div_en;
-    reg clk_div5;
-    reg [3:0] counter;
-    parameter clk_div_period = 5;
-    
-    always @(posedge clk) begin
-        if (~resetn | counter >= clk_div_period-1)
-            counter <= 4'b0;
-        else if(clk_div_en)
+    always @(posedge clk)
+    begin
+        if (~resetn || start)
         begin
-            counter  <= counter + 1;
-            clk_div5 <= (~counter[0] & ~counter[1] & ~counter[2] & ~counter[3]);
+            adder_m_done_reg <= 1'b0;
         end
-        else
+        else if (shift_counter[10] == 1'b0)
         begin
-            counter <= 4'b0;
-            clk_div5 <= 1'b0;
-        end   
+            adder_m_done_reg <= adder_m_done;
+        end
     end
     
-    // define the shift counter for A
-    // count to 1023
-    reg [9:0] shift_counter;
-
     // shift register for input A
     // shift input A every 5 clock cycles
     reg [1023:0] in_a_reg;
-    always @(posedge clk_div5)
+    always @(posedge clk)
     begin
-        if (~resetn)
+        if (~resetn || start)
         begin
-            shift_counter <= 0; 
-            in_a_reg <= 1023'b0;
+            shift_counter <= 0;
+            in_a_reg      <= in_a;
         end
-        else if (start)
+        else if (adder_m_done)
         begin
-            shift_counter <= 0; 
-            in_a_reg <= in_a;
-        end
-        else
-        begin
-            in_a_reg <= in_a_reg >> 1;
+            in_a_reg      <= in_a_reg >> 1;
             shift_counter <= shift_counter + 1;
         end
     end
-
-    assign shift_counter_out = shift_counter;
-
-    // check if shift_counter is 1023
-    // if it's 1023, clk_div is disabled and state is 1
-    always @(posedge clk)
-    begin
-        if (shift_counter == 10'h3FF)
-            clk_div_en <= 1'b0;
-        else
-            clk_div_en <= 1'b1;
-    end
-
-    // define wires for connecting C and adders
-    wire [1027:0] regC_D;
-    reg [1027:0] regC_Q;
-    wire [1026:0] shifted_C;
     
-    // instantiate Adder B
+    // define wires for connecting C and adders
+    reg [1027:0] regC_Q;
+    
+    // define the multiplexer for start signal for adder B
+    wire start_b;
+    assign start_b = start || adder_m_done_reg;
+
     wire adder_b_done;
     wire [1027:0] adder_b_result;
     mpadder adder_B (
     .clk      (clk),
     .resetn   (resetn),
-    .start    (clk_div5),
+    .start    (start_b),
     .subtract (1'b0),
-    .in_a     (shifted_C),
+    .in_a     (regC_Q),
     .in_b     ({3'b0, in_b}),
     .result   (adder_b_result),
     .done     (adder_b_done));
     
     // define the multiplexer for adder B result
     wire [1027:0] muxOutAdder_B;
-    assign muxOutAdder_B = (in_a_reg[0] == 1) ? adder_b_result : shifted_C;
+    assign muxOutAdder_B = (in_a_reg[0] == 1) ? adder_b_result : regC_Q;
     
     // instantiate Adder M
-    wire adder_m_done;
     wire [1027:0] adder_m_result;
+    wire start_m;
+    assign start_m = adder_b_done;
+    
     mpadder adder_M (
     .clk      (clk),
     .resetn   (resetn),
-    .start    (adder_b_done),
+    .start    (start_m),
     .subtract (1'b0),
     .in_a     (muxOutAdder_B),
     .in_b     ({3'b0, in_m}),
@@ -121,39 +85,53 @@ module montgomery(input clk,
     // define the multiplexer for adder M result
     wire [1027:0] muxOutAdder_M;
     assign muxOutAdder_M = (muxOutAdder_B[0] == 1) ? adder_m_result : muxOutAdder_B;
-    // connect regC_D to muxOutAdder_M
-    assign regC_D = muxOutAdder_M;
     
     // define regC
     always @(posedge clk)
     begin
-    if (~resetn || start)
-        regC_Q <= 1028'b0;
-    else if (adder_m_done)
-        regC_Q <= regC_D;
+        if (~resetn || start)
+            regC_Q <= 1028'b0;
+        else if (adder_m_done)
+            regC_Q <= (muxOutAdder_M >> 1);
     end
     
-    // define shifted C
-    assign shifted_C = regC_Q >> 1'b1;
-
-    assign result = shifted_C;
+    reg regDone;
+    always @(posedge clk) begin
+        if (~resetn || start) begin
+            regDone <= 1'b0;
+        end else begin
+            regDone <= shift_counter[10];
+        end
+    end
     
-//    assign a_i = in_a_reg[0];
-//    assign div_clk = clk_div5;
-//    assign done_b      = adder_b_done;
-//    assign done_m = adder_m_done;
-//    assign adder_b_out = adder_b_result;
-//    assign adder_m_out = adder_m_result;
-//    assign C_out       = shifted_C;
+    assign result = regC_Q;
+    assign done = regDone;
 
-    //This always block was added to ensure the tool doesn't trim away the montgomery module.
-    //Students: Feel free to remove this block
-//            reg [1023:0] r_result;
-//            always @(posedge(clk))
-//            begin
-//                r_result <= {1024{1'b1}};
-//            end
-//            assign result = r_result;
+endmodule
+
+module montgomery(input clk,
+                  input resetn,
+                  input start,
+                  input [1023:0] in_a,
+                  input [1023:0] in_b,
+                  input [1023:0] in_m,
+                  output [1023:0] result,
+                  output done);
+    /*
+     Student tasks:
+     1. Instantiate an Adder
+     2. Use the Adder to implement the Montgomery multiplier in hardware.
+     3. Use tb_montgomery.v to simulate your design.
+    */
     
-            assign done = 1;
+    multiplication multiplier(
+        .clk(clk),
+        .resetn(resetn),
+        .start(start),
+        .in_a(in_a),
+        .in_b(in_b),
+        .in_m(in_m),
+        .result(result),
+        .done(done));
+    
 endmodule
