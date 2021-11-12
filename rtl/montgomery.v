@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module multiplication (
+module multiplier (
     input clk,
     input resetn,
     input start,
@@ -18,13 +18,11 @@ module multiplication (
     always @(posedge clk)
     begin
         if (~resetn || start)
-        begin
             adder_m_done_reg <= 1'b0;
-        end
         else if (shift_counter[10] == 1'b0)
-        begin
             adder_m_done_reg <= adder_m_done;
-        end
+        else
+            adder_m_done_reg <= 1'b0;
     end
     
     // shift register for input A
@@ -99,13 +97,90 @@ module multiplication (
     always @(posedge clk) begin
         if (~resetn || start) begin
             regDone <= 1'b0;
-        end else begin
-            regDone <= shift_counter[10];
+        end else if(shift_counter[10] == 1'b1) begin
+            regDone <= adder_m_done_reg;
         end
     end
     
     assign result = regC_Q;
     assign done = regDone;
+
+endmodule
+
+module conditional_sub (
+    input clk,
+    input resetn,
+    input start,
+    input wire [1026:0] in_c,
+    input wire [1026:0] in_m,
+    output wire [1023:0] result,
+    output wire done,
+
+    output wire sub_start,
+    output wire sub_done,
+    output wire N);
+
+    // define the output register for subtractor
+    wire [1027:0] sub_result;
+    reg regSubDone;
+    wire subDone;
+
+    // define the mux for in_C
+    wire [1027:0] muxIn_C;
+    assign muxIn_C = (start) ? in_c : sub_result;
+
+    // define the start signal for subtractor
+    wire subStart;
+    assign subStart = start || regSubDone;
+    
+    reg regSubStart;
+
+    always @(posedge clk) begin
+        if (~resetn)
+            regSubStart <= 1'b0;
+        else
+            regSubStart <= subStart;
+    end
+
+    assign sub_start = regSubStart;
+
+    always @(posedge clk) begin
+        if (~resetn || start)
+            regSubDone <= 1'b0;
+        else
+            regSubDone <= subDone;
+    end
+
+    // define the register for in_a
+    reg [1026:0] regIn_A;
+    always @(posedge clk)
+    begin
+        if (~resetn)
+            regIn_A <= 1027'b0;
+        else if (subStart)
+            regIn_A <= muxIn_C;
+    end
+
+    mpadder subtractor(
+        .clk      (clk),
+        .resetn   (resetn),
+        .start    (regSubStart),
+        .subtract (1'b1),
+        .in_a     (regIn_A),
+        .in_b     (in_m),
+        .result   (sub_result),
+        .done     (subDone)
+    );
+
+    assign sub_done = subDone;
+   
+    assign N = sub_result[1027];
+    
+    wire [1023:0] muxOutSub;
+    assign muxOutSub = (N) ? regIn_A[1023:0] : sub_result[1023:0];
+
+    assign result = muxOutSub;
+    assign done = N;
 
 endmodule
 
@@ -116,7 +191,13 @@ module montgomery(input clk,
                   input [1023:0] in_b,
                   input [1023:0] in_m,
                   output [1023:0] result,
-                  output done);
+                  output done,
+
+                  output loop_done,
+                  output sub_start,
+                  output sub_done,
+                  output [1027:0] result_loop,
+                  output N);
     /*
      Student tasks:
      1. Instantiate an Adder
@@ -124,14 +205,33 @@ module montgomery(input clk,
      3. Use tb_montgomery.v to simulate your design.
     */
     
-    multiplication multiplier(
+    multiplier multi(
         .clk(clk),
         .resetn(resetn),
         .start(start),
         .in_a(in_a),
         .in_b(in_b),
         .in_m(in_m),
-        .result(result),
-        .done(done));
+        .result(result_loop),
+        .done(loop_done));
     
+    wire [1023:0] result_sub;
+    wire all_done;
+
+    conditional_sub sub(
+        .clk(clk),
+        .resetn(resetn),
+        .start(loop_done),
+        .in_c(result_loop),
+        .in_m({3'b0, in_m}),
+        .result(result_sub),
+        .done(all_done),
+
+        .sub_start(sub_start),
+        .sub_done(sub_done),
+        .N(N));
+    
+    assign result = result_sub;
+    assign done = all_done;
+
 endmodule
