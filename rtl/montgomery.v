@@ -114,11 +114,7 @@ module conditional_sub (
     input wire [1026:0] in_c,
     input wire [1026:0] in_m,
     output wire [1023:0] result,
-    output wire done,
-
-    output wire sub_start,
-    output wire sub_done,
-    output wire N);
+    output wire done);
 
     // define the output register for subtractor
     wire [1027:0] sub_result;
@@ -141,8 +137,6 @@ module conditional_sub (
         else
             regSubStart <= subStart;
     end
-
-    assign sub_start = regSubStart;
 
     always @(posedge clk) begin
         if (~resetn || start)
@@ -171,16 +165,12 @@ module conditional_sub (
         .result   (sub_result),
         .done     (subDone)
     );
-
-    assign sub_done = subDone;
-   
-    assign N = sub_result[1027];
     
     wire [1023:0] muxOutSub;
-    assign muxOutSub = (N) ? regIn_A[1023:0] : sub_result[1023:0];
+    assign muxOutSub = (sub_result[1027]) ? regIn_A[1023:0] : sub_result[1023:0];
 
     assign result = muxOutSub;
-    assign done = N;
+    assign done = sub_result[1027];
 
 endmodule
 
@@ -191,19 +181,16 @@ module montgomery(input clk,
                   input [1023:0] in_b,
                   input [1023:0] in_m,
                   output [1023:0] result,
-                  output done,
-
-                  output loop_done,
-                  output sub_start,
-                  output sub_done,
-                  output [1027:0] result_loop,
-                  output N);
+                  output done);
     /*
      Student tasks:
      1. Instantiate an Adder
      2. Use the Adder to implement the Montgomery multiplier in hardware.
      3. Use tb_montgomery.v to simulate your design.
     */
+
+    wire [1027:0] result_loop;
+    wire loop_done;
     
     multiplier multi(
         .clk(clk),
@@ -214,9 +201,6 @@ module montgomery(input clk,
         .in_m(in_m),
         .result(result_loop),
         .done(loop_done));
-    
-    wire [1023:0] result_sub;
-    wire all_done;
 
     conditional_sub sub(
         .clk(clk),
@@ -224,14 +208,7 @@ module montgomery(input clk,
         .start(loop_done),
         .in_c(result_loop),
         .in_m({3'b0, in_m}),
-        .result(result_sub),
-        .done(all_done),
-
-        .sub_start(sub_start),
-        .sub_done(sub_done),
-        .N(N));
-    
-    assign result = result_sub;
-    assign done = all_done;
+        .result(result),
+        .done(done));
 
 endmodule
