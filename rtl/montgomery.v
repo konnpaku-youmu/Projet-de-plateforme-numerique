@@ -11,19 +11,24 @@ module multiplier (
     output wire done);
 
     reg [10:0] shift_counter;
+    wire ai;
+    wire c0;
     
     wire adder_b_done;
     wire [1027:0] muxOutAdder_B;
+    wire adder_b_done_mux;
     
     wire adder_m_done;
     reg adder_m_done_reg;
 
+    assign c0 = (start) ? 1'b0 : muxOutAdder_B[0];
+
     wire mux1;
-    assign mux1 = (muxOutAdder_B[0] == 1) ? adder_m_done : adder_b_done;
+    assign mux1 = (c0) ? adder_m_done : adder_b_done_mux;
     
     always @(posedge clk)
     begin
-        if (~resetn || start)
+        if (~resetn)
             adder_m_done_reg <= 1'b0;
         else if (shift_counter[10] == 1'b0)
             adder_m_done_reg <= mux1;
@@ -41,7 +46,7 @@ module multiplier (
             shift_counter <= 0;
             in_a_reg      <= in_a;
         end
-        else if (mux1)
+        else if (mux1 && shift_counter[10] == 1'b0)
         begin
             in_a_reg      <= in_a_reg >> 1;
             shift_counter <= shift_counter + 1;
@@ -52,8 +57,13 @@ module multiplier (
     reg [1027:0] regC_Q;
     
     // define the multiplexer for start signal for adder B
+    wire start_b_;
+    assign start_b_ = start || adder_m_done_reg;
+
     wire start_b;
-    assign start_b = start || adder_m_done_reg;
+    assign start_b = ai && start_b_;
+
+    assign ai = (start) ? in_a[0] : in_a_reg[0];
 
     wire [1027:0] adder_b_result;
     mpadder adder_B (
@@ -68,11 +78,13 @@ module multiplier (
     
     // define the multiplexer for adder B result
     assign muxOutAdder_B = (in_a_reg[0] == 1) ? adder_b_result : regC_Q;
-    
+
+    assign adder_b_done_mux = (ai == 1) ? adder_b_done : start_b_;
+
     // instantiate Adder M
     wire [1027:0] adder_m_result;
     wire start_m;
-    assign start_m = adder_b_done && muxOutAdder_B[0];
+    assign start_m = adder_b_done_mux && c0;
     
     mpadder adder_M (
     .clk      (clk),
@@ -86,7 +98,7 @@ module multiplier (
     
     // define the multiplexer for adder M result
     wire [1027:0] muxOutAdder_M;
-    assign muxOutAdder_M = (muxOutAdder_B[0] == 1) ? adder_m_result : muxOutAdder_B;
+    assign muxOutAdder_M = (c0 == 1) ? adder_m_result : muxOutAdder_B;
     
     // define regC
     always @(posedge clk)
@@ -94,7 +106,7 @@ module multiplier (
         if (~resetn || start)
             regC_Q <= 1028'b0;
         else if (mux1)
-            regC_Q <= (muxOutAdder_M >> 1);
+            regC_Q <= (muxOutAdder_M >> (~shift_counter[10]));
     end
     
     reg regDone;
