@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
-`define ADDER_W 112
-`define ADDER_NUM 9
+`define ADDER_W 48
+`define ADDER_NUM 21
 
 module carry_sel_adder(input wire clk,
                        input wire [`ADDER_W-1:0] A,
