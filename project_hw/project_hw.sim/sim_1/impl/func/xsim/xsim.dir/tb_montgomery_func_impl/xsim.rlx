@@ -1,0 +1,12 @@
+
+{ 
+    crc :  15403103821387204890  , 
+    ccp_crc :  0  , 
+    cmdline : " -wto 95908b24bbff47ac8011bc4bd9809fbc --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L secureip --snapshot tb_montgomery_func_impl xil_defaultlib.tb_montgomery xil_defaultlib.glbl" , 
+    buildDate : "Nov 18 2020" , 
+    buildTime : "09:20:35" , 
+    linkCmd : "/usr/bin/gcc -Wa,-W  -O -fPIC  -m64  -Wl,--no-as-needed  -Wl,--unresolved-symbols=ignore-all  -o \"xsim.dir/tb_montgomery_func_impl/xsimk\"   \"xsim.dir/tb_montgomery_func_impl/obj/xsim_0.lnx64.o\" \"xsim.dir/tb_montgomery_func_impl/obj/xsim_1.lnx64.o\" \"xsim.dir/tb_montgomery_func_impl/obj/xsim_2.lnx64.o\" -L\"/home/yz/.local/Xilinx/Vivado/2020.2/lib/lnx64.o\" -lrdi_simulator_kernel   -lrdi_simbridge_kernel" , 
+    aggregate_nets : 
+    [ 
+    ] 
+} 

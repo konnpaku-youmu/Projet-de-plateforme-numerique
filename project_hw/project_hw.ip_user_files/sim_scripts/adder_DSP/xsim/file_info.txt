@@ -1,0 +1,2 @@
+adder_DSP.vhd,vhdl,xil_defaultlib,../../../../project_hw.srcs/sources_1/ip/adder_DSP/sim/adder_DSP.vhd,
+adder_DSP.vhd,vhdl,xil_defaultlib,../../../../project_hw.srcs/sources_1/ip/adder_DSP/synth/adder_DSP.vhd,
