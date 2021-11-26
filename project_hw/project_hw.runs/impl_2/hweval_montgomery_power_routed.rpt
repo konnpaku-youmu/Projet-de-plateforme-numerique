@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date             : Mon Nov 15 16:10:34 2021
+| Date             : Thu Nov 25 22:13:23 2021
 | Host             : archHome running 64-bit Arch Linux
 | Command          : report_power -file hweval_montgomery_power_routed.rpt -pb hweval_montgomery_power_summary_routed.pb -rpx hweval_montgomery_power_routed.rpx
 | Design           : hweval_montgomery
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.468        |
+| Total On-Chip Power (W)  | 0.496        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.356        |
-| Device Static (W)        | 0.111        |
+| Dynamic (W)              | 0.384        |
+| Device Static (W)        | 0.112        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 79.6         |
-| Junction Temperature (C) | 30.4         |
+| Max Ambient (C)          | 79.3         |
+| Junction Temperature (C) | 30.7         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,17 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.044 |        3 |       --- |             --- |
-| Slice Logic    |     0.070 |    23999 |       --- |             --- |
-|   LUT as Logic |     0.061 |     6373 |     53200 |           11.98 |
-|   Register     |     0.009 |    14357 |    106400 |           13.49 |
-|   CARRY4       |    <0.001 |       15 |     13300 |            0.11 |
-|   Others       |     0.000 |      437 |       --- |             --- |
-| Signals        |     0.153 |    21522 |       --- |             --- |
-| DSPs           |     0.089 |      141 |       220 |           64.09 |
+| Clocks         |     0.041 |        3 |       --- |             --- |
+| Slice Logic    |     0.063 |    22164 |       --- |             --- |
+|   LUT as Logic |     0.057 |     6877 |     53200 |           12.93 |
+|   Register     |     0.006 |    12661 |    106400 |           11.90 |
+|   Others       |     0.000 |      302 |       --- |             --- |
+| Signals        |     0.186 |    26313 |       --- |             --- |
+| DSPs           |     0.095 |      146 |       220 |           66.36 |
 | I/O            |    <0.001 |        3 |       125 |            2.40 |
-| Static Power   |     0.111 |          |           |                 |
-| Total          |     0.468 |          |           |                 |
+| Static Power   |     0.112 |          |           |                 |
+| Total          |     0.496 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,7 +71,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.365 |       0.356 |      0.009 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.393 |       0.384 |      0.009 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.011 |       0.000 |      0.011 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -148,13 +147,13 @@ Table of Contents
 +-----------------------+-----------+
 | Name                  | Power (W) |
 +-----------------------+-----------+
-| hweval_montgomery     |     0.356 |
-|   montgomery_instance |     0.339 |
-|     multi             |     0.250 |
-|       adder_B         |     0.128 |
-|       adder_M         |     0.083 |
-|     sub               |     0.088 |
-|       subtractor      |     0.082 |
+| hweval_montgomery     |     0.384 |
+|   montgomery_instance |     0.375 |
+|     multi             |     0.269 |
+|       adder_B         |     0.159 |
+|       adder_M         |     0.085 |
+|     sub               |     0.106 |
+|       subtractor      |     0.101 |
 +-----------------------+-----------+
 
 

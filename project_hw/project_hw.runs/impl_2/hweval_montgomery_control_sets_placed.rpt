@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Mon Nov 15 16:09:40 2021
+| Date         : Thu Nov 25 22:11:22 2021
 | Host         : archHome running 64-bit Arch Linux
 | Command      : report_control_sets -verbose -file hweval_montgomery_control_sets_placed.rpt
 | Design       : hweval_montgomery
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    10 |
-|    Minimum number of control sets                        |    10 |
+| Total control sets                                       |     9 |
+|    Minimum number of control sets                        |     9 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    35 |
+| Unused register locations in slices containing registers |    14 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,7 +39,7 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    10 |
+| Total control sets |     9 |
 | >= 0 to < 4        |     0 |
 | >= 4 to < 6        |     0 |
 | >= 6 to < 8        |     0 |
@@ -47,7 +47,7 @@ Table of Contents
 | >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     1 |
 | >= 14 to < 16      |     0 |
-| >= 16              |     9 |
+| >= 16              |     8 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,31 +58,30 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |            6084 |         1411 |
+| No           | No                    | No                     |            3934 |         1126 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              13 |           11 |
-| Yes          | No                    | No                     |            4137 |         1303 |
+| No           | Yes                   | No                     |              13 |            9 |
+| Yes          | No                    | No                     |            4091 |         1333 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |            4123 |          901 |
+| Yes          | Yes                   | No                     |            4100 |         1245 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------+-------------------------------------------------------+------------------------------------------------+------------------+----------------+--------------+
-|  Clock Signal  |                     Enable Signal                     |                Set/Reset Signal                | Slice Load Count | Bel Load Count | Bels / Slice |
-+----------------+-------------------------------------------------------+------------------------------------------------+------------------+----------------+--------------+
-|  clk_IBUF_BUFG |                                                       | montgomery_instance/sub/SR[0]                  |               11 |             13 |         1.18 |
-|  clk_IBUF_BUFG | montgomery_instance/multi/adder_B/shift_counter0      | montgomery_instance/multi/regC_Q[1027]_i_1_n_0 |                6 |             20 |         3.33 |
-|  clk_IBUF_BUFG | montgomery_instance/multi/E[0]                        | montgomery_instance/sub/SR[0]                  |              214 |           1027 |         4.80 |
-|  clk_IBUF_BUFG | montgomery_instance/multi/adder_B/mux1                | montgomery_instance/multi/regC_Q[1027]_i_1_n_0 |              364 |           1028 |         2.82 |
-|  clk_IBUF_BUFG | montgomery_instance/multi/adder_B/state               |                                                |              346 |           1028 |         2.97 |
-|  clk_IBUF_BUFG | montgomery_instance/multi/adder_B/next_state_reg_0[0] |                                                |              304 |           1028 |         3.38 |
-|  clk_IBUF_BUFG | montgomery_instance/multi/adder_B/E[0]                |                                                |              340 |           1029 |         3.03 |
-|  clk_IBUF_BUFG | montgomery_instance/sub/subtractor/state              |                                                |              313 |           1052 |         3.36 |
-|  clk_IBUF_BUFG | state[1]                                              | montgomery_instance/sub/SR[0]                  |              317 |           2048 |         6.46 |
-|  clk_IBUF_BUFG |                                                       |                                                |             1411 |           6084 |         4.31 |
-+----------------+-------------------------------------------------------+------------------------------------------------+------------------+----------------+--------------+
++----------------+-------------------------------------------------------+-----------------------------------------------------+------------------+----------------+--------------+
+|  Clock Signal  |                     Enable Signal                     |                   Set/Reset Signal                  | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+-------------------------------------------------------+-----------------------------------------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG |                                                       | montgomery_instance/sub/subtractor/adder_0/resetn   |                9 |             13 |         1.44 |
+|  clk_IBUF_BUFG | montgomery_instance/multi/adder_B/state               |                                                     |              304 |           1008 |         3.32 |
+|  clk_IBUF_BUFG | montgomery_instance/multi/adder_B/state_1             |                                                     |              324 |           1008 |         3.11 |
+|  clk_IBUF_BUFG | montgomery_instance/multi/adder_B/E[0]                |                                                     |              407 |           1023 |         2.51 |
+|  clk_IBUF_BUFG | montgomery_instance/multi/subStart                    | montgomery_instance/sub/subtractor/adder_0/resetn   |              377 |           1024 |         2.72 |
+|  clk_IBUF_BUFG | montgomery_instance/multi/adder_B/adder_0/regDone_reg | montgomery_instance/multi/adder_B/adder_0/start_reg |              371 |           1028 |         2.77 |
+|  clk_IBUF_BUFG | montgomery_instance/sub/subtractor/state              |                                                     |              298 |           1052 |         3.53 |
+|  clk_IBUF_BUFG | state[1]                                              | montgomery_instance/sub/subtractor/adder_0/resetn   |              497 |           2048 |         4.12 |
+|  clk_IBUF_BUFG |                                                       |                                                     |             1126 |           3934 |         3.49 |
++----------------+-------------------------------------------------------+-----------------------------------------------------+------------------+----------------+--------------+
 
 

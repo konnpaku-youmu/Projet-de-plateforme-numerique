@@ -115,7 +115,6 @@ proc step_failed { step } {
 OPTRACE "impl_2" END { }
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config  -id {Synth 8-327}  -new_severity {ERROR} 
 set_msg_config  -id {IP_Flow 19-2207}  -new_severity {INFO} 
 set_msg_config  -id {Vivado 12-3482}  -new_severity {INFO} 
@@ -154,8 +153,6 @@ OPTRACE "set parameters" START { }
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.runs/synth_2/hweval_montgomery.dcp
-  read_ip -quiet /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.srcs/sources_1/ip/adder_DSP/adder_DSP.xci
-  set_property used_in_simulation 1 [get_files -all /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.srcs/sources_1/ip/adder_DSP/synth/adder_DSP.vhd]
 OPTRACE "read constraints: implementation" START { }
   read_xdc -unmanaged /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/tcl/constraints.tcl
 OPTRACE "read constraints: implementation" END { }

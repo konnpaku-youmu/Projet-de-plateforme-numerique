@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module multiplier (
+(* use_dsp = "yes" *) module multiplier (
     input clk,
     input resetn,
     input start,
@@ -123,7 +123,7 @@ module multiplier (
 
 endmodule
 
-module conditional_sub (
+(* use_dsp = "yes" *) module conditional_sub (
     input clk,
     input resetn,
     input start,
@@ -190,7 +190,7 @@ module conditional_sub (
 
 endmodule
 
-module montgomery(input clk,
+(* use_dsp = "yes" *) module montgomery(input clk,
                   input resetn,
                   input start,
                   input [1023:0] in_a,

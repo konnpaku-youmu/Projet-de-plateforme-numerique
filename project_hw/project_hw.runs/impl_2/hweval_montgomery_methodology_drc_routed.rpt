@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Mon Nov 15 16:10:31 2021
+| Date         : Thu Nov 25 22:13:21 2021
 | Host         : archHome running 64-bit Arch Linux
 | Command      : report_methodology -file hweval_montgomery_methodology_drc_routed.rpt -pb hweval_montgomery_methodology_drc_routed.pb -rpx hweval_montgomery_methodology_drc_routed.rpx
 | Design       : hweval_montgomery
@@ -23,15 +23,393 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 2
+             Violations found: 77
 +-----------+----------+-------------------------------+------------+
 | Rule      | Severity | Description                   | Violations |
 +-----------+----------+-------------------------------+------------+
+| SYNTH-11  | Warning  | DSP output not registered     | 28         |
+| SYNTH-12  | Warning  | DSP input not registered      | 25         |
+| SYNTH-13  | Warning  | combinational multiplier      | 22         |
 | TIMING-18 | Warning  | Missing input or output delay | 2          |
 +-----------+----------+-------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
+SYNTH-11#1 Warning
+DSP output not registered  
+DSP instance montgomery_instance/multi/adder_B/genblk1[10].adder_i/S00 is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#2 Warning
+DSP output not registered  
+DSP instance montgomery_instance/multi/adder_B/genblk1[11].adder_i/S00 is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#3 Warning
+DSP output not registered  
+DSP instance montgomery_instance/multi/adder_B/genblk1[12].adder_i/S00 is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#4 Warning
+DSP output not registered  
+DSP instance montgomery_instance/multi/adder_B/genblk1[13].adder_i/S00 is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#5 Warning
+DSP output not registered  
+DSP instance montgomery_instance/multi/adder_B/genblk1[14].adder_i/S00 is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#6 Warning
+DSP output not registered  
+DSP instance montgomery_instance/multi/adder_B/genblk1[15].adder_i/S00 is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#7 Warning
+DSP output not registered  
+DSP instance montgomery_instance/multi/adder_B/genblk1[16].adder_i/S00 is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#8 Warning
+DSP output not registered  
+DSP instance montgomery_instance/multi/adder_B/genblk1[17].adder_i/S00 is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#9 Warning
+DSP output not registered  
+DSP instance montgomery_instance/multi/adder_B/genblk1[18].adder_i/S00 is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#10 Warning
+DSP output not registered  
+DSP instance montgomery_instance/multi/adder_B/genblk1[19].adder_i/S00 is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#11 Warning
+DSP output not registered  
+DSP instance montgomery_instance/multi/adder_B/genblk1[1].adder_i/S00 is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#12 Warning
+DSP output not registered  
+DSP instance montgomery_instance/multi/adder_B/genblk1[20].adder_i/S00 is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#13 Warning
+DSP output not registered  
+DSP instance montgomery_instance/multi/adder_B/genblk1[21].adder_i/S00 is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#14 Warning
+DSP output not registered  
+DSP instance montgomery_instance/multi/adder_B/genblk1[22].adder_i/S00 is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#15 Warning
+DSP output not registered  
+DSP instance montgomery_instance/multi/adder_B/genblk1[23].adder_i/S00 is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#16 Warning
+DSP output not registered  
+DSP instance montgomery_instance/multi/adder_B/genblk1[2].adder_i/S00 is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#17 Warning
+DSP output not registered  
+DSP instance montgomery_instance/multi/adder_B/genblk1[3].adder_i/S00 is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#18 Warning
+DSP output not registered  
+DSP instance montgomery_instance/multi/adder_B/genblk1[4].adder_i/S00 is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#19 Warning
+DSP output not registered  
+DSP instance montgomery_instance/multi/adder_B/genblk1[5].adder_i/S00 is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#20 Warning
+DSP output not registered  
+DSP instance montgomery_instance/multi/adder_B/genblk1[6].adder_i/S00 is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#21 Warning
+DSP output not registered  
+DSP instance montgomery_instance/multi/adder_B/genblk1[7].adder_i/S00 is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#22 Warning
+DSP output not registered  
+DSP instance montgomery_instance/multi/adder_B/genblk1[8].adder_i/S00 is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#23 Warning
+DSP output not registered  
+DSP instance montgomery_instance/multi/adder_B/genblk1[9].adder_i/S00 is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#24 Warning
+DSP output not registered  
+DSP instance montgomery_instance/sub/subtractor/carries_240 is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#25 Warning
+DSP output not registered  
+DSP instance montgomery_instance/sub/subtractor/genblk1[10].adder_i/S00 is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#26 Warning
+DSP output not registered  
+DSP instance montgomery_instance/sub/subtractor/genblk1[1].adder_i/S00 is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#27 Warning
+DSP output not registered  
+DSP instance montgomery_instance/sub/subtractor/genblk1[2].adder_i/S00 is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-11#28 Warning
+DSP output not registered  
+DSP instance montgomery_instance/sub/subtractor/genblk1[3].adder_i/S00 is not fully pipelined on the output side. MREG/PREG are not used.
+Related violations: <none>
+
+SYNTH-12#1 Warning
+DSP input not registered  
+DSP instance montgomery_instance/multi/adder_M/adder_0/S00 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#2 Warning
+DSP input not registered  
+DSP instance montgomery_instance/multi/adder_M/carries_240 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#3 Warning
+DSP input not registered  
+DSP instance montgomery_instance/multi/adder_M/genblk1[10].adder_i/S10 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#4 Warning
+DSP input not registered  
+DSP instance montgomery_instance/multi/adder_M/genblk1[12].adder_i/S10 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#5 Warning
+DSP input not registered  
+DSP instance montgomery_instance/multi/adder_M/genblk1[13].adder_i/S10 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#6 Warning
+DSP input not registered  
+DSP instance montgomery_instance/multi/adder_M/genblk1[14].adder_i/S10 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#7 Warning
+DSP input not registered  
+DSP instance montgomery_instance/multi/adder_M/genblk1[15].adder_i/S10 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#8 Warning
+DSP input not registered  
+DSP instance montgomery_instance/multi/adder_M/genblk1[16].adder_i/S10 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#9 Warning
+DSP input not registered  
+DSP instance montgomery_instance/multi/adder_M/genblk1[17].adder_i/S10 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#10 Warning
+DSP input not registered  
+DSP instance montgomery_instance/multi/adder_M/genblk1[18].adder_i/S10 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#11 Warning
+DSP input not registered  
+DSP instance montgomery_instance/multi/adder_M/genblk1[19].adder_i/S10 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#12 Warning
+DSP input not registered  
+DSP instance montgomery_instance/multi/adder_M/genblk1[1].adder_i/S10 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#13 Warning
+DSP input not registered  
+DSP instance montgomery_instance/multi/adder_M/genblk1[20].adder_i/S10 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#14 Warning
+DSP input not registered  
+DSP instance montgomery_instance/multi/adder_M/genblk1[21].adder_i/S10 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#15 Warning
+DSP input not registered  
+DSP instance montgomery_instance/multi/adder_M/genblk1[22].adder_i/S10 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#16 Warning
+DSP input not registered  
+DSP instance montgomery_instance/multi/adder_M/genblk1[23].adder_i/S10 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#17 Warning
+DSP input not registered  
+DSP instance montgomery_instance/multi/adder_M/genblk1[2].adder_i/S10 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#18 Warning
+DSP input not registered  
+DSP instance montgomery_instance/multi/adder_M/genblk1[3].adder_i/S10 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#19 Warning
+DSP input not registered  
+DSP instance montgomery_instance/multi/adder_M/genblk1[4].adder_i/S10 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#20 Warning
+DSP input not registered  
+DSP instance montgomery_instance/multi/adder_M/genblk1[5].adder_i/S10 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#21 Warning
+DSP input not registered  
+DSP instance montgomery_instance/multi/adder_M/genblk1[6].adder_i/S10 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#22 Warning
+DSP input not registered  
+DSP instance montgomery_instance/multi/adder_M/genblk1[7].adder_i/S10 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#23 Warning
+DSP input not registered  
+DSP instance montgomery_instance/multi/adder_M/genblk1[8].adder_i/S10 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#24 Warning
+DSP input not registered  
+DSP instance montgomery_instance/multi/adder_M/genblk1[9].adder_i/S10 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#25 Warning
+DSP input not registered  
+DSP instance montgomery_instance/multi/shift_counter_reg is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-13#1 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance montgomery_instance/multi/adder_M/genblk1[10].adder_i/S00.
+Related violations: <none>
+
+SYNTH-13#2 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance montgomery_instance/multi/adder_M/genblk1[12].adder_i/S00.
+Related violations: <none>
+
+SYNTH-13#3 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance montgomery_instance/multi/adder_M/genblk1[13].adder_i/S00.
+Related violations: <none>
+
+SYNTH-13#4 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance montgomery_instance/multi/adder_M/genblk1[14].adder_i/S00.
+Related violations: <none>
+
+SYNTH-13#5 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance montgomery_instance/multi/adder_M/genblk1[15].adder_i/S00.
+Related violations: <none>
+
+SYNTH-13#6 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance montgomery_instance/multi/adder_M/genblk1[16].adder_i/S00.
+Related violations: <none>
+
+SYNTH-13#7 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance montgomery_instance/multi/adder_M/genblk1[17].adder_i/S00.
+Related violations: <none>
+
+SYNTH-13#8 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance montgomery_instance/multi/adder_M/genblk1[18].adder_i/S00.
+Related violations: <none>
+
+SYNTH-13#9 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance montgomery_instance/multi/adder_M/genblk1[19].adder_i/S00.
+Related violations: <none>
+
+SYNTH-13#10 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance montgomery_instance/multi/adder_M/genblk1[1].adder_i/S00.
+Related violations: <none>
+
+SYNTH-13#11 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance montgomery_instance/multi/adder_M/genblk1[20].adder_i/S00.
+Related violations: <none>
+
+SYNTH-13#12 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance montgomery_instance/multi/adder_M/genblk1[21].adder_i/S00.
+Related violations: <none>
+
+SYNTH-13#13 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance montgomery_instance/multi/adder_M/genblk1[22].adder_i/S00.
+Related violations: <none>
+
+SYNTH-13#14 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance montgomery_instance/multi/adder_M/genblk1[23].adder_i/S00.
+Related violations: <none>
+
+SYNTH-13#15 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance montgomery_instance/multi/adder_M/genblk1[2].adder_i/S00.
+Related violations: <none>
+
+SYNTH-13#16 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance montgomery_instance/multi/adder_M/genblk1[3].adder_i/S00.
+Related violations: <none>
+
+SYNTH-13#17 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance montgomery_instance/multi/adder_M/genblk1[4].adder_i/S00.
+Related violations: <none>
+
+SYNTH-13#18 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance montgomery_instance/multi/adder_M/genblk1[5].adder_i/S00.
+Related violations: <none>
+
+SYNTH-13#19 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance montgomery_instance/multi/adder_M/genblk1[6].adder_i/S00.
+Related violations: <none>
+
+SYNTH-13#20 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance montgomery_instance/multi/adder_M/genblk1[7].adder_i/S00.
+Related violations: <none>
+
+SYNTH-13#21 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance montgomery_instance/multi/adder_M/genblk1[8].adder_i/S00.
+Related violations: <none>
+
+SYNTH-13#22 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance montgomery_instance/multi/adder_M/genblk1[9].adder_i/S00.
+Related violations: <none>
+
 TIMING-18#1 Warning
 Missing input or output delay  
 An input delay is missing on resetn relative to clock(s) clk_gen

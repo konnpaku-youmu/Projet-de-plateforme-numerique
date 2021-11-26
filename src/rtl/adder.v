@@ -3,7 +3,7 @@
 `define ADDER_W 42
 `define ADDER_NUM 24
 
-module carry_sel_adder(input wire clk,
+(* use_dsp = "yes" *) module carry_sel_adder(input wire clk,
                        input wire [`ADDER_W-1:0] A,
                        input wire [`ADDER_W-1:0] B,
                        input wire cin,
@@ -50,7 +50,7 @@ module carry_sel_adder_dsp(input wire clk,
     
 endmodule
     
-    module mpadder(
+(* use_dsp = "yes" *) module mpadder(
         input  wire          clk,
         input  wire          resetn,
         input  wire          start,
@@ -71,10 +71,10 @@ endmodule
         
         assign in_b_xor = in_b ^ {1027{subtract}};
         
-        carry_sel_adder_dsp adder_0(clk, in_a[`ADDER_W-1:0], in_b_xor[`ADDER_W-1:0], cin, adder_res[`ADDER_W-1:0], carries[0]);
+        carry_sel_adder adder_0(clk, in_a[`ADDER_W-1:0], in_b_xor[`ADDER_W-1:0], cin, adder_res[`ADDER_W-1:0], carries[0]);
         
         for (genvar i = 1; i < `ADDER_NUM; i = i + 1) begin
-            carry_sel_adder_dsp adder_i(clk, in_a[`ADDER_W*i + `ADDER_W-1 : `ADDER_W*i], in_b_xor[`ADDER_W*i + `ADDER_W-1 : `ADDER_W*i], carries[i-1], adder_res[`ADDER_W*i + `ADDER_W-1 : `ADDER_W*i], carries[i]);
+            carry_sel_adder adder_i(clk, in_a[`ADDER_W*i + `ADDER_W-1 : `ADDER_W*i], in_b_xor[`ADDER_W*i + `ADDER_W-1 : `ADDER_W*i], carries[i-1], adder_res[`ADDER_W*i + `ADDER_W-1 : `ADDER_W*i], carries[i]);
         end
         
         assign {carries[`ADDER_NUM], adder_res[1026:1008]} = in_a[1026:1008] + in_b_xor[1026:1008] + carries[`ADDER_NUM-1];
