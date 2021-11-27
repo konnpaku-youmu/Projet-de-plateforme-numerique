@@ -9,7 +9,13 @@
     input wire [1023:0] in_m,
     output wire [1027:0] result,
     output wire done,
-    output wire cnt_msb);
+
+    output wire cnt_msb,
+    output wire [1027:0] sub_res,
+    output wire state,
+    output wire m_start,
+    output wire m_done,
+    output wire [1023:0] sub_out);
 
     reg [10:0] shift_counter;
     wire ai;
@@ -53,7 +59,15 @@
             shift_counter <= shift_counter + 1;
         end
     end
-    
+
+    reg stage;
+    always @(posedge clk) begin
+        if (~resetn || start)
+            stage <= 1'b0;
+        else if (shift_counter[10] == 1'b1)
+            stage <= 1'b1;
+    end
+
     // define wires for connecting C and adders
     reg [1027:0] regC_Q;
     
@@ -82,17 +96,38 @@
 
     assign adder_b_done_mux = (ai == 1) ? adder_b_done : start_b_;
 
+    reg start_m_sub;
+    always @(posedge clk) begin
+        if (~resetn || start)
+            start_m_sub <= 1'b0;
+        else if (shift_counter[10] == 1'b1)
+            start_m_sub <= adder_m_done;
+    end
+
+    reg regDone;
+    reg start_m_sub_d;
+    always @(posedge clk) begin
+        if (~resetn || start)
+            start_m_sub_d <= 1'b0;
+        else if (shift_counter[10] == 1'b1)
+            start_m_sub_d <= start_m_sub || regDone;
+    end
+    
+    reg [1027:0] regC_sub;
+    wire [1027:0] adder_m_input;
+    assign adder_m_input = (stage) ? regC_sub : muxOutAdder_B;
+
     // instantiate Adder M
     wire [1027:0] adder_m_result;
     wire start_m;
-    assign start_m = adder_b_done_mux && c0;
+    assign start_m = (shift_counter[10]) ? start_m_sub_d : (adder_b_done_mux && c0);
     
     mpadder adder_M (
     .clk      (clk),
     .resetn   (resetn),
     .start    (start_m),
-    .subtract (1'b0),
-    .in_a     (muxOutAdder_B),
+    .subtract (stage),
+    .in_a     (adder_m_input),
     .in_b     ({3'b0, in_m}),
     .result   (adder_m_result),
     .done     (adder_m_done));
@@ -106,11 +141,10 @@
     begin
         if (~resetn || start)
             regC_Q <= 1028'b0;
-        else if (mux1)
+        else if (mux1 && shift_counter[10] == 1'b0)
             regC_Q <= (muxOutAdder_M >> (~shift_counter[10]));
     end
-    
-    reg regDone;
+
     always @(posedge clk) begin
         if (~resetn || start) begin
             regDone <= 1'b0;
@@ -119,11 +153,41 @@
         end
     end
     
+    always @(posedge clk) begin
+        if (~resetn || start)
+            regC_sub <= 1028'b0;
+        else if (regDone)
+            regC_sub <= regC_Q;
+        else if (stage == 1'b1 && start_m_sub == 1'b1)
+            regC_sub <= adder_m_result;
+    end
+
+    reg [1023:0] regSubRes;
+    always @(posedge clk) begin
+        if (~resetn || start)
+            regSubRes <= 1023'b0;
+        else if (stage == 1'b1)
+            regSubRes <= adder_m_input;
+    end
+
+    reg [1023:0] regSubRes_d;
+    always @(posedge clk) begin
+        if (~resetn || start)
+            regSubRes_d <= 1023'b0;
+        else if (regC_sub[1027] == 1'b1)  
+            regSubRes_d <= regSubRes;
+    end
+    
     assign result = regC_Q;
     assign done = regDone;
     
     // outputs for testing
     assign cnt_msb = shift_counter[10];
+    assign sub_res = regC_sub;
+    assign sub_out = regSubRes;
+    assign state = stage;
+    assign m_start = start_m;
+    assign m_done = adder_m_done;
 
 endmodule
 
@@ -221,7 +285,11 @@ endmodule
                   output [1027:0] result_loop,
                   output loop_done,
                   output cnt_msb,
-                  output res_msb);
+                  output [1027:0] sub_res,
+                  output wire state,
+                  output wire m_start,
+                  output wire m_done,
+                  output wire [1023:0] sub_out);
     /*
      Student tasks:
      1. Instantiate an Adder
@@ -241,7 +309,12 @@ endmodule
         .in_m(in_m),
         .result(result_loop),
         .done(loop_done),
-        .cnt_msb(cnt_msb));
+        .cnt_msb(cnt_msb),
+        .sub_res(sub_res),
+        .state(state),
+        .m_start(m_start),
+        .m_done(m_done),
+        .sub_out(sub_out));
 
     conditional_sub sub(
         .clk(clk),
@@ -250,7 +323,6 @@ endmodule
         .in_c(result_loop),
         .in_m({3'b0, in_m}),
         .result(result),
-        .done(done),
-        .res_msb(res_msb));
+        .done(done));
 
 endmodule
