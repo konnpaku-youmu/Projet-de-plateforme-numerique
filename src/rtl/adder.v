@@ -109,11 +109,17 @@ endmodule
         
         always @(posedge clk)
         begin
-            if (state == 1'b1) begin
+            if(~resetn || start)
+            begin
+                regDone <= 1'b0;
+                result <= 0;
+            end
+            
+            if (state == 1) begin
                 result       = {carries[`ADDER_NUM], adder_res};
                 result[1027] = result[1027] ^ subtract;
                 regDone <= 1'b1;
-                end else begin
+            end else begin
                 regDone <= 1'b0;
             end
         end

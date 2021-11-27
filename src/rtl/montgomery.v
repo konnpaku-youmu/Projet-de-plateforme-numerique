@@ -8,7 +8,8 @@
     input wire [1023:0] in_b,
     input wire [1023:0] in_m,
     output wire [1027:0] result,
-    output wire done);
+    output wire done,
+    output wire cnt_msb);
 
     reg [10:0] shift_counter;
     wire ai;
@@ -120,6 +121,9 @@
     
     assign result = regC_Q;
     assign done = regDone;
+    
+    // outputs for testing
+    assign cnt_msb = shift_counter[10];
 
 endmodule
 
@@ -130,7 +134,8 @@ endmodule
     input wire [1026:0] in_c,
     input wire [1026:0] in_m,
     output wire [1023:0] result,
-    output wire done);
+    output wire done,
+    output wire res_msb);
 
     // define the output register for subtractor
     wire [1027:0] sub_result;
@@ -181,13 +186,27 @@ endmodule
         .result   (sub_result),
         .done     (subDone)
     );
+
+    reg regDone;
+    always @(posedge clk) begin
+        if (~resetn || start)
+        begin
+            regDone   <= 1'b0;
+        end
+        else if (sub_result[1027] == 1'b1)
+        begin
+            regDone   <= 1'b1;
+        end
+        else
+        begin
+            regDone   <= 1'b0;
+        end
+    end
     
-    wire [1023:0] muxOutSub;
-    assign muxOutSub = (sub_result[1027]) ? regIn_A[1023:0] : sub_result[1023:0];
+    assign result = regIn_A[1023:0];
+    assign done = regDone;
 
-    assign result = muxOutSub;
-    assign done = sub_result[1027];
-
+    assign res_msb = sub_result[1027];
 endmodule
 
 (* use_dsp = "yes" *) module montgomery(input clk,
@@ -197,7 +216,12 @@ endmodule
                   input [1023:0] in_b,
                   input [1023:0] in_m,
                   output [1023:0] result,
-                  output done);
+                  output done,
+                  
+                  output [1027:0] result_loop,
+                  output loop_done,
+                  output cnt_msb,
+                  output res_msb);
     /*
      Student tasks:
      1. Instantiate an Adder
@@ -205,8 +229,8 @@ endmodule
      3. Use tb_montgomery.v to simulate your design.
     */
 
-    wire [1027:0] result_loop;
-    wire loop_done;
+    // wire [1027:0] result_loop;
+    // wire loop_done;
     
     multiplier multi(
         .clk(clk),
@@ -216,15 +240,17 @@ endmodule
         .in_b(in_b),
         .in_m(in_m),
         .result(result_loop),
-        .done(loop_done));
+        .done(loop_done),
+        .cnt_msb(cnt_msb));
 
     conditional_sub sub(
         .clk(clk),
-        .resetn(resetn),
+        .resetn(resetn && ~start),
         .start(loop_done),
         .in_c(result_loop),
         .in_m({3'b0, in_m}),
         .result(result),
-        .done(done));
+        .done(done),
+        .res_msb(res_msb));
 
 endmodule
