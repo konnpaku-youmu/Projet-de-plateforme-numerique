@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_2" LaunchPart="xc7z020clg400-1" LaunchTime="1637874466">
+<GenRun Id="synth_2" LaunchPart="xc7z020clg400-1" LaunchTime="1638060922">
+  <File Type="VDS-TIMING-PB" Name="hweval_montgomery_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="hweval_montgomery_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="hweval_montgomery.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="hweval_montgomery_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="hweval_montgomery_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="hweval_montgomery_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="hweval_montgomery.vds"/>
   <File Type="REPORTS-TCL" Name="hweval_montgomery_reports.tcl"/>
   <File Type="PA-TCL" Name="hweval_montgomery.tcl"/>
-  <File Type="RDS-DCP" Name="hweval_montgomery.dcp"/>
-  <File Type="RDS-RDS" Name="hweval_montgomery.vds"/>
-  <File Type="RDS-UTIL" Name="hweval_montgomery_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="hweval_montgomery_utilization_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../src/rtl/adder.v">
@@ -37,7 +40,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../src/rtl/rsa_wrapper.v">
+    <File Path="$PPRDIR/../src/rtl/hweval_adder.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -45,7 +48,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../src/rtl/hweval_adder.v">
+    <File Path="$PPRDIR/../src/rtl/rsa_wrapper.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -96,11 +99,13 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Flow_AreaOptimized_high" Flow="Vivado Synthesis 2020"/>
+    <StratHandle Name="Flow_AreaOptimized_high" Flow="Vivado Synthesis 2020">
+      <Desc>Performs general area optimizations including changing the threshold for control set optimizations, forcing ternary adder implementation, applying lower thresholds for use of carry chain in comparators and also area optimized mux optimizations.</Desc>
+    </StratHandle>
     <Step Id="synth_design">
       <Option Id="Directive">1</Option>
-      <Option Id="GatedClockConversion">2</Option>
       <Option Id="ControlSetOptThreshold">1</Option>
+      <Option Id="GatedClockConversion">2</Option>
     </Step>
   </Strategy>
 </GenRun>
