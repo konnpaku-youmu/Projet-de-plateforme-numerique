@@ -8,14 +8,7 @@
     input wire [1023:0] in_b,
     input wire [1023:0] in_m,
     output wire [1027:0] result,
-    output wire done,
-
-    output wire cnt_msb,
-    output wire [1027:0] sub_res,
-    output wire state,
-    output wire m_start,
-    output wire m_done,
-    output wire [1023:0] sub_out);
+    output wire done);
 
     reg [10:0] shift_counter;
     wire ai;
@@ -104,13 +97,13 @@
             start_m_sub <= adder_m_done;
     end
 
-    reg regDone;
+    reg regLoopDone;
     reg start_m_sub_d;
     always @(posedge clk) begin
         if (~resetn || start)
             start_m_sub_d <= 1'b0;
         else if (shift_counter[10] == 1'b1)
-            start_m_sub_d <= start_m_sub || regDone;
+            start_m_sub_d <= start_m_sub || regLoopDone;
     end
     
     reg [1027:0] regC_sub;
@@ -147,47 +140,39 @@
 
     always @(posedge clk) begin
         if (~resetn || start) begin
-            regDone <= 1'b0;
+            regLoopDone <= 1'b0;
         end else if(shift_counter[10] == 1'b1) begin
-            regDone <= adder_m_done_reg;
+            regLoopDone <= adder_m_done_reg;
         end
     end
     
     always @(posedge clk) begin
         if (~resetn || start)
             regC_sub <= 1028'b0;
-        else if (regDone)
+        else if (regLoopDone)
             regC_sub <= regC_Q;
         else if (stage == 1'b1 && start_m_sub == 1'b1)
             regC_sub <= adder_m_result;
     end
 
-    reg [1023:0] regSubRes;
+    reg subDone;
     always @(posedge clk) begin
         if (~resetn || start)
-            regSubRes <= 1023'b0;
-        else if (stage == 1'b1)
-            regSubRes <= adder_m_input;
-    end
-
-    reg [1023:0] regSubRes_d;
-    always @(posedge clk) begin
-        if (~resetn || start)
-            regSubRes_d <= 1023'b0;
-        else if (regC_sub[1027] == 1'b1)  
-            regSubRes_d <= regSubRes;
+        begin
+            subDone      <= 1'b0;
+        end
+        else if (adder_m_result[1027] == 1'b1)  
+        begin
+            subDone      <= 1'b1;
+        end
+        else
+        begin
+            subDone      <= 1'b0;
+        end
     end
     
-    assign result = regC_Q;
-    assign done = regDone;
-    
-    // outputs for testing
-    assign cnt_msb = shift_counter[10];
-    assign sub_res = regC_sub;
-    assign sub_out = regSubRes;
-    assign state = stage;
-    assign m_start = start_m;
-    assign m_done = adder_m_done;
+    assign result = regC_sub[1023:0];
+    assign done = subDone;
 
 endmodule
 
@@ -280,25 +265,13 @@ endmodule
                   input [1023:0] in_b,
                   input [1023:0] in_m,
                   output [1023:0] result,
-                  output done,
-                  
-                  output [1027:0] result_loop,
-                  output loop_done,
-                  output cnt_msb,
-                  output [1027:0] sub_res,
-                  output wire state,
-                  output wire m_start,
-                  output wire m_done,
-                  output wire [1023:0] sub_out);
+                  output done);
     /*
      Student tasks:
      1. Instantiate an Adder
      2. Use the Adder to implement the Montgomery multiplier in hardware.
      3. Use tb_montgomery.v to simulate your design.
     */
-
-    // wire [1027:0] result_loop;
-    // wire loop_done;
     
     multiplier multi(
         .clk(clk),
@@ -307,22 +280,16 @@ endmodule
         .in_a(in_a),
         .in_b(in_b),
         .in_m(in_m),
-        .result(result_loop),
-        .done(loop_done),
-        .cnt_msb(cnt_msb),
-        .sub_res(sub_res),
-        .state(state),
-        .m_start(m_start),
-        .m_done(m_done),
-        .sub_out(sub_out));
-
-    conditional_sub sub(
-        .clk(clk),
-        .resetn(resetn && ~start),
-        .start(loop_done),
-        .in_c(result_loop),
-        .in_m({3'b0, in_m}),
         .result(result),
         .done(done));
+
+    // conditional_sub sub(
+    //     .clk(clk),
+    //     .resetn(resetn && ~start),
+    //     .start(loop_done),
+    //     .in_c(result_loop),
+    //     .in_m({3'b0, in_m}),
+    //     .result(result),
+    //     .done(done));
 
 endmodule
