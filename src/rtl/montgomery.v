@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-(* use_dsp = "yes" *) module multiplier (
+module multiplier (
     input clk,
     input resetn,
     input start,
@@ -158,17 +158,11 @@
     reg subDone;
     always @(posedge clk) begin
         if (~resetn || start)
-        begin
             subDone      <= 1'b0;
-        end
         else if (adder_m_result[1027] == 1'b1)  
-        begin
             subDone      <= 1'b1;
-        end
         else
-        begin
             subDone      <= 1'b0;
-        end
     end
     
     assign result = regC_sub[1023:0];
@@ -176,89 +170,7 @@
 
 endmodule
 
-(* use_dsp = "yes" *) module conditional_sub (
-    input clk,
-    input resetn,
-    input start,
-    input wire [1026:0] in_c,
-    input wire [1026:0] in_m,
-    output wire [1023:0] result,
-    output wire done,
-    output wire res_msb);
-
-    // define the output register for subtractor
-    wire [1027:0] sub_result;
-    reg regSubDone;
-    wire subDone;
-
-    // define the mux for in_C
-    wire [1027:0] muxIn_C;
-    assign muxIn_C = (start) ? in_c : sub_result;
-
-    // define the start signal for subtractor
-    wire subStart;
-    assign subStart = start || regSubDone;
-    
-    reg regSubStart;
-
-    always @(posedge clk) begin
-        if (~resetn)
-            regSubStart <= 1'b0;
-        else
-            regSubStart <= subStart;
-    end
-
-    always @(posedge clk) begin
-        if (~resetn || start)
-            regSubDone <= 1'b0;
-        else
-            regSubDone <= subDone;
-    end
-
-    // define the register for in_a
-    reg [1026:0] regIn_A;
-    always @(posedge clk)
-    begin
-        if (~resetn)
-            regIn_A <= 1027'b0;
-        else if (subStart)
-            regIn_A <= muxIn_C;
-    end
-
-    mpadder subtractor(
-        .clk      (clk),
-        .resetn   (resetn),
-        .start    (regSubStart),
-        .subtract (1'b1),
-        .in_a     (regIn_A),
-        .in_b     (in_m),
-        .result   (sub_result),
-        .done     (subDone)
-    );
-
-    reg regDone;
-    always @(posedge clk) begin
-        if (~resetn || start)
-        begin
-            regDone   <= 1'b0;
-        end
-        else if (sub_result[1027] == 1'b1)
-        begin
-            regDone   <= 1'b1;
-        end
-        else
-        begin
-            regDone   <= 1'b0;
-        end
-    end
-    
-    assign result = regIn_A[1023:0];
-    assign done = regDone;
-
-    assign res_msb = sub_result[1027];
-endmodule
-
-(* use_dsp = "yes" *) module montgomery(input clk,
+module montgomery(input clk,
                   input resetn,
                   input start,
                   input [1023:0] in_a,
@@ -282,14 +194,5 @@ endmodule
         .in_m(in_m),
         .result(result),
         .done(done));
-
-    // conditional_sub sub(
-    //     .clk(clk),
-    //     .resetn(resetn && ~start),
-    //     .start(loop_done),
-    //     .in_c(result_loop),
-    //     .in_m({3'b0, in_m}),
-    //     .result(result),
-    //     .done(done));
 
 endmodule

@@ -107,6 +107,57 @@ module tb_montgomery();
         result_ok                   = (expected == result);
         #`CLK_PERIOD;
 
+        in_a <= 1024'hccb9a1fe3fa493c43012d43186b02c6aa3e7d4d74054e9107114d6537ed3a5cecb6cbabb6e7b6a1f3a6a443d04bb3bbe8538f8dd085dc166560a0117e6c5bffb0aedf875e90aed0bba49dc0d3e090c11fdf0793a5ddccda7246e27856b208bb220ca04b9bc259de18db4d2cd44f7f2e06d9e4e97b9695609315d30e655e5dfbf;
+        in_b <= 1024'hdea863c1a8c45ff4cfbb6479fb6fc249fdc7ff86f35e680330a6623d08e30def71011dc0d56050bba898406ef2d0ae763f32ece34da6bdf872fe5e7a5dae45e3e1c0545a778a7c286a9eea2c8afbec127efa632a73ccbe73036703dada76081173f8348c819b57064f279fe2af5852b968ffecb7245e38bdfb093ff0297e4ffe;
+        in_m <= 1024'he1c62ed84ee80535422bb863d1806ba7528b63044224bab7dd9221d7edc29645f66d612c73fd5be62f496def158ad6e8f833934831518166331587c1997e040e33738ec2117d5cbbd601d420625b572090aae39d535d474cb285e8c93e66ffd1d1505ffac2104ff4c9d77e47869402cd3921c0609cf6db4c8076e920bc2329bd;
+        expected <= 1024'h4e020083592709fecbfa9eddc543cef71ef8f29977ea6360adea4ee1866eb8feff449e2f05eb0099ffb0d6c22ce3f931a5530d059b2236c31838574582ef4d7d72d9f309b50e321fe63bfa2ecf2a691b2d73059c9d868f5b81728223ec984a5791c3a4d9a6788924eadebeb115d1c4a433767bbac09b272cc60a12bf1b764297;
+
+        perform_multiplication(in_a, in_b, in_m);
+        
+        $display("result calculated = %x", result);
+        $display("result expected   = %x", expected);
+        $display("error             = %x", expected-result);
+        result_ok                   = (expected == result);
+        #`CLK_PERIOD;
+
+        in_a <= 1024'h95515078205c4b6568cafd66254e64e65b4c2520e68bde14cdab39e44ccf16c1cfa49e7b7e20d21c47bb4df65775bbfbbdd9e249956e131a382dbc59e8a2884fb167328d5e344321ce10b0ef1b73bc89a5855cb9dfdd97455082f57f796c34a8b3646dc463e2d70f11021d57fd6d008c299f05c3b7ee170bb55617eb1ca866de;
+        in_b <= 1024'h8f5da230fd6916f3ac8ad8225b0f99b59262a2ff5b285871256987b25bb567b7d29173c25f8e0eada3ca2aa7450814c43310c940e2ab4bb8fcb83a878e33c7131255211ce75cd4b0c2d52337581a7b4ee0c6ddfe8a8ae85599e41a2fc959d979ef43b0d67c739b6f7cab3ad89d8ab6e9f72ad45829cdfcc45c71eb0a7311b400;
+        in_m <= 1024'hdd60e81e95d837599ff3ab792fa0f7535d4b45ed0bd324f37aeda017483e81f23620aa9b6bfcdd4e4ad08e8024f22483999620fb52d314fbe206c9bee804066766edb59dda48965f5a2fd48935dab5c356389040b1f5c21afa5b82d8744798e620dfb272f9dac27d06dbd82809a2655dc1f5d6af9aec6f095c779d41acc3872b;
+        expected <= 1024'h91c3a6303ce9acc31f58894e0ac64d9a6de4116896071b6294b476e5615ca397abd4e1b72449ead980e036c5c42638c706ee5e45ea3bbb8e8d08eb2de66401d0c883239ebf706d2255bcecab78cbcdfad10f509351776fd86dde4e49be1bca78fddd6bcbe195f672f20c0be7b5c74656377702c4a6d00dfb4bc56275751bafc3;
+
+        perform_multiplication(in_a, in_b, in_m);
+        
+        $display("result calculated = %x", result);
+        $display("result expected   = %x", expected);
+        $display("error             = %x", expected-result);
+        result_ok                   = (expected == result);
+        #`CLK_PERIOD;
+
+        in_a <= 1024'h9998808e67562e9f76146ba1251afed4703ef5d2ca2dc72ce51e05e78a3addb65f6e3e7eecd87b8dcdf4ed021d95c9802d19265f00064603514a04c5bd4cba8a415a0fc902351e061da4855aa3558535e518fa700e3503aa293a0121983694dae4309d8b191f430c11d8dedc93911496e1840ea39461c5285b393e3f72c58691;
+        in_b <= 1024'hb1ca84d18f532c39b3903cdf94605b938d8a0026f60865abf5fb8b7175756e6c0975dfffec22278cef8220756a64c11732c60af773fb187f56573755895007b11e95742619ffb1f626552b657fd304c1bfed2e5ecf78acd378666124e8cdd75ff3686897e844898e2bc67b6b24791a843c32a71559e8649260ede96ef11fddc;
+        in_m <= 1024'hc2e905867ded4503b66a7e3f96d01d37f67849131c016b4da41df3ddef75b59061307d8f60f0f8d9cb7dedbfe139d48c72f19b157e0cc79beea32c9396aaae855dcb6db0cd20fec4ca254465a2021a0df20851b83459c3f2899507f653d9215de4a6b6da42f4cb6cf08062d8c38bbd302476f55d4b23db5356a6fd87fe2e94e7;
+        expected <= 1024'h83396afcb2d18212ff3e94d90aa3a716f967401d40435a8e7b2c45ff59cc5f978859a57bd90e6779b25822798609d9068c00f4fef303820a177f2e2d4b3841c02cca1a7680d17f23351aaa69168fa1e9dca0d75fc353765ae5a90b053c7d71a412ed968bf17df2d706692ed631cc044021d233a3824ad99aa14b6439e1f2f58d;
+
+        perform_multiplication(in_a, in_b, in_m);
+        
+        $display("result calculated = %x", result);
+        $display("result expected   = %x", expected);
+        $display("error             = %x", expected-result);
+        result_ok                   = (expected == result);
+        #`CLK_PERIOD;
+
+        in_a <= 1024'h8c9f8517b450fd699e5a59b06944a43d938a3d6639955b7b3c76dcc1f1b841ad349ef68224f0c904c96064ed25076e36b98352df050670ae4811063586520d007da9204eb29b0fe0dae2474000314879d5e49e947ec9c5c74f6f772aa0735cc46b2a9821a69ae6b8eac776fae369252088a94e4bc19161953d31bbd300077d7d;
+        in_b <= 1024'h8b34ba592144d59ed7d48fae4da8f5bae1370acd492d8354a08d9899cd802a460559f2bc254383f7677dd7421f3db41c54407efc96677efb2854fbacc71f8c9381b749d07edf43bf6e29a48a420c6ceaea82c02542ee7998777f2747287db3d1ce093ed8fc2921a6f1ef9d5e81f10f2b9c6243d8cd96c229ff6864cb41c196bb;
+        in_m <= 1024'ha4384f8c17fe3a875cffdd1f20c79f01e872e62b2cf63e2f3e1b23b2b8b140e501611f0cb825893755e4126f6d19df9b7e2e177dde7b1fb32d6725b8a1bd6a2f2209850300a7a9a8143b14135d26548236e92695a7c6fdb3d5bdad5f9d1d390ec6abec98f202f1b753b7ffbc90dae478eb0888d57e527f118417188e72217ba9;
+        expected <= 1024'h4ad399c68546be7964ca52afb3983c4ef742ba1438b6b7741a1448381398673cfeec1ec6b1d0be56f34a47c6f1e9e2fd0c17bdb2ed066ed958aa183ad153842ccb0d5bd215222714996239be4bef27b4e004a890c39c5c05d84d95f7ae87a60947c51c3845bbd483ec7df43cc89e44a549aa2bc1397020cf04504e6430bde51f;
+
+        perform_multiplication(in_a, in_b, in_m);
+        
+        $display("result calculated = %x", result);
+        $display("result expected   = %x", expected);
+        $display("error             = %x", expected-result);
+        result_ok                   = (expected == result);
+        #`CLK_PERIOD;
         $finish;
     end
     

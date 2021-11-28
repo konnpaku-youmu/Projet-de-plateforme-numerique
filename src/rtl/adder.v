@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
-`define ADDER_W 42
-`define ADDER_NUM 24
+`define ADDER_W 36
+`define ADDER_NUM 28
 
 (* use_dsp = "yes" *) module carry_sel_adder(input wire clk,
                        input wire [`ADDER_W-1:0] A,
@@ -23,34 +23,8 @@
     assign S    = (cin == 1'b1) ? S1 : S0;
     
 endmodule
-
-module carry_sel_adder_dsp(input wire clk,
-                           input wire [`ADDER_W-1:0] A,
-                           input wire [`ADDER_W-1:0] B,
-                           input wire cin,
-                           output wire [`ADDER_W-1:0] S,
-                           output wire cout);
-    reg [`ADDER_W-1:0] S0, S1;
-    reg C0, C1;
     
-    wire [`ADDER_W-1:0] S0_dsp, S1_dsp;
-    wire C0_dsp, C1_dsp;
-    
-    adder_DSP adder_0(A, B, 1'b0, clk, C0_dsp, S0_dsp);
-    adder_DSP adder_1(A, B, 1'b1, clk, C1_dsp, S1_dsp);
-    
-    always @(posedge clk)
-    begin    
-        {C0, S0} <= {C0_dsp, S0_dsp};
-        {C1, S1} <= {C1_dsp, S1_dsp};
-    end
-    
-    assign cout = (cin == 1'b1) ? C1 : C0;
-    assign S    = (cin == 1'b1) ? S1 : S0;
-    
-endmodule
-    
-(* use_dsp = "yes" *) module mpadder(
+module mpadder(
         input  wire          clk,
         input  wire          resetn,
         input  wire          start,
