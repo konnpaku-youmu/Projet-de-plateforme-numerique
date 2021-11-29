@@ -20,15 +20,21 @@ module tb_mont_exp ();
     reg  [1023:0] expected;
     reg          result_ok;
 
-    wire reg_start;
+    wire inLoop;
     wire [4:0] cnt_out;
     wire [15:0] e_out;
     wire m0_resetn;
     wire m1_resetn;
     wire m0_start;
     wire m1_start;
+    wire m0_done;
+    wire m1_done;
     wire [1023:0] m0_in_a;
     wire [1023:0] m0_in_b;
+    wire [1023:0] m0_res;
+    wire [1023:0] m1_res;
+    wire [1023:0] A;
+    wire [1023:0] X_tilde;
 
     montgomery_exp mont_exp(
         .clk(clk),
@@ -42,15 +48,21 @@ module tb_mont_exp ();
         .result(result),
         .done(done),
 
-        .reg_start(reg_start),
+        .inLoop(inLoop),
         .cnt_out(cnt_out),
         .e_out(e_out),
         .m0_resetn(m0_resetn),
         .m1_resetn(m1_resetn),
         .m0_start(m0_start),
         .m1_start(m1_start),
+        .m0_done(m0_done),
+        .m1_done(m1_done),
         .m0_in_a(m0_in_a),
-        .m0_in_b(m0_in_b)
+        .m0_in_b(m0_in_b),
+        .m0_res(m0_res),
+        .m1_res(m1_res),
+        .A(A),
+        .X_tilde(X_tilde)
     );
 
     task perform_exp;
