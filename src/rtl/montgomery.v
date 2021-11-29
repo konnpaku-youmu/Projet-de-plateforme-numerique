@@ -168,57 +168,36 @@ module montgomery (
 
 endmodule
 
-
 module montgomery_exp (
     input clk,
     input resetn,
     input start,
+    input encryp_mode,
     input [1023:0] msg,
+    // todo: accept both e and d, 16bits or 1024 bits
     input [15:0] exp,
     input [1023:0] n,
     input [1023:0] rmodn,
     input [1023:0] r2modn,
     output [1023:0] result,
-    output done,
+    output done);
 
-    // outputs for debugging & testing
-    output inLoop,
-    output [4:0] cnt_out,
-    output [15:0] e_out,
-    output m0_resetn,
-    output m1_resetn,
-    output m0_start,
-    output m1_start,
-    output m0_done,
-    output m1_done,
-    output [1023:0] m0_in_a,
-    output [1023:0] m0_in_b,
-    output [1023:0] m1_in_a,
-    output [1023:0] m1_in_b,
-    output [1023:0] m0_res,
-    output [1023:0] m1_res,
-    output [1023:0] A,
-    output [1023:0] X_tilde
-    );
+    wire [1023:0] m0_in_a;
+    wire [1023:0] m0_in_b;
+    wire [1023:0] m0_res;
 
-    // todo: remove comment when finished
-    // wire [1023:0] m0_in_a;
-    // wire [1023:0] m0_in_b;
-    // wire [1023:0] m0_res;
+    wire [1023:0] m1_in_a;
+    wire [1023:0] m1_in_b;
+    wire [1023:0] m1_res;
 
-    // wire [1023:0] m1_in_a;
-    // wire [1023:0] m1_in_b;
-    // wire [1023:0] m1_res;
+    wire m0_resetn;
+    wire m1_resetn;
 
-    // todo: remove comment when finished
-    // wire m0_resetn;
-    // wire m1_resetn;
+    wire m0_start;
+    wire m1_start;
 
-    // wire m0_start;
-    // wire m1_start;
-
-    // wire m0_done;
-    // wire m1_done;
+    wire m0_done;
+    wire m1_done;
 
     wire m0m1_done;
     assign m0m1_done = m0_done && m1_done;
@@ -232,10 +211,9 @@ module montgomery_exp (
     end
     
     // indicator for start of the first iteration: 0 when initalized, 1 when init is done
-    // todo: remove comment when finished
-    // wire inLoop;
+    wire inLoop;
     assign inLoop = ~(regStart || start);
-    
+
     reg [4:0] shift_counter;
     always @(posedge clk) begin
         if (~resetn || start)
@@ -243,6 +221,9 @@ module montgomery_exp (
         else if (inLoop && m0m1_done && shift_counter[4] == 1'b0)
             shift_counter <= shift_counter + 1;
     end
+    
+    wire outLoop;
+    assign outLoop = inLoop && shift_counter[4];
     
     // shift register for the exponent
     reg [15:0] e_reg;
@@ -276,17 +257,8 @@ module montgomery_exp (
             m0_start_reg <= m0m1_done;
     end
     
-    // todo: find the start signal for m0 and m1
-    reg m0_start_reg_d;
-    always @(posedge clk) begin
-        if (~resetn || start)
-            m0_start_reg_d <= 1'b0;
-        else
-            m0_start_reg_d <= m0_start_reg;
-    end
-
     assign m0_start = m0_start_reg && ~shift_counter[4];
-    assign m1_start = m0_start && inLoop;
+    assign m1_start = (outLoop) ? m0_start_reg : (m0_start && inLoop);
     
     wire [1023:0] muxA_out;
     assign muxA_out = (e_i) ? m0_res : m1_res;
@@ -335,8 +307,8 @@ module montgomery_exp (
     .result   (m0_res),
     .done     (m0_done));
 
-    assign m1_in_a = (e_i) ? regX_Q : regA_Q;
-    assign m1_in_b = m1_in_a;
+    assign m1_in_a = (outLoop) ? regA_Q : ((e_i) ? regX_Q : regA_Q);
+    assign m1_in_b = (outLoop) ? 1024'b1 : m1_in_a;
 
     montgomery multi_1 (
     .clk      (clk),
@@ -348,16 +320,23 @@ module montgomery_exp (
     .result   (m1_res),
     .done     (m1_done));
 
-    assign result = 1024'b0;
-    assign done = 1'b0;
+    reg regDone;
+    always @(posedge clk) begin
+        if (~resetn || start)
+            regDone <= 1'b0;
+        else if (m1_done && outLoop)
+            regDone <= 1'b1;
+        else
+            regDone <= 1'b0;
+    end
 
-    // todo: no reset when counter = 0x0f
+    assign result = m1_res;
+    assign done = regDone;
+
     assign m0_resetn = (~inLoop) ? ((~m0_done) && resetn) : ((~m0m1_done) && resetn);
     assign m1_resetn = m0_resetn;
     
     // testing purpose
-    assign cnt_out = shift_counter;
-    assign e_out = e_reg;
     assign A = regA_Q;
     assign X_tilde = regX_Q;
 
