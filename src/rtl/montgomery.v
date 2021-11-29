@@ -175,7 +175,7 @@ module montgomery_exp (
     input encryp_mode,
     input [1023:0] msg,
     // todo: accept both e and d, 16bits or 1024 bits
-    input [15:0] exp,
+    input [1023:0] exp,
     input [1023:0] n,
     input [1023:0] rmodn,
     input [1023:0] r2modn,
@@ -214,28 +214,38 @@ module montgomery_exp (
     wire inLoop;
     assign inLoop = ~(regStart || start);
 
-    reg [4:0] shift_counter;
+    // todo: modify here
+    reg [10:0] shift_counter;
     always @(posedge clk) begin
         if (~resetn || start)
             shift_counter <= 0;
-        else if (inLoop && m0m1_done && shift_counter[4] == 1'b0)
+        else if (encryp_mode == 0 && inLoop && m0m1_done && shift_counter[4] == 1'b0)
+            shift_counter <= shift_counter + 1;
+        else if (encryp_mode != 0 && inLoop && m0m1_done && shift_counter[10] == 1'b0)
             shift_counter <= shift_counter + 1;
     end
     
+    // todo: modify here
     wire outLoop;
-    assign outLoop = inLoop && shift_counter[4];
+    assign outLoop = inLoop && ((encryp_mode == 0) ? shift_counter[4] : shift_counter[10]);
     
+    // todo: modify here
     // shift register for the exponent
-    reg [15:0] e_reg;
+    reg [1023:0] e_reg;
     always @(posedge clk) begin
         if (~resetn || start)
-            e_reg <= exp;
+        begin
+            if(encryp_mode == 0)
+                e_reg <= exp << 1008;
+            else
+                e_reg <= exp;
+        end
         else if (inLoop && m0m1_done)
             e_reg <= e_reg << 1;
     end
     // e_i as the highest bit of e_reg
     wire e_i;
-    assign e_i = e_reg[15];
+    assign e_i = e_reg[1023];
     
     reg start_d;
     always @(posedge clk) begin
@@ -257,7 +267,8 @@ module montgomery_exp (
             m0_start_reg <= m0m1_done;
     end
     
-    assign m0_start = m0_start_reg && ~shift_counter[4];
+    // todo: modify here
+    assign m0_start = m0_start_reg && ((encryp_mode == 0) ? ~shift_counter[4] : ~shift_counter[10]);
     assign m1_start = (outLoop) ? m0_start_reg : (m0_start && inLoop);
     
     wire [1023:0] muxA_out;
@@ -335,9 +346,5 @@ module montgomery_exp (
 
     assign m0_resetn = (~inLoop) ? ((~m0_done) && resetn) : ((~m0m1_done) && resetn);
     assign m1_resetn = m0_resetn;
-    
-    // testing purpose
-    assign A = regA_Q;
-    assign X_tilde = regX_Q;
 
 endmodule
