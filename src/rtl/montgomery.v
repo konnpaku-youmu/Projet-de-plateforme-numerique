@@ -240,7 +240,7 @@ module montgomery_exp (
     always @(posedge clk) begin
         if (~resetn || start)
             shift_counter <= 0;
-        else if (inLoop && m0m1_done)
+        else if (inLoop && m0m1_done && shift_counter[4] == 1'b0)
             shift_counter <= shift_counter + 1;
     end
     
@@ -285,8 +285,8 @@ module montgomery_exp (
             m0_start_reg_d <= m0_start_reg;
     end
 
-    assign m0_start = m0_start_reg_d;
-    assign m1_start = m0_start_reg_d && inLoop;
+    assign m0_start = m0_start_reg && ~shift_counter[4];
+    assign m1_start = m0_start && inLoop;
     
     wire [1023:0] muxA_out;
     assign muxA_out = (e_i) ? m0_res : m1_res;
@@ -299,7 +299,7 @@ module montgomery_exp (
             muxX_sel <= ~e_i;
     end
 
-    wire [1023:0] muxX_out;    
+    wire [1023:0] muxX_out;
     assign muxX_out = (muxX_sel) ? m0_res : m1_res;
 
     wire [1023:0] muxRegA_D;
@@ -351,13 +351,14 @@ module montgomery_exp (
     assign result = 1024'b0;
     assign done = 1'b0;
 
+    // todo: no reset when counter = 0x0f
     assign m0_resetn = (~inLoop) ? ((~m0_done) && resetn) : ((~m0m1_done) && resetn);
     assign m1_resetn = m0_resetn;
     
     // testing purpose
     assign cnt_out = shift_counter;
     assign e_out = e_reg;
-    assign A = muxA_out;
-    assign X_tilde = muxX_out;
+    assign A = regA_Q;
+    assign X_tilde = regX_Q;
 
 endmodule
