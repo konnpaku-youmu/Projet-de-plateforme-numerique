@@ -180,23 +180,35 @@ module montgomery_exp (
     input [1023:0] r2modn,
     output [1023:0] result,
     output done,
-    output reg_start);
 
-    wire e_i;
+    output reg_start,
+    output [4:0] cnt_out,
+    output [15:0] e_out,
+    output m0_resetn,
+    output m1_resetn,
+    output m0_start,
+    output m1_start,
+    output [1023:0] m0_in_a,
+    output [1023:0] m0_in_b,
+    output [1023:0] m1_in_a,
+    output [1023:0] m1_in_b
+    );
 
-    wire [1023:0] m0_in_a;
-    wire [1023:0] m0_in_b;
+    // todo: remove comment when finished
+    // wire [1023:0] m0_in_a;
+    // wire [1023:0] m0_in_b;
     wire [1023:0] m0_res;
 
-    wire [1023:0] m1_in_a;
-    wire [1023:0] m1_in_b;
+    // wire [1023:0] m1_in_a;
+    // wire [1023:0] m1_in_b;
     wire [1023:0] m1_res;
 
-    wire m0_resetn;
-    wire m1_resetn;
+    // todo: remove comment when finished
+    // wire m0_resetn;
+    // wire m1_resetn;
 
-    wire m0_start;
-    wire m1_start;
+    // wire m0_start;
+    // wire m1_start;
 
     wire m0_done;
     wire m1_done;
@@ -210,7 +222,31 @@ module montgomery_exp (
         else if (m0_done || start)
             regStart <= start;
     end
-
+    
+    // indicator for start of the first iteration: 0 when initalized, 1 when init is done
+    wire inLoop;
+    assign inLoop = ~(regStart || start);
+    
+    reg [4:0] shift_counter;
+    always @(posedge clk) begin
+        if (~resetn || start)
+            shift_counter <= 0;
+        else if (inLoop)
+            shift_counter <= shift_counter + 1;
+    end
+    
+    // shift register for the exponent
+    reg [15:0] e_reg;
+    always @(posedge clk) begin
+        if (~resetn || start)
+            e_reg <= exp;
+        else if (inLoop)
+            e_reg <= e_reg << 1;
+    end
+    // e_i as the highest bit of e_reg
+    wire e_i;
+    assign e_i = e_reg[15];
+    
     reg start_d;
     always @(posedge clk) begin
         if (~resetn)
@@ -236,14 +272,16 @@ module montgomery_exp (
     assign muxX_out = (muxX_sel) ? m0_res : m1_res;
 
     wire [1023:0] muxRegA_D;
-    assign muxRegA_D = (regStart) ? rmodn : muxA_out;
+    assign muxRegA_D = (start) ? rmodn : muxA_out;
 
     reg [1023:0] regA_Q;
     always @(posedge clk) begin
         if (~resetn)
             regA_Q <= 1028'b0;
-        else if (start_d)
+        // initialize the A register
+        else if (start)
             regA_Q <= muxRegA_D;
+        // todo: update A register
     end
 
     reg [1023:0] regX_Q;
@@ -251,16 +289,16 @@ module montgomery_exp (
         if (~resetn || start)
             regX_Q <= 1028'b0;
         // todo: find the correct enable signal for regX
-        else if (m0_done)
+        else if ((m0_done && regStart))
             regX_Q <= muxX_out;
     end
 
     assign m0_in_a = (regStart) ? msg : regA_Q;
-    assign m0_in_b = (regStart) ? r2modn : 1028'b0;
+    assign m0_in_b = (regStart) ? r2modn : regX_Q;
 
     montgomery multi_0 (
     .clk      (clk),
-    .resetn   (resetn),
+    .resetn   (m0_resetn),
     .start    (m0_start),
     .in_a     (m0_in_a),
     .in_b     (m0_in_b),
@@ -270,7 +308,7 @@ module montgomery_exp (
 
     montgomery multi_1 (
     .clk      (clk),
-    .resetn   (resetn),
+    .resetn   (m1_resetn),
     .start    (m1_start),
     .in_a     (m1_in_a),
     .in_b     (m1_in_b),
@@ -283,5 +321,8 @@ module montgomery_exp (
 
     // testing purpose
     assign reg_start = regStart;
-
+    assign cnt_out = shift_counter;
+    assign e_out = e_reg;
+    assign m0_resetn = (~m0_done) && resetn;
+    assign m1_resetn = (~m1_done) && resetn;
 endmodule

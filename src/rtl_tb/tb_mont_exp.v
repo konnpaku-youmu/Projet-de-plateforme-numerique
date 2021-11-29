@@ -21,6 +21,14 @@ module tb_mont_exp ();
     reg          result_ok;
 
     wire reg_start;
+    wire [4:0] cnt_out;
+    wire [15:0] e_out;
+    wire m0_resetn;
+    wire m1_resetn;
+    wire m0_start;
+    wire m1_start;
+    wire [1023:0] m0_in_a;
+    wire [1023:0] m0_in_b;
 
     montgomery_exp mont_exp(
         .clk(clk),
@@ -33,7 +41,16 @@ module tb_mont_exp ();
         .r2modn(r2modn),
         .result(result),
         .done(done),
-        .reg_start(reg_start)
+
+        .reg_start(reg_start),
+        .cnt_out(cnt_out),
+        .e_out(e_out),
+        .m0_resetn(m0_resetn),
+        .m1_resetn(m1_resetn),
+        .m0_start(m0_start),
+        .m1_start(m1_start),
+        .m0_in_a(m0_in_a),
+        .m0_in_b(m0_in_b)
     );
 
     task perform_exp;
@@ -74,6 +91,16 @@ module tb_mont_exp ();
         $display("error             = %x", expected-result);
         result_ok                   = (expected == result);
 
+        #`CLK_PERIOD
+        #`CLK_PERIOD
+        #`CLK_PERIOD
+        #`CLK_PERIOD
+        #`CLK_PERIOD
+        #`CLK_PERIOD
+        #`CLK_PERIOD
+        #`CLK_PERIOD
+        #`CLK_PERIOD
+        #`CLK_PERIOD
         #`CLK_PERIOD
         #`CLK_PERIOD
 
