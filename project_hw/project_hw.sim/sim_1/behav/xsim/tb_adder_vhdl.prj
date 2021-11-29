@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../project_hw.srcs/sources_1/ip/adder_DSP/sim/adder_DSP.vhd" \
-"../../../../project_hw.srcs/sources_1/ip/adder_DSP/synth/adder_DSP.vhd" \
-
-# Do not sort compile order
-nosort

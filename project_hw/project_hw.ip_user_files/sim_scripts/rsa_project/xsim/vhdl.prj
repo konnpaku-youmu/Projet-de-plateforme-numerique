@@ -1,0 +1,5 @@
+vhdl xil_defaultlib  \
+"../../../bd/rsa_project/ip/rsa_project_axi_dma_0_0/sim/rsa_project_axi_dma_0_0.vhd" \
+"../../../bd/rsa_project/ip/rsa_project_rst_processing_system7_0_100M_0/sim/rsa_project_rst_processing_system7_0_100M_0.vhd" \
+
+nosort
