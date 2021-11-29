@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module multiplier (
+module montgomery (
     input clk,
     input resetn,
     input start,
@@ -146,23 +146,21 @@ module multiplier (
         end
     end
     
+    reg subDone;
     always @(posedge clk) begin
         if (~resetn || start)
             regC_sub <= 1028'b0;
         else if (regLoopDone)
             regC_sub <= regC_Q;
-        else if (stage == 1'b1 && start_m_sub == 1'b1)
+        else if (stage == 1'b1 && start_m_sub == 1'b1 && subDone == 1'b0)
             regC_sub <= adder_m_result;
     end
 
-    reg subDone;
     always @(posedge clk) begin
         if (~resetn || start)
             subDone      <= 1'b0;
-        else if (adder_m_result[1027] == 1'b1)  
+        else if (adder_m_result[1027] == 1'b1)
             subDone      <= 1'b1;
-        else
-            subDone      <= 1'b0;
     end
     
     assign result = regC_sub[1023:0];
@@ -170,29 +168,120 @@ module multiplier (
 
 endmodule
 
-module montgomery(input clk,
-                  input resetn,
-                  input start,
-                  input [1023:0] in_a,
-                  input [1023:0] in_b,
-                  input [1023:0] in_m,
-                  output [1023:0] result,
-                  output done);
-    /*
-     Student tasks:
-     1. Instantiate an Adder
-     2. Use the Adder to implement the Montgomery multiplier in hardware.
-     3. Use tb_montgomery.v to simulate your design.
-    */
+
+module montgomery_exp (
+    input clk,
+    input resetn,
+    input start,
+    input [1023:0] msg,
+    input [15:0] exp,
+    input [1023:0] n,
+    input [1023:0] rmodn,
+    input [1023:0] r2modn,
+    output [1023:0] result,
+    output done,
+    output reg_start);
+
+    wire e_i;
+
+    wire [1023:0] m0_in_a;
+    wire [1023:0] m0_in_b;
+    wire [1023:0] m0_res;
+
+    wire [1023:0] m1_in_a;
+    wire [1023:0] m1_in_b;
+    wire [1023:0] m1_res;
+
+    wire m0_resetn;
+    wire m1_resetn;
+
+    wire m0_start;
+    wire m1_start;
+
+    wire m0_done;
+    wire m1_done;
+    wire m0m1_done;
+    assign m0m1_done = m0_done && m1_done;
+
+    reg regStart;
+    always @(posedge clk) begin
+        if (~resetn)
+            regStart <= 1'b0;
+        else if (m0_done || start)
+            regStart <= start;
+    end
+
+    reg start_d;
+    always @(posedge clk) begin
+        if (~resetn)
+            start_d <= 1'b0;
+        else
+            start_d <= start;
+    end
+
+    // todo: find the start signal for m0 and m1
+    assign m0_start = start_d;
+
+    wire [1023:0] muxA_out;
+    assign muxA_out = (e_i) ? m0_res : m1_res;
     
-    multiplier multi(
-        .clk(clk),
-        .resetn(resetn),
-        .start(start),
-        .in_a(in_a),
-        .in_b(in_b),
-        .in_m(in_m),
-        .result(result),
-        .done(done));
+    reg muxX_sel;
+    always @(posedge clk) begin
+        if (~resetn || start)
+            muxX_sel <= 1'b1;
+            // todo: add a toggle for muxX_sel
+    end
+
+    wire [1023:0] muxX_out;    
+    assign muxX_out = (muxX_sel) ? m0_res : m1_res;
+
+    wire [1023:0] muxRegA_D;
+    assign muxRegA_D = (regStart) ? rmodn : muxA_out;
+
+    reg [1023:0] regA_Q;
+    always @(posedge clk) begin
+        if (~resetn)
+            regA_Q <= 1028'b0;
+        else if (start_d)
+            regA_Q <= muxRegA_D;
+    end
+
+    reg [1023:0] regX_Q;
+    always @(posedge clk) begin
+        if (~resetn || start)
+            regX_Q <= 1028'b0;
+        // todo: find the correct enable signal for regX
+        else if (m0_done)
+            regX_Q <= muxX_out;
+    end
+
+    assign m0_in_a = (regStart) ? msg : regA_Q;
+    assign m0_in_b = (regStart) ? r2modn : 1028'b0;
+
+    montgomery multi_0 (
+    .clk      (clk),
+    .resetn   (resetn),
+    .start    (m0_start),
+    .in_a     (m0_in_a),
+    .in_b     (m0_in_b),
+    .in_m     (n),
+    .result   (m0_res),
+    .done     (m0_done));
+
+    montgomery multi_1 (
+    .clk      (clk),
+    .resetn   (resetn),
+    .start    (m1_start),
+    .in_a     (m1_in_a),
+    .in_b     (m1_in_b),
+    .in_m     (n),
+    .result   (m1_res),
+    .done     (m1_done));
+
+    assign result = regX_Q;
+    assign done = m0_done;
+
+    // testing purpose
+    assign reg_start = regStart;
 
 endmodule

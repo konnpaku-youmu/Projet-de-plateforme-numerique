@@ -1,8 +1,0 @@
-# compile verilog/system verilog design source files
-verilog xil_defaultlib  \
-"tb_adder_func_impl.v" \
-"../../../../../../src/rtl/adder.v" \
-"../../../../../../src/rtl_tb/tb_adder.v" \
-
-# Do not sort compile order
-nosort
