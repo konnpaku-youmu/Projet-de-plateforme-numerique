@@ -772,10 +772,10 @@
       <xilinx:vendorDisplayName>COSIC</xilinx:vendorDisplayName>
       <xilinx:vendorURL>http://www.esat.kuleuven.be/cosic/</xilinx:vendorURL>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2021-11-28T23:55:33Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2021-11-30T21:51:49Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2020.2</xilinx:xilinxVersion>
+      <xilinx:xilinxVersion>2018.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="6f0949ea"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="5a46a2fb"/>
       <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="274c7a95"/>

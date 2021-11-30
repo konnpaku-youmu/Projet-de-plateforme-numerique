@@ -1,0 +1,169 @@
+/*
+
+Xilinx Vivado v2018.2 (64-bit) [Major: 2018, Minor: 2]
+SW Build: 2258646 on Thu Jun 14 20:02:38 MDT 2018
+IP Build: 2256618 on Thu Jun 14 22:10:49 MDT 2018
+
+Process ID: 6881
+License: Customer
+
+Current time: 	Tue Nov 30 22:52:44 CET 2021
+Time zone: 	Central European Time (Europe/Brussels)
+
+OS: Rocky Linux release 8.5 (Green Obsidian)
+OS Version: 4.18.0-348.2.1.el8_5.x86_64
+OS Architecture: amd64
+Available processors (cores): 4
+
+Display: :1
+Screen size: 1901x959
+Screen resolution (DPI): 95
+Available screens: 1
+Available disk space: 17 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	/esat/micas-data/software/xilinx_vivado_2018.2/Vivado/2018.2/tps/lnx64/jre
+Java executable location: 	/esat/micas-data/software/xilinx_vivado_2018.2/Vivado/2018.2/tps/lnx64/jre/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 2 GB
+
+
+User name: 	r0873266
+User home directory: /users/students/r0873266
+User working directory: /users/students/r0873266/Documents/CODESIGN_4/Projet-de-plateforme-numerique
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /esat/micas-data/software/xilinx_vivado_2018.2/Vivado
+HDI_APPROOT: /esat/micas-data/software/xilinx_vivado_2018.2/Vivado/2018.2
+RDI_DATADIR: /esat/micas-data/software/xilinx_vivado_2018.2/Vivado/2018.2/data
+RDI_BINDIR: /esat/micas-data/software/xilinx_vivado_2018.2/Vivado/2018.2/bin
+
+Vivado preferences file location: /users/students/r0873266/.Xilinx/Vivado/2018.2/vivado.xml
+Vivado preferences directory: /users/students/r0873266/.Xilinx/Vivado/2018.2/
+Vivado layouts directory: /users/students/r0873266/.Xilinx/Vivado/2018.2/layouts
+PlanAhead jar file location: 	/esat/micas-data/software/xilinx_vivado_2018.2/Vivado/2018.2/lib/classes/planAhead.jar
+Vivado log file location: 	/users/students/r0873266/Documents/CODESIGN_4/Projet-de-plateforme-numerique/vivado.log
+Vivado journal file location: 	/users/students/r0873266/Documents/CODESIGN_4/Projet-de-plateforme-numerique/vivado.jou
+Engine tmp dir: 	/tmp/.Xil_r0873266/Vivado-6881-stud-r8-9.esat.kuleuven.be
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /esat/micas-data/software/xilinx_vivado_2018.2/Vivado/2018.2/ids_lite/ISE
+XILINXD_LICENSE_FILE: 2100@licserv
+XILINX_DSP: /esat/micas-data/software/xilinx_vivado_2018.2/Vivado/2018.2/ids_lite/ISE
+XILINX_PLANAHEAD: /esat/micas-data/software/xilinx_vivado_2018.2/Vivado/2018.2
+XILINX_SDK: /esat/micas-data/software/xilinx_vivado_2018.2/SDK/2018.2
+XILINX_VIVADO: /esat/micas-data/software/xilinx_vivado_2018.2/Vivado/2018.2
+XILINX_VIVADO_HLS: /esat/micas-data/software/xilinx_vivado_2018.2/Vivado/2018.2
+
+
+GUI allocated memory:	156 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 885 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 54 MB (+54064kb) [00:00:06]
+// [Engine Memory]: 800 MB (+687606kb) [00:00:06]
+// bx (ck):  Open Project : addNotify
+// Opening Vivado Project: project_hw/project_hw.xpr. Version: Vivado v2018.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project project_hw/project_hw.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: MSGMGR_REFRESH_MSG
+// [GUI Memory]: 63 MB (+6727kb) [00:00:08]
+// [Engine Memory]: 881 MB (+42552kb) [00:00:08]
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 906 MB. GUI used memory: 35 MB. Current time: 11/30/21 10:52:46 PM CET
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 996 MB (+74268kb) [00:00:12]
+// Tcl Message: open_project project_hw/project_hw.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository '/users/students/r0873266/Documents/CODESIGN_4/Projet-de-plateforme-numerique/project_ipcores'. INFO: [IP_Flow 19-2207] Repository '/users/students/r0873266/Documents/CODESIGN_4/Projet-de-plateforme-numerique/project_ipcores' already exists; ignoring attempt to add it again. INFO: [IP_Flow 19-1700] Loaded user IP repository '/users/students/r0873266/Documents/CODESIGN_4/Projet-de-plateforme-numerique/project_ipcores'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/esat/micas-data/software/xilinx_vivado_2018.2/Vivado/2018.2/data/ip'. 
+// Project name: project_hw; location: /users/students/r0873266/Documents/CODESIGN_4/Projet-de-plateforme-numerique/project_hw; part: xc7z020clg400-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 6397.762 ; gain = 195.316 ; free physical = 2293 ; free virtual = 13449 
+dismissDialog("Open Project"); // bx (ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// [Engine Memory]: 1,183 MB (+144217kb) [00:00:17]
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sim_1 
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// PAPropertyPanels.initPanels (rsa_project_wrapper.v) elapsed time: 0.2s
+// Elapsed time: 42 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, rsa_project_wrapper (rsa_project_wrapper.v)]", 4, true); // B (D, ck) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, hweval_adder (hweval_adder.v)]", 2, true); // B (D, ck) - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, hweval_adder (hweval_adder.v)]", 2); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, hweval_adder (hweval_adder.v), dut : mpadder (adder.v)]", 3, true); // B (D, ck) - Node
+// [GUI Memory]: 67 MB (+901kb) [00:01:04]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, hweval_adder (hweval_adder.v), dut : mpadder (adder.v), genblk1[2].adder_i : carry_sel_adder (adder.v)]", 6, false, false, false, false, false, true); // B (D, ck) - Double Click
+// [GUI Memory]: 71 MB (+1062kb) [00:01:04]
+// [GUI Memory]: 79 MB (+4208kb) [00:01:13]
+selectCodeEditor("adder.v", 148, 366); // ce (w, ck)
+typeControlKey((HResource) null, "adder.v", 'v'); // ce (w, ck)
+// Elapsed time: 24 seconds
+selectCodeEditor("adder.v", 26, 141); // ce (w, ck)
+selectCodeEditor("adder.v", 27, 141); // ce (w, ck)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,086 MB. GUI used memory: 44 MB. Current time: 11/30/21 10:54:21 PM CET
+selectCodeEditor("adder.v", 1, 141); // ce (w, ck)
+// Elapsed time: 18 seconds
+selectCodeEditor("adder.v", 111, 133); // ce (w, ck)
+selectCodeEditor("adder.v", 105, 145); // ce (w, ck)
+typeControlKey((HResource) null, "adder.v", 'v'); // ce (w, ck)
+selectCodeEditor("adder.v", 30, 170); // ce (w, ck)
+// Elapsed time: 29 seconds
+selectCodeEditor("adder.v", 29, 186); // ce (w, ck)
+selectCodeEditor("adder.v", 120, 170); // ce (w, ck)
+selectCodeEditor("adder.v", 48, 235); // ce (w, ck)
+selectCodeEditor("adder.v", 30, 290); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// HMemoryUtils.trashcanNow. Engine heap size: 1,118 MB. GUI used memory: 45 MB. Current time: 11/30/21 10:55:46 PM CET
+// Elapsed time: 31 seconds
+selectCodeEditor("adder.v", 26, 109); // ce (w, ck)
+selectCodeEditor("adder.v", 126, 367); // ce (w, ck)
+// [GUI Memory]: 86 MB (+2717kb) [00:03:41]
+// Elapsed time: 12 seconds
+selectCodeEditor("adder.v", 876, 263); // ce (w, ck)
+selectCodeEditor("adder.v", 22, 360); // ce (w, ck)
+typeControlKey((HResource) null, "adder.v", 'v'); // ce (w, ck)
+selectCodeEditor("adder.v", 30, 365); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,376 MB. GUI used memory: 45 MB. Current time: 11/30/21 10:56:46 PM CET
+// TclEventType: DG_GRAPH_GENERATED
+// [GUI Memory]: 91 MB (+645kb) [00:04:23]
+// [GUI Memory]: 95 MB (+66kb) [00:12:58]
+// Elapsed time: 607 seconds
+selectCodeEditor("adder.v", 277, 129); // ce (w, ck)

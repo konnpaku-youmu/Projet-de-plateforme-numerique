@@ -23,6 +23,16 @@
     assign S    = (cin == 1'b1) ? S1 : S0;
     
 endmodule
+
+module halfadder(
+    input a,b,
+    output sum,carry
+    );
+    
+    assign sum = a ^ b;
+    assign carry = a & b;
+    
+endmodule
     
 module mpadder(
         input  wire          clk,
@@ -102,3 +112,28 @@ module mpadder(
         
         
     endmodule
+    
+module csave_adder(
+        input[1026:0] a,
+        input[1026:0] b,
+        output[1027:0] c_s
+        );
+        
+        wire[1026:0] sum;
+        wire[1027:0] carry;
+        
+        for (genvar i=0; i<1027; i=i+1)begin
+        
+            halfadder inneradditions(
+            .a      (a[i]),
+            .b      (b[i]),
+            .sum    (sum[i]),
+            .carry  (carry[i+1]));    
+        
+        end
+        
+        assign carry[0] = 0;
+        
+        assign c_s = sum + carry;
+        
+endmodule
