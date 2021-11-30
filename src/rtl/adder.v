@@ -3,7 +3,7 @@
 `define ADDER_W 36
 `define ADDER_NUM 28
 
-(* use_dsp = "yes" *) module carry_sel_adder(input wire clk,
+module carry_sel_adder(input wire clk,
                        input wire [`ADDER_W-1:0] A,
                        input wire [`ADDER_W-1:0] B,
                        input wire cin,
