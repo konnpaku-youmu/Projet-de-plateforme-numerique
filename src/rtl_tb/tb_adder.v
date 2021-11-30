@@ -17,10 +17,12 @@ module tb_adder();
     wire          done;
 
     reg  [1027:0] expected;
+    reg  [1027:0] error;
     reg           result_ok;
 
     // Instantiating adder
-    mpadder dut (
+    //mpadder dut (
+    csave_adder dut (
         .clk      (clk     ),
         .resetn   (resetn  ),
         .start    (start   ),
@@ -87,7 +89,7 @@ module tb_adder();
     
     /*************TEST ADDITION*************/
     
-    $display("\nAddition with testvector 1");
+    //$display("\nAddition with testvector 1");
     
     // Check if 1+1=2
     #`CLK_PERIOD;
@@ -96,12 +98,13 @@ module tb_adder();
     expected  = 1028'h19;
     wait (done==1);
     result_ok = (expected==result);
-    $display("result calculated=%x", result);
-    $display("result expected  =%x", expected);
-    $display("error            =%x", expected-result);
+    error = expected-result;
+    //$display("result calculated=%x", result);
+    //$display("result expected  =%x", expected);
+    //$display("error            =%x", expected-result);
     #`CLK_PERIOD;   
 
-    $display("\nAddition with testvector 2");
+    //$display("\nAddition with testvector 2");
 
     // Test addition with large test vectors. 
     // You can generate your own vectors with testvector generator python script.
@@ -110,15 +113,16 @@ module tb_adder();
     expected  = 1028'h958d68336caf8e203a3542febf82f56cee8b6b28f28cfa71562a808201e4f3dc6057b5d9d768c43d4d7672fe01b5ead83366d788aa6d4e2f339b3a42c54cc7d142e60f32108330028abcce695112befdedfc03ff27b97fc98babb10592bcb18b2e956b216b48559d72383e8a8f7f046cee6c92e4356fdb4e3c17aadf39e3735bf;
     wait (done==1);
     result_ok = (expected==result);
-    $display("result calculated=%x", result);
-    $display("result expected  =%x", expected);
-    $display("error            =%x", expected-result);
+    error = expected-result;
+    //$display("result calculated=%x", result);
+    //$display("result expected  =%x", expected);
+    //$display("error            =%x", expected-result);
     #`CLK_PERIOD;
     
     
      /*************TEST SUBTRACTION*************/
        
-    $display("\nSubtraction with testvector 1");
+    //$display("\nSubtraction with testvector 1");
            
     // Check if 1-1=0
     #`CLK_PERIOD;
@@ -127,12 +131,13 @@ module tb_adder();
     expected  = 1028'h0;
     wait (done==1);
     result_ok = (expected==result);
-    $display("result calculated=%x", result);
-    $display("result expected  =%x", expected);
-    $display("error            =%x", expected-result);
+    error = expected-result;
+    //$display("result calculated=%x", result);
+    //$display("result expected  =%x", expected);
+    //$display("error            =%x", expected-result);
     #`CLK_PERIOD;    
 
-    $display("\nSubtraction with testvector 2");
+    //$display("\nSubtraction with testvector 2");
 
     // Test subtraction with large test vectors. 
     // You can generate your own vectors with testvector generator python script.
@@ -141,9 +146,10 @@ module tb_adder();
     expected  = 1028'h987360ef8954dbfd781b0cb71fe562eea8dd555abe96c56a7e763e5335d5b1e1719cbb5d9e747156c2baab9c047d5c81070651fa2a92289428bc3d3250bc161faef60dcb872c6b2510d9977d48671ac91758a36b2a874e0024046157973111d041b021a84eb45cbc6c99b5dba497bb323aca9bddbf07caae72e1473a593a3e2d;
     wait (done==1);
     result_ok = (expected==result);
-    $display("result calculated=%x", result);
-    $display("result expected  =%x", expected);
-    $display("error            =%x", expected-result);
+    error = expected-result;
+    //$display("result calculated=%x", result);
+    //$display("result expected  =%x", expected);
+    //$display("error            =%x", expected-result);
     #`CLK_PERIOD;    
     
     $finish;

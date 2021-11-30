@@ -24,14 +24,14 @@
     
 endmodule
 
-module halfadder(
-    input a,b,
-    output sum,carry
-    );
-    
-    assign sum = a ^ b;
-    assign carry = a & b;
-    
+module fulladder(
+       input a,b,cin,
+       output sum,carry
+       );
+
+       assign sum = a ^ b ^ cin;
+       assign carry = (a & b) | (cin & b) | (a & cin);
+
 endmodule
     
 module mpadder(
@@ -114,26 +114,85 @@ module mpadder(
     endmodule
     
 module csave_adder(
-        input[1026:0] a,
-        input[1026:0] b,
-        output[1027:0] c_s
+        input  wire          clk,
+        input  wire          resetn,
+        input  wire          start,
+        input  wire          subtract,
+        input  wire          [1026:0] in_a,
+        input  wire          [1026:0] in_b,
+        output reg          [1027:0] result,
+        output wire          done
         );
         
+        wire [1026:0] cin;
+        //wire [1025:0] zcin = 0;
+
+        //assign cin = {zcin, subtract};
+        assign cin = subtract;
+        
         wire[1026:0] sum;
-        wire[1027:0] carry;
+        wire[1027:0] cout;
         
         for (genvar i=0; i<1027; i=i+1)begin
         
             halfadder inneradditions(
-            .a      (a[i]),
-            .b      (b[i]),
+            .a      (in_a[i]),
+            .b      (in_b[i]),
+            .cin    (cin),
             .sum    (sum[i]),
-            .carry  (carry[i+1]));    
+            .carry  (cout[i+1]));    
         
         end
         
-        assign carry[0] = 0;
+        assign cout[0] = 0;
         
-        assign c_s = sum + carry;
+        //assign result = sum + cout;
+        
+        reg state, next_state;
+        
+        always @(*)
+        begin
+            if (~resetn | start)
+                state <= 2'b0;      // Idle
+            else
+                state <= next_state;
+        end
+        
+        always @(posedge clk)
+        begin
+            case(state)
+                1'b0:begin
+                    if (start)
+                        next_state <= 1'b1;
+                    else
+                        next_state <= 1'b0;
+                end
+                1'b1:begin
+                    next_state <= 1'b0;
+                end
+                default: next_state <= 1'b0;
+            endcase
+        end
+        
+        reg regDone;
+        
+        always @(posedge clk)
+        begin
+            if(~resetn || start)
+            begin
+                regDone <= 1'b0;
+                result <= 0;
+            end
+            
+            if (state == 1) begin
+                result = sum + cout;
+                //result[1027] = result[1027] ^ subtract;
+                regDone <= 1'b1;
+            end else begin
+                regDone <= 1'b0;
+            end
+        end
+        
+        assign done = regDone;  
         
 endmodule

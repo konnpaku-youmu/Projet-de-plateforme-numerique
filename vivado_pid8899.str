@@ -1,0 +1,283 @@
+/*
+
+Xilinx Vivado v2018.2 (64-bit) [Major: 2018, Minor: 2]
+SW Build: 2258646 on Thu Jun 14 20:02:38 MDT 2018
+IP Build: 2256618 on Thu Jun 14 22:10:49 MDT 2018
+
+Process ID: 8899
+License: Customer
+
+Current time: 	Wed Dec 01 00:31:56 CET 2021
+Time zone: 	Central European Time (Europe/Brussels)
+
+OS: Rocky Linux release 8.5 (Green Obsidian)
+OS Version: 4.18.0-348.2.1.el8_5.x86_64
+OS Architecture: amd64
+Available processors (cores): 4
+
+Display: :1
+Screen size: 1907x968
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 17 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	/esat/micas-data/software/xilinx_vivado_2018.2/Vivado/2018.2/tps/lnx64/jre
+Java executable location: 	/esat/micas-data/software/xilinx_vivado_2018.2/Vivado/2018.2/tps/lnx64/jre/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 2 GB
+
+
+User name: 	r0873266
+User home directory: /users/students/r0873266
+User working directory: /users/students/r0873266/Documents/CODESIGN_4/Projet-de-plateforme-numerique
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /esat/micas-data/software/xilinx_vivado_2018.2/Vivado
+HDI_APPROOT: /esat/micas-data/software/xilinx_vivado_2018.2/Vivado/2018.2
+RDI_DATADIR: /esat/micas-data/software/xilinx_vivado_2018.2/Vivado/2018.2/data
+RDI_BINDIR: /esat/micas-data/software/xilinx_vivado_2018.2/Vivado/2018.2/bin
+
+Vivado preferences file location: /users/students/r0873266/.Xilinx/Vivado/2018.2/vivado.xml
+Vivado preferences directory: /users/students/r0873266/.Xilinx/Vivado/2018.2/
+Vivado layouts directory: /users/students/r0873266/.Xilinx/Vivado/2018.2/layouts
+PlanAhead jar file location: 	/esat/micas-data/software/xilinx_vivado_2018.2/Vivado/2018.2/lib/classes/planAhead.jar
+Vivado log file location: 	/users/students/r0873266/Documents/CODESIGN_4/Projet-de-plateforme-numerique/vivado.log
+Vivado journal file location: 	/users/students/r0873266/Documents/CODESIGN_4/Projet-de-plateforme-numerique/vivado.jou
+Engine tmp dir: 	/tmp/.Xil_r0873266/Vivado-8899-stud-r8-spice-4.esat.kuleuven.be
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /esat/micas-data/software/xilinx_vivado_2018.2/Vivado/2018.2/ids_lite/ISE
+XILINXD_LICENSE_FILE: 2100@licserv
+XILINX_DSP: /esat/micas-data/software/xilinx_vivado_2018.2/Vivado/2018.2/ids_lite/ISE
+XILINX_PLANAHEAD: /esat/micas-data/software/xilinx_vivado_2018.2/Vivado/2018.2
+XILINX_SDK: /esat/micas-data/software/xilinx_vivado_2018.2/SDK/2018.2
+XILINX_VIVADO: /esat/micas-data/software/xilinx_vivado_2018.2/Vivado/2018.2
+XILINX_VIVADO_HLS: /esat/micas-data/software/xilinx_vivado_2018.2/Vivado/2018.2
+
+
+GUI allocated memory:	165 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 899 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 68 MB (+69284kb) [00:00:08]
+// [Engine Memory]: 838 MB (+727308kb) [00:00:08]
+// bx (ck):  Open Project : addNotify
+// Opening Vivado Project: project_hw/project_hw.xpr. Version: Vivado v2018.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project project_hw/project_hw.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: MSGMGR_REFRESH_MSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 938 MB. GUI used memory: 41 MB. Current time: 12/1/21 12:31:58 AM CET
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 1,016 MB (+142590kb) [00:00:14]
+// Tcl Message: open_project project_hw/project_hw.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository '/users/students/r0873266/Documents/CODESIGN_4/Projet-de-plateforme-numerique/project_ipcores'. INFO: [IP_Flow 19-2207] Repository '/users/students/r0873266/Documents/CODESIGN_4/Projet-de-plateforme-numerique/project_ipcores' already exists; ignoring attempt to add it again. INFO: [IP_Flow 19-1700] Loaded user IP repository '/users/students/r0873266/Documents/CODESIGN_4/Projet-de-plateforme-numerique/project_ipcores'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/esat/micas-data/software/xilinx_vivado_2018.2/Vivado/2018.2/data/ip'. 
+// Project name: project_hw; location: /users/students/r0873266/Documents/CODESIGN_4/Projet-de-plateforme-numerique/project_hw; part: xc7z020clg400-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 6398.109 ; gain = 177.465 ; free physical = 4561 ; free virtual = 14405 
+dismissDialog("Open Project"); // bx (ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// [Engine Memory]: 1,067 MB (+306kb) [00:00:19]
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// [Engine Memory]: 1,323 MB (+212826kb) [00:00:19]
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Tcl Message: update_compile_order -fileset sim_1 
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 13 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 8); // B (D, ck)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 9); // B (D, ck)
+// PAPropertyPanels.initPanels (tb_adder.v) elapsed time: 0.2s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_adder (tb_adder.v)]", 13, true); // B (D, ck) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_adder (tb_adder.v)]", 13, true, false, false, false, true, false); // B (D, ck) - Popup Trigger - Node
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // aa (aj, ck)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // aa (aj, ck)
+selectMenuItem(PAResourceCommand.PACommandNames_SET_AS_TOP, "Set as Top"); // ad (aj, ck)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,107 MB. GUI used memory: 45 MB. Current time: 12/1/21 12:32:28 AM CET
+// Run Command: PAResourceCommand.PACommandNames_SET_AS_TOP
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: set_property top tb_adder [get_filesets sim_1] 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: set_property top_lib xil_defaultlib [get_filesets sim_1] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sim_1 
+// [GUI Memory]: 72 MB (+13kb) [00:00:46]
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 10 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_adder (tb_adder.v)]", 10, true); // B (D, ck) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_adder (tb_adder.v)]", 10, true, false, false, false, false, true); // B (D, ck) - Double Click - Node
+// [GUI Memory]: 80 MB (+4863kb) [00:01:44]
+// Elapsed time: 73 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, csave_adder (adder.v)]", 1, true); // B (D, ck) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, csave_adder (adder.v), genblk1[0].inneradditions : xil_defaultlib.halfadder]", 2, false, false, false, false, false, true); // B (D, ck) - Double Click
+// [GUI Memory]: 84 MB (+4kb) [00:02:39]
+// Elapsed time: 50 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "tb_adder.v", 1); // k (j, ck)
+// Elapsed time: 14 seconds
+selectCodeEditor("tb_adder.v", 28, 140); // ce (w, ck)
+// Elapsed time: 10 seconds
+selectCodeEditor("tb_adder.v", 26, 185); // ce (w, ck)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,150 MB. GUI used memory: 46 MB. Current time: 12/1/21 12:35:13 AM CET
+// Elapsed time: 18 seconds
+selectCodeEditor("tb_adder.v", 308, 163); // ce (w, ck)
+selectCodeEditor("tb_adder.v", 258, 174); // ce (w, ck)
+// Elapsed time: 34 seconds
+selectCodeEditor("tb_adder.v", 204, 183); // ce (w, ck)
+// Elapsed time: 48 seconds
+selectCodeEditor("tb_adder.v", 249, 166); // ce (w, ck)
+selectCodeEditor("tb_adder.v", 112, 160); // ce (w, ck)
+// Elapsed time: 56 seconds
+selectCodeEditor("tb_adder.v", 190, 155); // ce (w, ck)
+// Elapsed time: 21 seconds
+selectCodeEditor("tb_adder.v", 289, 187); // ce (w, ck)
+// Elapsed time: 15 seconds
+selectCodeEditor("tb_adder.v", 274, 249); // ce (w, ck)
+typeControlKey((HResource) null, "tb_adder.v", 'c'); // ce (w, ck)
+selectCodeEditor("tb_adder.v", 104, 203); // ce (w, ck)
+typeControlKey((HResource) null, "tb_adder.v", 'v'); // ce (w, ck)
+selectCodeEditor("tb_adder.v", 274, 260); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// HMemoryUtils.trashcanNow. Engine heap size: 1,177 MB. GUI used memory: 46 MB. Current time: 12/1/21 12:38:48 AM CET
+// Elapsed time: 14 seconds
+selectCodeEditor("tb_adder.v", 28, 114); // ce (w, ck)
+// Elapsed time: 12 seconds
+selectCodeEditor("tb_adder.v", 29, 232); // ce (w, ck)
+// Elapsed time: 16 seconds
+selectCodeEditor("tb_adder.v", 204, 141); // ce (w, ck)
+// [GUI Memory]: 90 MB (+1997kb) [00:07:37]
+typeControlKey((HResource) null, "tb_adder.v", 'c'); // ce (w, ck)
+selectCodeEditor("tb_adder.v", 287, 167); // ce (w, ck)
+// Elapsed time: 10 seconds
+typeControlKey((HResource) null, "tb_adder.v", 'v'); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,314 MB. GUI used memory: 46 MB. Current time: 12/1/21 12:39:43 AM CET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 17 seconds
+selectCodeEditor("tb_adder.v", 27, 125); // ce (w, ck)
+selectCodeEditor("tb_adder.v", 28, 174); // ce (w, ck)
+selectCodeEditor("tb_adder.v", 23, 186); // ce (w, ck)
+selectCodeEditor("tb_adder.v", 30, 199); // ce (w, ck)
+selectCodeEditor("tb_adder.v", 28, 158); // ce (w, ck)
+selectCodeEditor("tb_adder.v", 259, 64); // ce (w, ck)
+typeControlKey((HResource) null, "tb_adder.v", 'v'); // ce (w, ck)
+selectCodeEditor("tb_adder.v", 25, 250); // ce (w, ck)
+selectCodeEditor("tb_adder.v", 29, 264); // ce (w, ck)
+selectCodeEditor("tb_adder.v", 30, 273); // ce (w, ck)
+selectCodeEditor("tb_adder.v", 277, 228); // ce (w, ck)
+typeControlKey((HResource) null, "tb_adder.v", 'v'); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// [GUI Memory]: 96 MB (+1688kb) [00:09:06]
+// Elapsed time: 18 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (O, ck)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ad (aj, ck)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// e (ck):  Run Simulation : addNotify
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: LOAD_FEATURE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in '/users/students/r0873266/Documents/CODESIGN_4/Projet-de-plateforme-numerique/project_hw/project_hw.sim/sim_1/behav/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [USF-XSim-7] Finding pre-compiled libraries... INFO: [USF-XSim-11] File '/esat/micas-data/software/xilinx_vivado_2018.2/Vivado/2018.2/data/xsim/xsim.ini' copied to run dir:'/users/students/r0873266/Documents/CODESIGN_4/Projet-de-plateforme-numerique/project_hw/project_hw.sim/sim_1/behav/xsim' INFO: [SIM-utils-54] Inspecting design source files for 'tb_adder' in fileset 'sim_1'... 
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// Tcl Message: INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/users/students/r0873266/Documents/CODESIGN_4/Projet-de-plateforme-numerique/project_hw/project_hw.sim/sim_1/behav/xsim' 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '1' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/users/students/r0873266/Documents/CODESIGN_4/Projet-de-plateforme-numerique/project_hw/project_hw.sim/sim_1/behav/xsim' 
+// Tcl Message: Vivado Simulator 2018.2 Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved. Running: /esat/micas-data/software/xilinx_vivado_2018.2/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 56b64449aabb4e8a8192ddfdfc2cf418 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_adder_behav xil_defaultlib.tb_adder xil_defaultlib.glbl -log elaborate.log  Using 8 slave threads. Starting static elaboration ERROR: [VRFC 10-2063] Module <halfadder> not found while processing module instance <genblk1[0].inneradditions> [/users/students/r0873266/Documents/CODESIGN_4/Projet-de-plateforme-numerique/src/rtl/adder.v:138] 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed. 
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds INFO: [USF-XSim-99] Step results log file:'/users/students/r0873266/Documents/CODESIGN_4/Projet-de-plateforme-numerique/project_hw/project_hw.sim/sim_1/behav/xsim/elaborate.log' 
+// Tcl Message: ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/users/students/r0873266/Documents/CODESIGN_4/Projet-de-plateforme-numerique/project_hw/project_hw.sim/sim_1/behav/xsim/elaborate.log' file for more information. ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation. 
+// Tcl Message: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors. 
+// CommandFailedException: ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.  
+// HOptionPane Error: 'ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.  (Run Simulation)'
+// 'd' command handler elapsed time: 6 seconds
+selectButton("RDIResource.ProgressDialog_ERROR_ENCOUNTERED_PLEASE_SEE_TCL_OK", "OK"); // JButton (A, G)
+// a (ck): Critical Messages: addNotify
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (a)
+dismissDialog("Critical Messages"); // a (ck)
+// Elapsed time: 73 seconds
+closeMainWindow("project_hw - [/users/students/r0873266/Documents/CODESIGN_4/Projet-de-plateforme-numerique/project_hw/project_hw.xpr] - Vivado 2018.2"); // ck
+// A (ck): Exit Vivado: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (A)
+dismissDialog("Exit Vivado"); // A (ck)
