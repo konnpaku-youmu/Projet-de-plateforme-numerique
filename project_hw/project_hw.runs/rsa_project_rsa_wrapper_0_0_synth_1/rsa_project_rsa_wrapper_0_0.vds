@@ -1,0 +1,312 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Wed Dec  1 13:53:13 2021
+# Process ID: 98919
+# Current directory: /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.runs/rsa_project_rsa_wrapper_0_0_synth_1
+# Command line: vivado -log rsa_project_rsa_wrapper_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source rsa_project_rsa_wrapper_0_0.tcl
+# Log file: /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.runs/rsa_project_rsa_wrapper_0_0_synth_1/rsa_project_rsa_wrapper_0_0.vds
+# Journal file: /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.runs/rsa_project_rsa_wrapper_0_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source rsa_project_rsa_wrapper_0_0.tcl -notrace
+Command: synth_design -top rsa_project_rsa_wrapper_0_0 -part xc7z020clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 99241 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1319.035 ; gain = 88.723 ; free physical = 4147 ; free virtual = 30499
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'rsa_project_rsa_wrapper_0_0' [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.srcs/sources_1/bd/rsa_project/ip/rsa_project_rsa_wrapper_0_0/synth/rsa_project_rsa_wrapper_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'rsa_wrapper' [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/rsa_wrapper.v:3]
+	Parameter STATE_BITS bound to: 3 - type: integer 
+	Parameter STATE_WAIT_FOR_CMD bound to: 3'b000 
+	Parameter STATE_READ_DATA bound to: 3'b001 
+	Parameter STATE_COMPUTE bound to: 3'b010 
+	Parameter STATE_WRITE_DATA bound to: 3'b011 
+	Parameter STATE_ASSERT_DONE bound to: 3'b100 
+	Parameter CMD_READ bound to: 0 - type: integer 
+	Parameter CMD_COMPUTE bound to: 1 - type: integer 
+	Parameter CMD_WRITE bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rsa_wrapper' (1#1) [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/rsa_wrapper.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'rsa_project_rsa_wrapper_0_0' (2#1) [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.srcs/sources_1/bd/rsa_project/ip/rsa_project_rsa_wrapper_0_0/synth/rsa_project_rsa_wrapper_0_0.v:58]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1363.660 ; gain = 133.348 ; free physical = 4105 ; free virtual = 30460
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1363.660 ; gain = 133.348 ; free physical = 4100 ; free virtual = 30455
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1363.660 ; gain = 133.348 ; free physical = 4100 ; free virtual = 30455
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+WARNING: [Constraints 18-5210] No constraint will be written out.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.18 . Memory (MB): peak = 1710.688 ; gain = 2.000 ; free physical = 1855 ; free virtual = 28242
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:30 . Memory (MB): peak = 1710.688 ; gain = 480.375 ; free physical = 1703 ; free virtual = 28128
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:30 . Memory (MB): peak = 1710.688 ; gain = 480.375 ; free physical = 1703 ; free virtual = 28128
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:30 . Memory (MB): peak = 1710.688 ; gain = 480.375 ; free physical = 1704 ; free virtual = 28127
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'r_state_reg' in module 'rsa_wrapper'
+INFO: [Synth 8-5544] ROM "next_state0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "next_state" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+      STATE_WAIT_FOR_CMD |                            00001 |                              000
+         STATE_READ_DATA |                            00010 |                              001
+           STATE_COMPUTE |                            00100 |                              010
+        STATE_WRITE_DATA |                            01000 |                              011
+       STATE_ASSERT_DONE |                            10000 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'r_state_reg' using encoding 'one-hot' in module 'rsa_wrapper'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:31 . Memory (MB): peak = 1710.688 ; gain = 480.375 ; free physical = 1552 ; free virtual = 27990
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	             1024 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   3 Input   1024 Bit        Muxes := 2     
+	   5 Input      5 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 4     
+	   4 Input      5 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module rsa_wrapper 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	             1024 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   3 Input   1024 Bit        Muxes := 2     
+	   5 Input      5 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 4     
+	   4 Input      5 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-3917] design rsa_project_rsa_wrapper_0_0 has port leds[3] driven by constant 0
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:32 . Memory (MB): peak = 1710.688 ; gain = 480.375 ; free physical = 1365 ; free virtual = 27805
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:44 . Memory (MB): peak = 1710.688 ; gain = 480.375 ; free physical = 1232 ; free virtual = 27684
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:44 . Memory (MB): peak = 1710.688 ; gain = 480.375 ; free physical = 1785 ; free virtual = 28238
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:45 . Memory (MB): peak = 1710.688 ; gain = 480.375 ; free physical = 1823 ; free virtual = 28317
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:45 . Memory (MB): peak = 1710.688 ; gain = 480.375 ; free physical = 2778 ; free virtual = 29263
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:45 . Memory (MB): peak = 1710.688 ; gain = 480.375 ; free physical = 2776 ; free virtual = 29261
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:45 . Memory (MB): peak = 1710.688 ; gain = 480.375 ; free physical = 2774 ; free virtual = 29259
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:45 . Memory (MB): peak = 1710.688 ; gain = 480.375 ; free physical = 2774 ; free virtual = 29259
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:45 . Memory (MB): peak = 1710.688 ; gain = 480.375 ; free physical = 2774 ; free virtual = 29259
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:45 . Memory (MB): peak = 1710.688 ; gain = 480.375 ; free physical = 2774 ; free virtual = 29259
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT1 |     1|
+|2     |LUT2 |     4|
+|3     |LUT3 |     2|
+|4     |LUT4 |    37|
+|5     |LUT5 |     4|
+|6     |LUT6 |     5|
+|7     |FDRE |  1031|
+|8     |FDSE |     1|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+------------+------+
+|      |Instance |Module      |Cells |
++------+---------+------------+------+
+|1     |top      |            |  1085|
+|2     |  inst   |rsa_wrapper |  1085|
++------+---------+------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:45 . Memory (MB): peak = 1710.688 ; gain = 480.375 ; free physical = 2772 ; free virtual = 29257
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:22 . Memory (MB): peak = 1710.688 ; gain = 133.348 ; free physical = 2696 ; free virtual = 29157
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:46 . Memory (MB): peak = 1710.688 ; gain = 480.375 ; free physical = 2709 ; free virtual = 29170
+INFO: [Project 1-571] Translating synthesized netlist
+WARNING: [Netlist 29-101] Netlist 'rsa_project_rsa_wrapper_0_0' is not ideal for floorplanning, since the cellview 'rsa_wrapper' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+20 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:47 . Memory (MB): peak = 1710.688 ; gain = 494.105 ; free physical = 2645 ; free virtual = 29108
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.runs/rsa_project_rsa_wrapper_0_0_synth_1/rsa_project_rsa_wrapper_0_0.dcp' has been generated.
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.runs/rsa_project_rsa_wrapper_0_0_synth_1/rsa_project_rsa_wrapper_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file rsa_project_rsa_wrapper_0_0_utilization_synth.rpt -pb rsa_project_rsa_wrapper_0_0_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.14 . Memory (MB): peak = 1710.688 ; gain = 0.000 ; free physical = 3916 ; free virtual = 30372
+INFO: [Common 17-206] Exiting Vivado at Wed Dec  1 13:54:13 2021...

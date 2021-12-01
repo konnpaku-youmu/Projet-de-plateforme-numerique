@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="36">
   <CompositeFile CompositeFileTopName="rsa_project" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1638305034"/>
-    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1638305034"/>
-    <Generation Name="SIMULATION" State="STALE" Timestamp="1638305034"/>
-    <Generation Name="HW_HANDOFF" State="STALE" Timestamp="1638305034"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1638363187"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1638363187"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1638363187"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1638363187"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip/rsa_project_processing_system7_0_0/rsa_project_processing_system7_0_0.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0"/>
@@ -150,6 +150,39 @@
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="synth/rsa_project.v" Type="Verilog">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+      </File>
+      <File Name="sim/rsa_project.v" Type="Verilog">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="rsa_project_ooc.xdc" Type="XDC">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="OUT_OF_CONTEXT"/>
+      </File>
+      <File Name="hw_handoff/rsa_project.hwh" Type="HwHandoff">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="HW_HANDOFF"/>
+      </File>
+      <File Name="hw_handoff/rsa_project_bd.tcl">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="HW_HANDOFF"/>
+      </File>
+      <File Name="synth/rsa_project.hwdef">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="HW_HANDOFF"/>
       </File>
     </FileCollection>
   </CompositeFile>

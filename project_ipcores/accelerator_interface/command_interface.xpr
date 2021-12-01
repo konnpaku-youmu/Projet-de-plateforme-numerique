@@ -3,10 +3,10 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="38" Path="/users/students/r0822930/Projet-de-plateforme-numerique/project_ipcores/accelerator_interface/command_interface.xpr">
+<Project Version="7" Minor="38" Path="/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_ipcores/accelerator_interface/command_interface.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="b6e7ad79cbe14e9cbf928b880c6e02c0"/>
+    <Option Name="Id" Val="dbc65666be234401aa275ab4ca289715"/>
     <Option Name="Part" Val="xc7z020clg400-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
