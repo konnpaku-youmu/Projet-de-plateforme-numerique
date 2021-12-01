@@ -115,13 +115,11 @@ module rsa_wrapper
                 end
                 
                 STATE_COMPUTE: begin
-                    core_data <= {core_data[1023:992]^32'hDEADBEEF, core_data[991:0]};
                 end
                 
                 default: begin
                     core_data <= core_data;
                 end
-                
             endcase
         end
     
