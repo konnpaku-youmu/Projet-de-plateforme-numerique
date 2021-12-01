@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
--- Date        : Wed Dec  1 13:54:12 2021
+-- Date        : Wed Dec  1 13:54:10 2021
 -- Host        : archHome running 64-bit Arch Linux
--- Command     : write_vhdl -force -mode funcsim
---               /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.srcs/sources_1/bd/rsa_project/ip/rsa_project_axis_dwidth_converter_0_0/rsa_project_axis_dwidth_converter_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top rsa_project_axis_dwidth_converter_0_0 -prefix
+--               rsa_project_axis_dwidth_converter_0_0_ rsa_project_axis_dwidth_converter_0_0_sim_netlist.vhdl
 -- Design      : rsa_project_axis_dwidth_converter_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -26,8 +26,6 @@ entity rsa_project_axis_dwidth_converter_0_0_axis_dwidth_converter_v1_1_16_axisc
     aclk : in STD_LOGIC;
     s_axis_tdata : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of rsa_project_axis_dwidth_converter_0_0_axis_dwidth_converter_v1_1_16_axisc_upsizer : entity is "axis_dwidth_converter_v1_1_16_axisc_upsizer";
 end rsa_project_axis_dwidth_converter_0_0_axis_dwidth_converter_v1_1_16_axisc_upsizer;
 
 architecture STRUCTURE of rsa_project_axis_dwidth_converter_0_0_axis_dwidth_converter_v1_1_16_axisc_upsizer is
@@ -9549,8 +9547,6 @@ entity rsa_project_axis_dwidth_converter_0_0_axis_dwidth_converter_v1_1_16_axis_
   attribute G_TASK_SEVERITY_INFO of rsa_project_axis_dwidth_converter_0_0_axis_dwidth_converter_v1_1_16_axis_dwidth_converter : entity is 0;
   attribute G_TASK_SEVERITY_WARNING : integer;
   attribute G_TASK_SEVERITY_WARNING of rsa_project_axis_dwidth_converter_0_0_axis_dwidth_converter_v1_1_16_axis_dwidth_converter : entity is 1;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of rsa_project_axis_dwidth_converter_0_0_axis_dwidth_converter_v1_1_16_axis_dwidth_converter : entity is "axis_dwidth_converter_v1_1_16_axis_dwidth_converter";
   attribute P_AXIS_SIGNAL_SET : string;
   attribute P_AXIS_SIGNAL_SET of rsa_project_axis_dwidth_converter_0_0_axis_dwidth_converter_v1_1_16_axis_dwidth_converter : entity is "32'b00000000000000000000000000000011";
   attribute P_D1_REG_CONFIG : integer;

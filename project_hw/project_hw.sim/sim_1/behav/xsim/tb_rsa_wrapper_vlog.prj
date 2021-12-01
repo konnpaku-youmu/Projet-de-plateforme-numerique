@@ -1,5 +1,7 @@
 # compile verilog/system verilog design source files
-verilog xil_defaultlib  --include "../../../../project_hw.srcs/sources_1/bd/rsa_project/ipshared/ec67/hdl" --include "../../../../project_hw.srcs/sources_1/bd/rsa_project/ipshared/5bb9/hdl/verilog" --include "../../../../project_hw.srcs/sources_1/bd/rsa_project/ipshared/70fd/hdl" --include "../../../../project_hw.srcs/sources_1/bd/rsa_project/ipshared/0ab1/hdl" --include "/esat/micas-data/software/xilinx_vivado_2018.2/Vivado/2018.2/data/xilinx_vip/include" \
+verilog xil_defaultlib  --include "../../../../project_hw.srcs/sources_1/bd/rsa_project/ipshared/ec67/hdl" --include "../../../../project_hw.srcs/sources_1/bd/rsa_project/ipshared/5bb9/hdl/verilog" --include "../../../../project_hw.srcs/sources_1/bd/rsa_project/ipshared/70fd/hdl" --include "../../../../project_hw.srcs/sources_1/bd/rsa_project/ipshared/0ab1/hdl" --include "/home/yz/.Xilinx/Vivado/2018.2/data/xilinx_vip/include" \
+"../../../../../src/rtl/adder.v" \
+"../../../../../src/rtl/montgomery.v" \
 "../../../../../src/rtl/rsa_wrapper.v" \
 "../../../../../src/rtl_tb/tb_rsa_wrapper.v" \
 

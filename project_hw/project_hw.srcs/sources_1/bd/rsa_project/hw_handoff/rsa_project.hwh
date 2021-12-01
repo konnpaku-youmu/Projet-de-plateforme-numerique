@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Dec  1 13:53:07 2021" VIVADOVERSION="2018.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Dec  1 23:24:15 2021" VIVADOVERSION="2018.2">
 
   <SYSTEMINFO ARCH="zynq" BOARD="tul.com.tw:pynq-z2:part0:1.0" DEVICE="7z020" NAME="rsa_project" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -4972,7 +4972,6 @@
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_ACP_ACLK"/>
-            <CONNECTION INSTANCE="rsa_wrapper_0" PORT="clk"/>
             <CONNECTION INSTANCE="Interface_Cell_axi_dma_0" PORT="m_axi_mm2s_aclk"/>
             <CONNECTION INSTANCE="Interface_Cell_axi_dma_0" PORT="m_axi_s2mm_aclk"/>
             <CONNECTION INSTANCE="Interface_Cell_axi_dma_0" PORT="s_axi_lite_aclk"/>
@@ -4988,6 +4987,7 @@
             <CONNECTION INSTANCE="Interface_Cell_axi_mem_intercon" PORT="M00_ACLK"/>
             <CONNECTION INSTANCE="Interface_Cell_axi_mem_intercon" PORT="S00_ACLK"/>
             <CONNECTION INSTANCE="Interface_Cell_axi_mem_intercon" PORT="S01_ACLK"/>
+            <CONNECTION INSTANCE="rsa_wrapper_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">

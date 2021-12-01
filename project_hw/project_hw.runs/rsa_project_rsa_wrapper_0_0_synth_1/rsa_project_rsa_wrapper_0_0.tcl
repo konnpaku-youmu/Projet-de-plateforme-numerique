@@ -17,6 +17,8 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param xicom.use_bs_reader 1
+set_msg_config -id {HDL-1065} -limit 10000
 set_msg_config  -ruleid {1}  -id {Synth 8-327}  -new_severity {ERROR} 
 set_msg_config  -ruleid {10}  -id {IP_Flow 19-2207}  -new_severity {INFO} 
 set_msg_config  -ruleid {11}  -id {Vivado 12-3482}  -new_severity {INFO} 
@@ -47,7 +49,11 @@ set_property ip_repo_paths {
 } [current_project]
 set_property ip_output_repo /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_verilog -library xil_defaultlib /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/rsa_wrapper.v
+read_verilog -library xil_defaultlib {
+  /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/adder.v
+  /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/montgomery.v
+  /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/rsa_wrapper.v
+}
 read_ip -quiet /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.srcs/sources_1/bd/rsa_project/ip/rsa_project_rsa_wrapper_0_0/rsa_project_rsa_wrapper_0_0.xci
 
 # Mark all dcp files as not used in implementation to prevent them from being

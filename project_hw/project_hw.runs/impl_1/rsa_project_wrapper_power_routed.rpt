@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date             : Wed Dec  1 13:58:00 2021
+| Date             : Wed Dec  1 21:30:20 2021
 | Host             : archHome running 64-bit Arch Linux
 | Command          : report_power -file rsa_project_wrapper_power_routed.rpt -pb rsa_project_wrapper_power_summary_routed.pb -rpx rsa_project_wrapper_power_routed.rpx
 | Design           : rsa_project_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.419        |
+| Total On-Chip Power (W)  | 1.412        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.284        |
-| Device Static (W)        | 0.135        |
+| Dynamic (W)              | 1.274        |
+| Device Static (W)        | 0.138        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 68.6         |
-| Junction Temperature (C) | 41.4         |
+| Max Ambient (C)          | 68.7         |
+| Junction Temperature (C) | 41.3         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,20 +52,19 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.017 |        3 |       --- |             --- |
-| Slice Logic              |     0.003 |     9690 |       --- |             --- |
-|   LUT as Logic           |     0.002 |     2556 |     53200 |            4.80 |
-|   Register               |    <0.001 |     5812 |    106400 |            5.46 |
+| Clocks                   |     0.008 |        3 |       --- |             --- |
+| Slice Logic              |     0.002 |     4862 |       --- |             --- |
+|   LUT as Logic           |     0.002 |     1610 |     53200 |            3.03 |
+|   Register               |    <0.001 |     2288 |    106400 |            2.15 |
 |   CARRY4                 |    <0.001 |       34 |     13300 |            0.26 |
-|   F7/F8 Muxes            |    <0.001 |      256 |     53200 |            0.48 |
 |   LUT as Distributed RAM |    <0.001 |       10 |     17400 |            0.06 |
 |   LUT as Shift Register  |    <0.001 |      165 |     17400 |            0.95 |
-|   Others                 |     0.000 |      373 |       --- |             --- |
-| Signals                  |     0.004 |     7629 |       --- |             --- |
-| I/O                      |     0.000 |        4 |       125 |            3.20 |
+|   Others                 |     0.000 |      374 |       --- |             --- |
+| Signals                  |     0.003 |     3532 |       --- |             --- |
+| I/O                      |    <0.001 |        4 |       125 |            3.20 |
 | PS7                      |     1.260 |        1 |       --- |             --- |
-| Static Power             |     0.135 |          |           |                 |
-| Total                    |     1.419 |          |           |                 |
+| Static Power             |     0.138 |          |           |                 |
+| Total                    |     1.412 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,9 +74,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.037 |       0.024 |      0.013 |
+| Vccint    |       1.000 |     0.026 |       0.013 |      0.013 |
 | Vccaux    |       1.800 |     0.014 |       0.000 |      0.014 |
-| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
+| Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -151,9 +150,9 @@ Table of Contents
 +-------------------------------------------------------------------------------------+-----------+
 | Name                                                                                | Power (W) |
 +-------------------------------------------------------------------------------------+-----------+
-| rsa_project_wrapper                                                                 |     1.284 |
-|   rsa_project_i                                                                     |     1.284 |
-|     Interface_Cell                                                                  |     0.020 |
+| rsa_project_wrapper                                                                 |     1.274 |
+|   rsa_project_i                                                                     |     1.273 |
+|     Interface_Cell                                                                  |     0.013 |
 |       ARCACHE                                                                       |     0.000 |
 |       ARUSER                                                                        |     0.000 |
 |       axi_dma_0                                                                     |     0.004 |
@@ -227,7 +226,7 @@ Table of Contents
 |             GEN_RESET_FOR_S2MM.RESET_I                                              |    <0.001 |
 |             REG_HRD_RST                                                             |    <0.001 |
 |             REG_HRD_RST_OUT                                                         |    <0.001 |
-|       axi_interconnect_0                                                            |     0.004 |
+|       axi_interconnect_0                                                            |     0.005 |
 |         s00_couplers                                                                |     0.004 |
 |           auto_pc                                                                   |     0.004 |
 |             inst                                                                    |     0.004 |
@@ -260,11 +259,11 @@ Table of Contents
 |               gen_decerr.decerr_slave_inst                                          |    <0.001 |
 |               splitter_ar                                                           |    <0.001 |
 |               splitter_aw                                                           |    <0.001 |
-|       axi_mem_intercon                                                              |     0.004 |
-|         m00_couplers                                                                |     0.001 |
-|           auto_pc                                                                   |     0.001 |
-|             inst                                                                    |     0.001 |
-|               gen_axi4_axi3.axi3_conv_inst                                          |     0.001 |
+|       axi_mem_intercon                                                              |     0.003 |
+|         m00_couplers                                                                |     0.002 |
+|           auto_pc                                                                   |     0.002 |
+|             inst                                                                    |     0.002 |
+|               gen_axi4_axi3.axi3_conv_inst                                          |     0.002 |
 |                 USE_READ.USE_SPLIT_R.read_addr_inst                                 |    <0.001 |
 |                   USE_R_CHANNEL.cmd_queue                                           |    <0.001 |
 |                     inst                                                            |    <0.001 |
@@ -350,12 +349,12 @@ Table of Contents
 |               gen_decerr.decerr_slave_inst                                          |    <0.001 |
 |               splitter_ar                                                           |    <0.001 |
 |               splitter_aw                                                           |    <0.001 |
-|       axis_dwidth_converter_0                                                       |     0.003 |
-|         inst                                                                        |     0.003 |
-|           gen_upsizer_conversion.axisc_upsizer_0                                    |     0.003 |
-|       axis_dwidth_converter_1                                                       |     0.005 |
-|         inst                                                                        |     0.005 |
-|           gen_downsizer_conversion.axisc_downsizer_0                                |     0.005 |
+|       axis_dwidth_converter_0                                                       |    <0.001 |
+|         inst                                                                        |    <0.001 |
+|           gen_upsizer_conversion.axisc_upsizer_0                                    |    <0.001 |
+|       axis_dwidth_converter_1                                                       |    <0.001 |
+|         inst                                                                        |    <0.001 |
+|           gen_downsizer_conversion.axisc_downsizer_0                                |    <0.001 |
 |       command_interface_0                                                           |    <0.001 |
 |         inst                                                                        |    <0.001 |
 |           command_interface_S00_AXI_inst                                            |    <0.001 |
@@ -368,8 +367,8 @@ Table of Contents
 |             SEQ_COUNTER                                                             |    <0.001 |
 |     processing_system7_0                                                            |     1.261 |
 |       inst                                                                          |     1.261 |
-|     rsa_wrapper_0                                                                   |     0.003 |
-|       inst                                                                          |     0.003 |
+|     rsa_wrapper_0                                                                   |    <0.001 |
+|       inst                                                                          |    <0.001 |
 +-------------------------------------------------------------------------------------+-----------+
 
 

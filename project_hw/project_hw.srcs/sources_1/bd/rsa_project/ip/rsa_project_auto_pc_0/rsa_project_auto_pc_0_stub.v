@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-// Date        : Wed Dec  1 13:55:25 2021
+// Date        : Wed Dec  1 13:55:24 2021
 // Host        : archHome running 64-bit Arch Linux
-// Command     : write_verilog -force -mode synth_stub
-//               /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.srcs/sources_1/bd/rsa_project/ip/rsa_project_auto_pc_0/rsa_project_auto_pc_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top rsa_project_auto_pc_0 -prefix
+//               rsa_project_auto_pc_0_ rsa_project_auto_pc_0_stub.v
 // Design      : rsa_project_auto_pc_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-1
