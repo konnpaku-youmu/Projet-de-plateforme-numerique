@@ -1,4 +1,4 @@
-NumberHits:6
-Timestamp: Wed Dec 01 22:24:15 UTC 2021
+NumberHits:11
+Timestamp: Thu Dec 02 20:36:02 UTC 2021
 VLNV: xilinx.com:ip:axis_dwidth_converter:1.1
 SynthRuntime: 50

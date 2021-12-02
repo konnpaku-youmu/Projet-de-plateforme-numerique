@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Wed Dec  1 23:24:23 2021
-# Process ID: 674049
+# Start of session at: Thu Dec  2 21:36:10 2021
+# Process ID: 1467061
 # Current directory: /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.runs/rsa_project_rsa_wrapper_0_0_synth_1
 # Command line: vivado -log rsa_project_rsa_wrapper_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source rsa_project_rsa_wrapper_0_0.tcl
 # Log file: /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.runs/rsa_project_rsa_wrapper_0_0_synth_1/rsa_project_rsa_wrapper_0_0.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 674080 
+INFO: Helper process launched with PID 1467170 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1320.039 ; gain = 89.723 ; free physical = 1660 ; free virtual = 27039
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1320.035 ; gain = 89.723 ; free physical = 2600 ; free virtual = 26584
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'rsa_project_rsa_wrapper_0_0' [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.srcs/sources_1/bd/rsa_project/ip/rsa_project_rsa_wrapper_0_0/synth/rsa_project_rsa_wrapper_0_0.v:58]
 INFO: [Synth 8-6157] synthesizing module 'rsa_wrapper' [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/rsa_wrapper.v:3]
@@ -51,7 +51,7 @@ WARNING: [Synth 8-6014] Unused sequential element core_data_reg was removed.  [/
 INFO: [Synth 8-6155] done synthesizing module 'rsa_wrapper' (5#1) [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/rsa_wrapper.v:3]
 INFO: [Synth 8-6155] done synthesizing module 'rsa_project_rsa_wrapper_0_0' (6#1) [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.srcs/sources_1/bd/rsa_project/ip/rsa_project_rsa_wrapper_0_0/synth/rsa_project_rsa_wrapper_0_0.v:58]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1374.664 ; gain = 144.348 ; free physical = 1653 ; free virtual = 27033
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1374.660 ; gain = 144.348 ; free physical = 2592 ; free virtual = 26578
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -64,10 +64,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1374.664 ; gain = 144.348 ; free physical = 1658 ; free virtual = 27038
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1374.660 ; gain = 144.348 ; free physical = 2598 ; free virtual = 26584
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1374.664 ; gain = 144.348 ; free physical = 1658 ; free virtual = 27038
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1374.660 ; gain = 144.348 ; free physical = 2598 ; free virtual = 26584
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -80,22 +80,22 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 WARNING: [Constraints 18-5210] No constraint will be written out.
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.68 ; elapsed = 00:00:00.20 . Memory (MB): peak = 1818.668 ; gain = 11.000 ; free physical = 1309 ; free virtual = 26690
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.61 ; elapsed = 00:00:00.20 . Memory (MB): peak = 1818.664 ; gain = 11.000 ; free physical = 2177 ; free virtual = 26170
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 1818.668 ; gain = 588.352 ; free physical = 1470 ; free virtual = 26851
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 1818.664 ; gain = 588.352 ; free physical = 2085 ; free virtual = 26089
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 1818.668 ; gain = 588.352 ; free physical = 1470 ; free virtual = 26851
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 1818.664 ; gain = 588.352 ; free physical = 2085 ; free virtual = 26089
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 1818.668 ; gain = 588.352 ; free physical = 1470 ; free virtual = 26851
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 1818.664 ; gain = 588.352 ; free physical = 2087 ; free virtual = 26091
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'r_state_reg' in module 'rsa_wrapper'
 INFO: [Synth 8-802] inferred FSM for state register 'param_cnt_reg' in module 'rsa_wrapper'
@@ -134,14 +134,14 @@ INFO: [Synth 8-3354] encoded FSM with state register 'param_cnt_reg' using encod
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'r_state_reg' using encoding 'one-hot' in module 'rsa_wrapper'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 1818.668 ; gain = 588.352 ; free physical = 1453 ; free virtual = 26835
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:22 . Memory (MB): peak = 1818.664 ; gain = 588.352 ; free physical = 2070 ; free virtual = 26078
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+--------------------+------------+----------+
 |      |RTL Partition       |Replication |Instances |
 +------+--------------------+------------+----------+
-|1     |mpadder             |           2|     11291|
+|1     |mpadder             |           2|     11256|
 |2     |montgomery__GC0     |           1|      9304|
 |3     |montgomery_exp__GC0 |           1|     13381|
 |4     |rsa_wrapper__GC0    |           1|      5307|
@@ -159,7 +159,7 @@ INFO: [Synth 8-3538] Detected potentially large (wide) register regC_Q_reg [/hom
 INFO: [Synth 8-3538] Detected potentially large (wide) register regC_sub_reg [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/montgomery.v:111]
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     73 Bit       Adders := 112   
+	   2 Input    113 Bit       Adders := 72    
 	   3 Input     20 Bit       Adders := 4     
 	   2 Input     11 Bit       Adders := 3     
 +---XORs : 
@@ -168,18 +168,18 @@ Detailed RTL Component Info :
 +---Registers : 
 	             1028 Bit    Registers := 8     
 	             1024 Bit    Registers := 10    
-	               72 Bit    Registers := 112   
+	              112 Bit    Registers := 72    
 	               11 Bit    Registers := 3     
-	                1 Bit    Registers := 140   
+	                1 Bit    Registers := 100   
 +---Muxes : 
 	   2 Input   1028 Bit        Muxes := 8     
 	   2 Input   1024 Bit        Muxes := 12    
-	   2 Input     72 Bit        Muxes := 56    
+	   2 Input    112 Bit        Muxes := 36    
 	   6 Input      6 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 5     
 	   4 Input      6 Bit        Muxes := 1     
 	   6 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 79    
+	   2 Input      1 Bit        Muxes := 59    
 	   3 Input      1 Bit        Muxes := 7     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -194,142 +194,92 @@ Hierarchical RTL Component report
 Module carry_sel_adder__1 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     73 Bit       Adders := 2     
+	   2 Input    113 Bit       Adders := 2     
 +---Registers : 
-	               72 Bit    Registers := 2     
+	              112 Bit    Registers := 2     
 	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     72 Bit        Muxes := 1     
+	   2 Input    112 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
 Module carry_sel_adder__2 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     73 Bit       Adders := 2     
+	   2 Input    113 Bit       Adders := 2     
 +---Registers : 
-	               72 Bit    Registers := 2     
+	              112 Bit    Registers := 2     
 	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     72 Bit        Muxes := 1     
+	   2 Input    112 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
 Module carry_sel_adder__3 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     73 Bit       Adders := 2     
+	   2 Input    113 Bit       Adders := 2     
 +---Registers : 
-	               72 Bit    Registers := 2     
+	              112 Bit    Registers := 2     
 	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     72 Bit        Muxes := 1     
+	   2 Input    112 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
 Module carry_sel_adder__4 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     73 Bit       Adders := 2     
+	   2 Input    113 Bit       Adders := 2     
 +---Registers : 
-	               72 Bit    Registers := 2     
+	              112 Bit    Registers := 2     
 	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     72 Bit        Muxes := 1     
+	   2 Input    112 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
 Module carry_sel_adder__5 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     73 Bit       Adders := 2     
+	   2 Input    113 Bit       Adders := 2     
 +---Registers : 
-	               72 Bit    Registers := 2     
+	              112 Bit    Registers := 2     
 	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     72 Bit        Muxes := 1     
+	   2 Input    112 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
 Module carry_sel_adder__6 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     73 Bit       Adders := 2     
+	   2 Input    113 Bit       Adders := 2     
 +---Registers : 
-	               72 Bit    Registers := 2     
+	              112 Bit    Registers := 2     
 	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     72 Bit        Muxes := 1     
+	   2 Input    112 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
 Module carry_sel_adder__7 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     73 Bit       Adders := 2     
+	   2 Input    113 Bit       Adders := 2     
 +---Registers : 
-	               72 Bit    Registers := 2     
+	              112 Bit    Registers := 2     
 	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     72 Bit        Muxes := 1     
+	   2 Input    112 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
 Module carry_sel_adder__8 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     73 Bit       Adders := 2     
+	   2 Input    113 Bit       Adders := 2     
 +---Registers : 
-	               72 Bit    Registers := 2     
+	              112 Bit    Registers := 2     
 	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     72 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
-Module carry_sel_adder__9 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     73 Bit       Adders := 2     
-+---Registers : 
-	               72 Bit    Registers := 2     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input     72 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
-Module carry_sel_adder__10 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     73 Bit       Adders := 2     
-+---Registers : 
-	               72 Bit    Registers := 2     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input     72 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
-Module carry_sel_adder__11 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     73 Bit       Adders := 2     
-+---Registers : 
-	               72 Bit    Registers := 2     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input     72 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
-Module carry_sel_adder__12 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     73 Bit       Adders := 2     
-+---Registers : 
-	               72 Bit    Registers := 2     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input     72 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
-Module carry_sel_adder__13 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     73 Bit       Adders := 2     
-+---Registers : 
-	               72 Bit    Registers := 2     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input     72 Bit        Muxes := 1     
+	   2 Input    112 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
 Module carry_sel_adder 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     73 Bit       Adders := 2     
+	   2 Input    113 Bit       Adders := 2     
 +---Registers : 
-	               72 Bit    Registers := 2     
+	              112 Bit    Registers := 2     
 	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     72 Bit        Muxes := 1     
+	   2 Input    112 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
 Module mpadder 
 Detailed RTL Component Info : 
@@ -395,6 +345,46 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 INFO: [Synth 8-3917] design rsa_project_rsa_wrapper_0_0 has port leds[3] driven by constant 0
+WARNING: [Synth 8-3332] Sequential element (S1_reg[111]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[110]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[109]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[108]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[107]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[106]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[105]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[104]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[103]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[102]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[101]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[100]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[99]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[98]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[97]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[96]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[95]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[94]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[93]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[92]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[91]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[90]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[89]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[88]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[87]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[86]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[85]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[84]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[83]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[82]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[81]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[80]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[79]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[78]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[77]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[76]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[75]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[74]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[73]) is unused and will be removed from module carry_sel_adder__1.
+WARNING: [Synth 8-3332] Sequential element (S1_reg[72]) is unused and will be removed from module carry_sel_adder__1.
 WARNING: [Synth 8-3332] Sequential element (S1_reg[71]) is unused and will be removed from module carry_sel_adder__1.
 WARNING: [Synth 8-3332] Sequential element (S1_reg[70]) is unused and will be removed from module carry_sel_adder__1.
 WARNING: [Synth 8-3332] Sequential element (S1_reg[69]) is unused and will be removed from module carry_sel_adder__1.
@@ -455,19 +445,7 @@ WARNING: [Synth 8-3332] Sequential element (S1_reg[15]) is unused and will be re
 WARNING: [Synth 8-3332] Sequential element (S1_reg[14]) is unused and will be removed from module carry_sel_adder__1.
 WARNING: [Synth 8-3332] Sequential element (S1_reg[13]) is unused and will be removed from module carry_sel_adder__1.
 WARNING: [Synth 8-3332] Sequential element (S1_reg[12]) is unused and will be removed from module carry_sel_adder__1.
-WARNING: [Synth 8-3332] Sequential element (S1_reg[11]) is unused and will be removed from module carry_sel_adder__1.
-WARNING: [Synth 8-3332] Sequential element (S1_reg[10]) is unused and will be removed from module carry_sel_adder__1.
-WARNING: [Synth 8-3332] Sequential element (S1_reg[9]) is unused and will be removed from module carry_sel_adder__1.
-WARNING: [Synth 8-3332] Sequential element (S1_reg[8]) is unused and will be removed from module carry_sel_adder__1.
-WARNING: [Synth 8-3332] Sequential element (S1_reg[7]) is unused and will be removed from module carry_sel_adder__1.
-WARNING: [Synth 8-3332] Sequential element (S1_reg[6]) is unused and will be removed from module carry_sel_adder__1.
-WARNING: [Synth 8-3332] Sequential element (S1_reg[5]) is unused and will be removed from module carry_sel_adder__1.
-WARNING: [Synth 8-3332] Sequential element (S1_reg[4]) is unused and will be removed from module carry_sel_adder__1.
-WARNING: [Synth 8-3332] Sequential element (S1_reg[3]) is unused and will be removed from module carry_sel_adder__1.
-WARNING: [Synth 8-3332] Sequential element (S1_reg[2]) is unused and will be removed from module carry_sel_adder__1.
-WARNING: [Synth 8-3332] Sequential element (S1_reg[1]) is unused and will be removed from module carry_sel_adder__1.
-WARNING: [Synth 8-3332] Sequential element (S1_reg[0]) is unused and will be removed from module carry_sel_adder__1.
-WARNING: [Synth 8-3332] Sequential element (C1_reg) is unused and will be removed from module carry_sel_adder__1.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (mont_expi_2/\e_reg_reg[0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (mont_expi_2/\e_reg_reg[1] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (mont_expi_2/\e_reg_reg[2] )
@@ -577,49 +555,47 @@ INFO: [Synth 8-3886] merging instance 'mont_expi_2/e_reg_reg[1004]' (FDE) to 'mo
 INFO: [Synth 8-3886] merging instance 'mont_expi_2/e_reg_reg[1005]' (FDE) to 'mont_expi_2/e_reg_reg[1006]'
 INFO: [Synth 8-3886] merging instance 'mont_expi_2/e_reg_reg[1006]' (FDE) to 'mont_expi_2/e_reg_reg[1007]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:55 ; elapsed = 00:03:18 . Memory (MB): peak = 1818.668 ; gain = 588.352 ; free physical = 1355 ; free virtual = 26767
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:03 ; elapsed = 00:03:26 . Memory (MB): peak = 1818.664 ; gain = 588.352 ; free physical = 1826 ; free virtual = 25935
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+--------------------+------------+----------+
 |      |RTL Partition       |Replication |Instances |
 +------+--------------------+------------+----------+
-|1     |mpadder             |           2|      7368|
+|1     |mpadder             |           2|      7173|
 |2     |montgomery__GC0     |           2|     17518|
 |3     |montgomery_exp__GC0 |           1|     20554|
 |4     |rsa_wrapper__GC0    |           1|      4201|
-|5     |mpadder__1          |           2|      8705|
+|5     |mpadder__1          |           2|      8680|
 +------+--------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:00 ; elapsed = 00:03:25 . Memory (MB): peak = 1818.668 ; gain = 588.352 ; free physical = 1249 ; free virtual = 26660
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:08 ; elapsed = 00:03:33 . Memory (MB): peak = 1818.664 ; gain = 588.352 ; free physical = 1711 ; free virtual = 25824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:03:00 ; elapsed = 00:03:25 . Memory (MB): peak = 1818.668 ; gain = 588.352 ; free physical = 1248 ; free virtual = 26660
+Finished Timing Optimization : Time (s): cpu = 00:03:08 ; elapsed = 00:03:33 . Memory (MB): peak = 1818.664 ; gain = 588.352 ; free physical = 1711 ; free virtual = 25824
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+--------------------+------------+----------+
 |      |RTL Partition       |Replication |Instances |
 +------+--------------------+------------+----------+
-|1     |mpadder             |           2|      7368|
+|1     |mpadder             |           2|      7173|
 |2     |montgomery__GC0     |           2|     17518|
 |3     |montgomery_exp__GC0 |           1|     20554|
 |4     |rsa_wrapper__GC0    |           1|      4201|
-|5     |mpadder__1          |           2|      8705|
+|5     |mpadder__1          |           2|      8680|
 +------+--------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3332] Sequential element (inst/mont_exp/multi_0/regC_Q_reg[1027]) is unused and will be removed from module rsa_project_rsa_wrapper_0_0.
-INFO: [Synth 8-3332] Sequential element (inst/mont_exp/multi_1/regC_Q_reg[1027]) is unused and will be removed from module rsa_project_rsa_wrapper_0_0.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:03:04 ; elapsed = 00:03:29 . Memory (MB): peak = 1818.668 ; gain = 588.352 ; free physical = 1235 ; free virtual = 26647
+Finished Technology Mapping : Time (s): cpu = 00:03:12 ; elapsed = 00:03:38 . Memory (MB): peak = 1818.664 ; gain = 588.352 ; free physical = 1686 ; free virtual = 25801
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -643,7 +619,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:03:07 ; elapsed = 00:03:32 . Memory (MB): peak = 1818.668 ; gain = 588.352 ; free physical = 1231 ; free virtual = 26644
+Finished IO Insertion : Time (s): cpu = 00:03:16 ; elapsed = 00:03:41 . Memory (MB): peak = 1818.664 ; gain = 588.352 ; free physical = 1679 ; free virtual = 25794
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -656,7 +632,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:03:07 ; elapsed = 00:03:33 . Memory (MB): peak = 1818.668 ; gain = 588.352 ; free physical = 1231 ; free virtual = 26643
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:16 ; elapsed = 00:03:41 . Memory (MB): peak = 1818.664 ; gain = 588.352 ; free physical = 1679 ; free virtual = 25794
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -668,25 +644,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:09 ; elapsed = 00:03:35 . Memory (MB): peak = 1818.668 ; gain = 588.352 ; free physical = 1220 ; free virtual = 26632
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:18 ; elapsed = 00:03:43 . Memory (MB): peak = 1818.664 ; gain = 588.352 ; free physical = 1669 ; free virtual = 25785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:03:10 ; elapsed = 00:03:35 . Memory (MB): peak = 1818.668 ; gain = 588.352 ; free physical = 1219 ; free virtual = 26632
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:18 ; elapsed = 00:03:43 . Memory (MB): peak = 1818.664 ; gain = 588.352 ; free physical = 1670 ; free virtual = 25785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:03:11 ; elapsed = 00:03:36 . Memory (MB): peak = 1818.668 ; gain = 588.352 ; free physical = 1217 ; free virtual = 26629
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:19 ; elapsed = 00:03:45 . Memory (MB): peak = 1818.664 ; gain = 588.352 ; free physical = 1669 ; free virtual = 25784
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:03:11 ; elapsed = 00:03:36 . Memory (MB): peak = 1818.668 ; gain = 588.352 ; free physical = 1217 ; free virtual = 26630
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:19 ; elapsed = 00:03:45 . Memory (MB): peak = 1818.664 ; gain = 588.352 ; free physical = 1669 ; free virtual = 25784
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -702,95 +678,75 @@ Report Cell Usage:
 +------+-------+------+
 |      |Cell   |Count |
 +------+-------+------+
-|1     |CARRY4 |  2056|
-|2     |LUT1   |    58|
-|3     |LUT2   |    68|
+|1     |CARRY4 |  2016|
+|2     |LUT1   |    38|
+|3     |LUT2   |    63|
 |4     |LUT3   |  5128|
-|5     |LUT4   |  2146|
-|6     |LUT5   |  8078|
+|5     |LUT4   |  2141|
+|6     |LUT5   |  7994|
 |7     |LUT6   |  4107|
-|8     |FDRE   | 24602|
+|8     |FDRE   | 24479|
 |9     |FDSE   |     2|
 +------+-------+------+
 
 Report Instance Areas: 
-+------+--------------------------------+-------------------+------+
-|      |Instance                        |Module             |Cells |
-+------+--------------------------------+-------------------+------+
-|1     |top                             |                   | 46245|
-|2     |  inst                          |rsa_wrapper        | 46245|
-|3     |    mont_exp                    |montgomery_exp     | 42074|
-|4     |      multi_0                   |montgomery         | 19431|
-|5     |        adder_B                 |mpadder_29         |  8858|
-|6     |          adder_0               |carry_sel_adder_45 |   328|
-|7     |          \genblk1[10].adder_i  |carry_sel_adder_46 |   420|
-|8     |          \genblk1[11].adder_i  |carry_sel_adder_47 |   565|
-|9     |          \genblk1[12].adder_i  |carry_sel_adder_48 |   420|
-|10    |          \genblk1[13].adder_i  |carry_sel_adder_49 |   492|
-|11    |          \genblk1[1].adder_i   |carry_sel_adder_50 |   565|
-|12    |          \genblk1[2].adder_i   |carry_sel_adder_51 |   420|
-|13    |          \genblk1[3].adder_i   |carry_sel_adder_52 |   565|
-|14    |          \genblk1[4].adder_i   |carry_sel_adder_53 |   420|
-|15    |          \genblk1[5].adder_i   |carry_sel_adder_54 |   565|
-|16    |          \genblk1[6].adder_i   |carry_sel_adder_55 |   420|
-|17    |          \genblk1[7].adder_i   |carry_sel_adder_56 |   565|
-|18    |          \genblk1[8].adder_i   |carry_sel_adder_57 |   420|
-|19    |          \genblk1[9].adder_i   |carry_sel_adder_58 |   565|
-|20    |        adder_M                 |mpadder_30         |  5392|
-|21    |          adder_0               |carry_sel_adder_31 |   310|
-|22    |          \genblk1[10].adder_i  |carry_sel_adder_32 |   310|
-|23    |          \genblk1[11].adder_i  |carry_sel_adder_33 |   165|
-|24    |          \genblk1[12].adder_i  |carry_sel_adder_34 |   310|
-|25    |          \genblk1[13].adder_i  |carry_sel_adder_35 |   165|
-|26    |          \genblk1[1].adder_i   |carry_sel_adder_36 |   165|
-|27    |          \genblk1[2].adder_i   |carry_sel_adder_37 |   310|
-|28    |          \genblk1[3].adder_i   |carry_sel_adder_38 |   165|
-|29    |          \genblk1[4].adder_i   |carry_sel_adder_39 |   310|
-|30    |          \genblk1[5].adder_i   |carry_sel_adder_40 |   165|
-|31    |          \genblk1[6].adder_i   |carry_sel_adder_41 |   310|
-|32    |          \genblk1[7].adder_i   |carry_sel_adder_42 |   165|
-|33    |          \genblk1[8].adder_i   |carry_sel_adder_43 |   310|
-|34    |          \genblk1[9].adder_i   |carry_sel_adder_44 |   165|
-|35    |      multi_1                   |montgomery_0       | 20480|
-|36    |        adder_B                 |mpadder            |  8855|
-|37    |          adder_0               |carry_sel_adder_15 |   327|
-|38    |          \genblk1[10].adder_i  |carry_sel_adder_16 |   419|
-|39    |          \genblk1[11].adder_i  |carry_sel_adder_17 |   565|
-|40    |          \genblk1[12].adder_i  |carry_sel_adder_18 |   419|
-|41    |          \genblk1[13].adder_i  |carry_sel_adder_19 |   492|
-|42    |          \genblk1[1].adder_i   |carry_sel_adder_20 |   565|
-|43    |          \genblk1[2].adder_i   |carry_sel_adder_21 |   420|
-|44    |          \genblk1[3].adder_i   |carry_sel_adder_22 |   564|
-|45    |          \genblk1[4].adder_i   |carry_sel_adder_23 |   420|
-|46    |          \genblk1[5].adder_i   |carry_sel_adder_24 |   564|
-|47    |          \genblk1[6].adder_i   |carry_sel_adder_25 |   420|
-|48    |          \genblk1[7].adder_i   |carry_sel_adder_26 |   564|
-|49    |          \genblk1[8].adder_i   |carry_sel_adder_27 |   420|
-|50    |          \genblk1[9].adder_i   |carry_sel_adder_28 |   565|
-|51    |        adder_M                 |mpadder_1          |  5393|
-|52    |          adder_0               |carry_sel_adder    |   310|
-|53    |          \genblk1[10].adder_i  |carry_sel_adder_2  |   310|
-|54    |          \genblk1[11].adder_i  |carry_sel_adder_3  |   165|
-|55    |          \genblk1[12].adder_i  |carry_sel_adder_4  |   310|
-|56    |          \genblk1[13].adder_i  |carry_sel_adder_5  |   165|
-|57    |          \genblk1[1].adder_i   |carry_sel_adder_6  |   165|
-|58    |          \genblk1[2].adder_i   |carry_sel_adder_7  |   310|
-|59    |          \genblk1[3].adder_i   |carry_sel_adder_8  |   165|
-|60    |          \genblk1[4].adder_i   |carry_sel_adder_9  |   310|
-|61    |          \genblk1[5].adder_i   |carry_sel_adder_10 |   165|
-|62    |          \genblk1[6].adder_i   |carry_sel_adder_11 |   310|
-|63    |          \genblk1[7].adder_i   |carry_sel_adder_12 |   165|
-|64    |          \genblk1[8].adder_i   |carry_sel_adder_13 |   310|
-|65    |          \genblk1[9].adder_i   |carry_sel_adder_14 |   165|
-+------+--------------------------------+-------------------+------+
++------+-------------------------------+-------------------+------+
+|      |Instance                       |Module             |Cells |
++------+-------------------------------+-------------------+------+
+|1     |top                            |                   | 45968|
+|2     |  inst                         |rsa_wrapper        | 45968|
+|3     |    mont_exp                   |montgomery_exp     | 41797|
+|4     |      multi_0                  |montgomery         | 19295|
+|5     |        adder_B                |mpadder_19         |  8739|
+|6     |          adder_0              |carry_sel_adder_30 |   509|
+|7     |          \genblk1[1].adder_i  |carry_sel_adder_31 |   876|
+|8     |          \genblk1[2].adder_i  |carry_sel_adder_32 |   650|
+|9     |          \genblk1[3].adder_i  |carry_sel_adder_33 |   876|
+|10    |          \genblk1[4].adder_i  |carry_sel_adder_34 |   650|
+|11    |          \genblk1[5].adder_i  |carry_sel_adder_35 |   876|
+|12    |          \genblk1[6].adder_i  |carry_sel_adder_36 |   650|
+|13    |          \genblk1[7].adder_i  |carry_sel_adder_37 |   875|
+|14    |          \genblk1[8].adder_i  |carry_sel_adder_38 |   650|
+|15    |        adder_M                |mpadder_20         |  5375|
+|16    |          adder_0              |carry_sel_adder_21 |   480|
+|17    |          \genblk1[1].adder_i  |carry_sel_adder_22 |   255|
+|18    |          \genblk1[2].adder_i  |carry_sel_adder_23 |   480|
+|19    |          \genblk1[3].adder_i  |carry_sel_adder_24 |   255|
+|20    |          \genblk1[4].adder_i  |carry_sel_adder_25 |   480|
+|21    |          \genblk1[5].adder_i  |carry_sel_adder_26 |   255|
+|22    |          \genblk1[6].adder_i  |carry_sel_adder_27 |   480|
+|23    |          \genblk1[7].adder_i  |carry_sel_adder_28 |   255|
+|24    |          \genblk1[8].adder_i  |carry_sel_adder_29 |   367|
+|25    |      multi_1                  |montgomery_0       | 20349|
+|26    |        adder_B                |mpadder            |  8741|
+|27    |          adder_0              |carry_sel_adder_10 |   509|
+|28    |          \genblk1[1].adder_i  |carry_sel_adder_11 |   876|
+|29    |          \genblk1[2].adder_i  |carry_sel_adder_12 |   650|
+|30    |          \genblk1[3].adder_i  |carry_sel_adder_13 |   876|
+|31    |          \genblk1[4].adder_i  |carry_sel_adder_14 |   649|
+|32    |          \genblk1[5].adder_i  |carry_sel_adder_15 |   876|
+|33    |          \genblk1[6].adder_i  |carry_sel_adder_16 |   650|
+|34    |          \genblk1[7].adder_i  |carry_sel_adder_17 |   875|
+|35    |          \genblk1[8].adder_i  |carry_sel_adder_18 |   650|
+|36    |        adder_M                |mpadder_1          |  5376|
+|37    |          adder_0              |carry_sel_adder    |   480|
+|38    |          \genblk1[1].adder_i  |carry_sel_adder_2  |   255|
+|39    |          \genblk1[2].adder_i  |carry_sel_adder_3  |   480|
+|40    |          \genblk1[3].adder_i  |carry_sel_adder_4  |   255|
+|41    |          \genblk1[4].adder_i  |carry_sel_adder_5  |   480|
+|42    |          \genblk1[5].adder_i  |carry_sel_adder_6  |   255|
+|43    |          \genblk1[6].adder_i  |carry_sel_adder_7  |   480|
+|44    |          \genblk1[7].adder_i  |carry_sel_adder_8  |   255|
+|45    |          \genblk1[8].adder_i  |carry_sel_adder_9  |   367|
++------+-------------------------------+-------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:03:11 ; elapsed = 00:03:36 . Memory (MB): peak = 1818.668 ; gain = 588.352 ; free physical = 1216 ; free virtual = 26629
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:19 ; elapsed = 00:03:45 . Memory (MB): peak = 1818.664 ; gain = 588.352 ; free physical = 1670 ; free virtual = 25785
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 73 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:03:02 ; elapsed = 00:03:20 . Memory (MB): peak = 1818.668 ; gain = 144.348 ; free physical = 1270 ; free virtual = 26682
-Synthesis Optimization Complete : Time (s): cpu = 00:03:11 ; elapsed = 00:03:36 . Memory (MB): peak = 1818.668 ; gain = 588.352 ; free physical = 1270 ; free virtual = 26682
+Synthesis finished with 0 errors, 0 critical warnings and 113 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:03:10 ; elapsed = 00:03:28 . Memory (MB): peak = 1818.664 ; gain = 144.348 ; free physical = 1727 ; free virtual = 25843
+Synthesis Optimization Complete : Time (s): cpu = 00:03:19 ; elapsed = 00:03:45 . Memory (MB): peak = 1818.664 ; gain = 588.352 ; free physical = 1727 ; free virtual = 25843
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 2056 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 2016 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -798,16 +754,16 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-162 Infos, 82 Warnings, 0 Critical Warnings and 0 Errors encountered.
+161 Infos, 109 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:03:17 ; elapsed = 00:03:42 . Memory (MB): peak = 1858.332 ; gain = 639.746 ; free physical = 1245 ; free virtual = 26658
+synth_design: Time (s): cpu = 00:03:26 ; elapsed = 00:03:50 . Memory (MB): peak = 1857.953 ; gain = 639.371 ; free physical = 1698 ; free virtual = 25815
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint '/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.runs/rsa_project_rsa_wrapper_0_0_synth_1/rsa_project_rsa_wrapper_0_0.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1882.344 ; gain = 24.012 ; free physical = 1221 ; free virtual = 26641
-INFO: [Coretcl 2-1174] Renamed 64 cell refs.
+write_checkpoint: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1881.965 ; gain = 24.012 ; free physical = 1688 ; free virtual = 25814
+INFO: [Coretcl 2-1174] Renamed 44 cell refs.
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint '/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.runs/rsa_project_rsa_wrapper_0_0_synth_1/rsa_project_rsa_wrapper_0_0.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1882.344 ; gain = 0.000 ; free physical = 1197 ; free virtual = 26640
+write_checkpoint: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1881.965 ; gain = 0.000 ; free physical = 1647 ; free virtual = 25798
 INFO: [runtcl-4] Executing : report_utilization -file rsa_project_rsa_wrapper_0_0_utilization_synth.rpt -pb rsa_project_rsa_wrapper_0_0_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.29 ; elapsed = 00:00:00.32 . Memory (MB): peak = 1882.344 ; gain = 0.000 ; free physical = 1192 ; free virtual = 26635
-INFO: [Common 17-206] Exiting Vivado at Wed Dec  1 23:28:31 2021...
+report_utilization: Time (s): cpu = 00:00:00.31 ; elapsed = 00:00:00.33 . Memory (MB): peak = 1881.965 ; gain = 0.000 ; free physical = 1642 ; free virtual = 25793
+INFO: [Common 17-206] Exiting Vivado at Thu Dec  2 21:40:27 2021...

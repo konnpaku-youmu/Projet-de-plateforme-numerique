@@ -43,42 +43,43 @@
 #define alloca _alloca
 #endif
 typedef void (*funcp)(char *, char *);
+extern void execute_22(char*, char *);
+extern void execute_23(char*, char *);
+extern void execute_24(char*, char *);
+extern void execute_27(char*, char *);
+extern void execute_53(char*, char *);
+extern void execute_54(char*, char *);
+extern void execute_55(char*, char *);
+extern void execute_56(char*, char *);
+extern void execute_57(char*, char *);
+extern void execute_58(char*, char *);
+extern void execute_59(char*, char *);
+extern void execute_19(char*, char *);
+extern void execute_20(char*, char *);
+extern void execute_21(char*, char *);
+extern void vlog_simple_process_execute_0_fast_no_reg_no_agg(char*, char*, char*);
+extern void execute_33(char*, char *);
+extern void execute_34(char*, char *);
+extern void execute_51(char*, char *);
+extern void execute_4(char*, char *);
+extern void execute_35(char*, char *);
+extern void execute_36(char*, char *);
+extern void execute_29(char*, char *);
+extern void execute_30(char*, char *);
+extern void execute_31(char*, char *);
+extern void execute_60(char*, char *);
+extern void execute_61(char*, char *);
 extern void execute_62(char*, char *);
 extern void execute_63(char*, char *);
 extern void execute_64(char*, char *);
-extern void execute_67(char*, char *);
-extern void execute_132(char*, char *);
-extern void execute_133(char*, char *);
-extern void execute_134(char*, char *);
-extern void execute_135(char*, char *);
-extern void execute_136(char*, char *);
-extern void execute_137(char*, char *);
-extern void execute_138(char*, char *);
-extern void execute_59(char*, char *);
-extern void execute_60(char*, char *);
-extern void execute_61(char*, char *);
-extern void vlog_simple_process_execute_0_fast_no_reg_no_agg(char*, char*, char*);
-extern void execute_73(char*, char *);
-extern void execute_130(char*, char *);
-extern void execute_4(char*, char *);
-extern void execute_74(char*, char *);
-extern void execute_75(char*, char *);
-extern void execute_69(char*, char *);
-extern void execute_70(char*, char *);
-extern void execute_71(char*, char *);
-extern void execute_139(char*, char *);
-extern void execute_140(char*, char *);
-extern void execute_141(char*, char *);
-extern void execute_142(char*, char *);
-extern void execute_143(char*, char *);
 extern void vlog_transfunc_eventcallback(char*, char*, unsigned, unsigned, unsigned, char *);
 extern void transaction_7(char*, char*, unsigned, unsigned, unsigned);
-funcp funcTab[30] = {(funcp)execute_62, (funcp)execute_63, (funcp)execute_64, (funcp)execute_67, (funcp)execute_132, (funcp)execute_133, (funcp)execute_134, (funcp)execute_135, (funcp)execute_136, (funcp)execute_137, (funcp)execute_138, (funcp)execute_59, (funcp)execute_60, (funcp)execute_61, (funcp)vlog_simple_process_execute_0_fast_no_reg_no_agg, (funcp)execute_73, (funcp)execute_130, (funcp)execute_4, (funcp)execute_74, (funcp)execute_75, (funcp)execute_69, (funcp)execute_70, (funcp)execute_71, (funcp)execute_139, (funcp)execute_140, (funcp)execute_141, (funcp)execute_142, (funcp)execute_143, (funcp)vlog_transfunc_eventcallback, (funcp)transaction_7};
-const int NumRelocateId= 30;
+funcp funcTab[31] = {(funcp)execute_22, (funcp)execute_23, (funcp)execute_24, (funcp)execute_27, (funcp)execute_53, (funcp)execute_54, (funcp)execute_55, (funcp)execute_56, (funcp)execute_57, (funcp)execute_58, (funcp)execute_59, (funcp)execute_19, (funcp)execute_20, (funcp)execute_21, (funcp)vlog_simple_process_execute_0_fast_no_reg_no_agg, (funcp)execute_33, (funcp)execute_34, (funcp)execute_51, (funcp)execute_4, (funcp)execute_35, (funcp)execute_36, (funcp)execute_29, (funcp)execute_30, (funcp)execute_31, (funcp)execute_60, (funcp)execute_61, (funcp)execute_62, (funcp)execute_63, (funcp)execute_64, (funcp)vlog_transfunc_eventcallback, (funcp)transaction_7};
+const int NumRelocateId= 31;
 
 void relocate(char *dp)
 {
-	iki_relocate(dp, "xsim.dir/tb_adder_behav/xsim.reloc",  (void **)funcTab, 30);
+	iki_relocate(dp, "xsim.dir/tb_adder_behav/xsim.reloc",  (void **)funcTab, 31);
 
 	/*Populate the transaction function pointer field in the whole net structure */
 }
