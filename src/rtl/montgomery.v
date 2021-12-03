@@ -214,7 +214,6 @@ module montgomery_exp (
     wire inLoop;
     assign inLoop = ~(regStart || start);
 
-    // todo: modify here
     reg [10:0] shift_counter;
     always @(posedge clk) begin
         if (~resetn || start)
@@ -225,11 +224,9 @@ module montgomery_exp (
             shift_counter <= shift_counter + 1;
     end
     
-    // todo: modify here
     wire outLoop;
     assign outLoop = inLoop && ((encryp_mode == 0) ? shift_counter[4] : shift_counter[10]);
     
-    // todo: modify here
     // shift register for the exponent
     reg [1023:0] e_reg;
     always @(posedge clk) begin

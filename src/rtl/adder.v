@@ -1,9 +1,9 @@
 `timescale 1ns / 1ps
 
-`define ADDER_W 36
-`define ADDER_NUM 28
+`define ADDER_W 112
+`define ADDER_NUM 9
 
-(* use_dsp = "yes" *) module carry_sel_adder(input wire clk,
+module carry_sel_adder(input wire clk,
                        input wire [`ADDER_W-1:0] A,
                        input wire [`ADDER_W-1:0] B,
                        input wire cin,

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="rsa_project_rsa_wrapper_0_0_synth_1" LaunchDir="/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.runs/rsa_project_rsa_wrapper_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_3" LaunchDir="/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.runs/synth_3" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="rsa_project_rsa_wrapper_0_0_synth_1"/>
+	</Run>
+</Runs>
+

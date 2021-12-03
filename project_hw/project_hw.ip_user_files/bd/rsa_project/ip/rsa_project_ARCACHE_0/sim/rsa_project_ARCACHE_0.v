@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:ip:xlconstant:1.1
-// IP Revision: 7
+// IP Revision: 5
 
 `timescale 1ns/1ps
 
@@ -59,9 +59,9 @@ module rsa_project_ARCACHE_0 (
 
 output wire [3 : 0] dout;
 
-  xlconstant_v1_1_7_xlconstant #(
+  xlconstant_v1_1_5_xlconstant #(
     .CONST_WIDTH(4),
-    .CONST_VAL(4'H2)
+    .CONST_VAL('H2)
   ) inst (
     .dout(dout)
   );
