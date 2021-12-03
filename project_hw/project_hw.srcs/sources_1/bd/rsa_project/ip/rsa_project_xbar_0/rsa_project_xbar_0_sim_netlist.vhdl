@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
--- Date        : Wed Dec  1 13:54:29 2021
+-- Date        : Wed Dec  1 13:54:28 2021
 -- Host        : archHome running 64-bit Arch Linux
--- Command     : write_vhdl -force -mode funcsim
---               /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.srcs/sources_1/bd/rsa_project/ip/rsa_project_xbar_0/rsa_project_xbar_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top rsa_project_xbar_0 -prefix
+--               rsa_project_xbar_0_ rsa_project_xbar_0_sim_netlist.vhdl
 -- Design      : rsa_project_xbar_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -66,8 +66,6 @@ entity rsa_project_xbar_0_axi_crossbar_v2_1_18_addr_arbiter_sasd is
     s_axi_araddr : in STD_LOGIC_VECTOR ( 31 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of rsa_project_xbar_0_axi_crossbar_v2_1_18_addr_arbiter_sasd : entity is "axi_crossbar_v2_1_18_addr_arbiter_sasd";
 end rsa_project_xbar_0_axi_crossbar_v2_1_18_addr_arbiter_sasd;
 
 architecture STRUCTURE of rsa_project_xbar_0_axi_crossbar_v2_1_18_addr_arbiter_sasd is
@@ -1407,8 +1405,6 @@ entity rsa_project_xbar_0_axi_crossbar_v2_1_18_decerr_slave is
     m_ready_d_0 : in STD_LOGIC_VECTOR ( 0 to 0 );
     \gen_no_arbiter.grant_rnw_reg_1\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of rsa_project_xbar_0_axi_crossbar_v2_1_18_decerr_slave : entity is "axi_crossbar_v2_1_18_decerr_slave";
 end rsa_project_xbar_0_axi_crossbar_v2_1_18_decerr_slave;
 
 architecture STRUCTURE of rsa_project_xbar_0_axi_crossbar_v2_1_18_decerr_slave is
@@ -1612,8 +1608,6 @@ entity rsa_project_xbar_0_axi_crossbar_v2_1_18_splitter is
     \gen_no_arbiter.grant_rnw_reg_0\ : in STD_LOGIC;
     aclk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of rsa_project_xbar_0_axi_crossbar_v2_1_18_splitter : entity is "axi_crossbar_v2_1_18_splitter";
 end rsa_project_xbar_0_axi_crossbar_v2_1_18_splitter;
 
 architecture STRUCTURE of rsa_project_xbar_0_axi_crossbar_v2_1_18_splitter is
@@ -1819,8 +1813,6 @@ entity rsa_project_xbar_0_axi_crossbar_v2_1_18_crossbar_sasd is
     s_axi_araddr : in STD_LOGIC_VECTOR ( 31 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of rsa_project_xbar_0_axi_crossbar_v2_1_18_crossbar_sasd : entity is "axi_crossbar_v2_1_18_crossbar_sasd";
 end rsa_project_xbar_0_axi_crossbar_v2_1_18_crossbar_sasd;
 
 architecture STRUCTURE of rsa_project_xbar_0_axi_crossbar_v2_1_18_crossbar_sasd is
@@ -2578,8 +2570,6 @@ entity rsa_project_xbar_0_axi_crossbar_v2_1_18_axi_crossbar is
   attribute C_S_AXI_WRITE_ACCEPTANCE of rsa_project_xbar_0_axi_crossbar_v2_1_18_axi_crossbar : entity is 1;
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of rsa_project_xbar_0_axi_crossbar_v2_1_18_axi_crossbar : entity is "yes";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of rsa_project_xbar_0_axi_crossbar_v2_1_18_axi_crossbar : entity is "axi_crossbar_v2_1_18_axi_crossbar";
   attribute P_ADDR_DECODE : integer;
   attribute P_ADDR_DECODE of rsa_project_xbar_0_axi_crossbar_v2_1_18_axi_crossbar : entity is 1;
   attribute P_AXI3 : integer;

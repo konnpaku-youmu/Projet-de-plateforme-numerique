@@ -41,8 +41,7 @@ module tb_montgomery();
     .in_b   (in_b),
     .in_m   (in_m),
     .result (result),
-    .done   (done)
-    );
+    .done   (done));
     
     //Generate a clock
     initial begin
@@ -73,7 +72,7 @@ module tb_montgomery();
         $display("error             = %x", expected-result);
         result_ok                   = (expected == result);
 
-        #10000;
+        #`CLK_PERIOD;
         
         in_a     <= 1024'h9da047286698f2932ccdcde2caf34892b5083b6ef547230d1a6bed0da3fc78d72077d83a31a9424acfe163b207771176b6c65dd7a805034a6b0116c56eebfbc8b8c19bfcade49f58569b76406a21f3178d13fa5d89c1fbe1ea3385eb3865e4cfa25c0672597aee9573e8f2dda745e2b3a5d473bcc8b1b3834b9d13403137b47e;
         in_b     <= 1024'h325fbd7c1f8b70dc75209a0b742349cb71020cbbae206caed0e657e384d7b16bcfd33d90bf6368ee24f8737298ec20303c05601234f4741fe1aaf4120128ef7350bdcaaaa3ef118fe1572a3d40de00bdf0198db7abc69dcec9ebbfed1c4787ca567cbb40f0f682ea5f4b7f31df94a2a9eb5741e69ef568e23451578e0424f325;
@@ -86,7 +85,7 @@ module tb_montgomery();
         $display("result expected   = %x", expected);
         $display("error             = %x", expected-result);
         result_ok                   = (expected == result);
-        #10000;
+        #`CLK_PERIOD;
 
         in_a <= 1024'h6babbe7a106a56e7a5a76924c87cfe229b3e665e39d75ca2c1f0b78c7a6411c10adfd1643bd181b10e6f709896d7b75366a06e3c42fcb114f04c49b8a15443cd17337b208daad29c795cf7eb83566212bfd960e8316dbed31f372c50b0ddc5d9d57b4cf668c52313103f3cf8dc25c970e5993b92c054d4a48873ae3d2b5d3042;
         in_b <= 1024'h8cee6a74a9c690a91ad6c0e9be42b652d7612f31883439f3b0ef3984a6243d68977511bb9cfffd970340ae48fd0015e586cd8189972db443a83c9ac4954faff6e6dbe5ba9398c8211446ec6498ec75ccc7a2b19d4585e0b888968c780d7106bf4ff1c9ab2336d5eb7482815e7a9cabbcdac0b848150b70aa288affd0741f0e94;
@@ -99,7 +98,7 @@ module tb_montgomery();
         $display("result expected   = %x", expected);
         $display("error             = %x", expected-result);
         result_ok                   = (expected == result);
-        #10000;
+        #`CLK_PERIOD;
 
         in_a <= 1024'h17b14be13d5251e0d4ae3f830f544b099075a6ab9f33a3e3b5b497f557387712f96a9f72382eace2ee4295008acc1d6863666f0c9440d42045f156aa8f1de2e184bd0528b8e010e259e8cade3a420061eb2ce5e7fbae449c58f612430bcb73ca3cfdf4972891150e529b07c2f2cb46d5d4265a48ba63d5aa430253f876706f7f;
         in_b <= 1024'hae98ab2a208427fa046e893bfbff44a03a0756fcdd3c3202058f5390d7697c81d66b99e5d4a59638c06f39ba5e3ab98f711ed8c2cd285719e7a259ce6440fc10bad3043709fdf5fa2c6701d9875ef65a0cddb8567c631081daf49a5e8af177c1c4933efaa45a29fb3b9fed21548a5b3a467b9469e3bc7ab635093e43a934e7b7;

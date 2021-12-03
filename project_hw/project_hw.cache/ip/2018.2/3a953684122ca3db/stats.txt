@@ -1,4 +1,4 @@
-NumberHits:12
-Timestamp: Fri Dec 03 00:31:34 UTC 2021
+NumberHits:27
+Timestamp: Fri Dec 03 20:13:07 UTC 2021
 VLNV: xilinx.com:ip:axi_crossbar:2.1
 SynthRuntime: 69

@@ -17,7 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
 set_msg_config -id {HDL-1065} -limit 10000
 set_msg_config  -ruleid {1}  -id {Synth 8-327}  -new_severity {ERROR} 
 set_msg_config  -ruleid {10}  -id {IP_Flow 19-2207}  -new_severity {INFO} 
