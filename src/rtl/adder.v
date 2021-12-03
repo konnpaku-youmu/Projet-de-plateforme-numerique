@@ -2,6 +2,7 @@
 
 `define ADDER_W 112
 `define ADDER_NUM 9
+`define MSB_ADDER_W 19
 
 module carry_sel_adder(input wire clk,
                        input wire [`ADDER_W-1:0] A,
@@ -24,6 +25,27 @@ module carry_sel_adder(input wire clk,
     
 endmodule
     
+module carry_sel_adder_msb(input wire clk,
+                           input wire [`MSB_ADDER_W-1:0] A,
+                           input wire [`MSB_ADDER_W-1:0] B,
+                           input wire cin,
+                           output wire [`MSB_ADDER_W-1:0] S,
+                           output wire cout);
+    
+    reg [`MSB_ADDER_W-1:0] S0, S1;
+    reg C0, C1;
+    
+    always @(posedge clk)
+    begin
+        {C0, S0} <= A + B;
+        {C1, S1} <= A + B + `MSB_ADDER_W'b1;
+    end
+    
+    assign cout = (cin == 1'b1) ? C1 : C0;
+    assign S    = (cin == 1'b1) ? S1 : S0;
+    
+endmodule
+
 module mpadder(
         input  wire          clk,
         input  wire          resetn,
@@ -31,7 +53,7 @@ module mpadder(
         input  wire          subtract,
         input  wire [1026:0] in_a,
         input  wire [1026:0] in_b,
-        output reg  [1027:0] result,
+        output wire  [1027:0] result,
         output wire          done
         );
         
@@ -41,7 +63,7 @@ module mpadder(
         
         wire [1026:0] in_b_xor;
         wire [1026:0] adder_res;
-        wire [`ADDER_NUM:0] carries;
+        wire [`ADDER_NUM+1:0] carries;
         
         assign in_b_xor = in_b ^ {1027{subtract}};
         
@@ -51,51 +73,16 @@ module mpadder(
             carry_sel_adder adder_i(clk, in_a[`ADDER_W*i + `ADDER_W-1 : `ADDER_W*i], in_b_xor[`ADDER_W*i + `ADDER_W-1 : `ADDER_W*i], carries[i-1], adder_res[`ADDER_W*i + `ADDER_W-1 : `ADDER_W*i], carries[i]);
         end
         
-        assign {carries[`ADDER_NUM], adder_res[1026:1008]} = in_a[1026:1008] + in_b_xor[1026:1008] + carries[`ADDER_NUM-1];
-        
-        reg state, next_state;
-        
-        always @(*)
-        begin
-            if (~resetn | start)
-                state <= 2'b0;      // Idle
-            else
-                state <= next_state;
-        end
-        
-        always @(posedge clk)
-        begin
-            case(state)
-                1'b0:begin
-                    if (start)
-                        next_state <= 1'b1;
-                    else
-                        next_state <= 1'b0;
-                end
-                1'b1:begin
-                    next_state <= 1'b0;
-                end
-                default: next_state <= 1'b0;
-            endcase
-        end
+        // assign {carries[`ADDER_NUM], adder_res[1026:1008]} = in_a[1026:1008] + in_b_xor[1026:1008] + carries[`ADDER_NUM-1];
+        carry_sel_adder_msb adder_msb(clk, in_a[1026:1008], in_b_xor[1026:1008], carries[`ADDER_NUM - 1], adder_res[1026:1008], carries[`ADDER_NUM]);
+
+        assign result  = {carries[`ADDER_NUM]^subtract, adder_res};
         
         reg regDone;
         
         always @(posedge clk)
         begin
-            if(~resetn || start)
-            begin
-                regDone <= 1'b0;
-                result <= 0;
-            end
-            
-            if (state == 1) begin
-                result       = {carries[`ADDER_NUM], adder_res};
-                result[1027] = result[1027] ^ subtract;
-                regDone <= 1'b1;
-            end else begin
-                regDone <= 1'b0;
-            end
+            regDone <= start;
         end
         
         assign done = regDone;
