@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date             : Thu Dec  2 21:45:52 2021
+| Date             : Fri Dec  3 01:37:55 2021
 | Host             : archHome running 64-bit Arch Linux
 | Command          : report_power -file rsa_project_wrapper_power_routed.rpt -pb rsa_project_wrapper_power_summary_routed.pb -rpx rsa_project_wrapper_power_routed.rpx
 | Design           : rsa_project_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.877        |
+| Total On-Chip Power (W)  | 1.738        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.728        |
-| Device Static (W)        | 0.150        |
+| Dynamic (W)              | 1.595        |
+| Device Static (W)        | 0.143        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 63.4         |
-| Junction Temperature (C) | 46.6         |
+| Max Ambient (C)          | 65.0         |
+| Junction Temperature (C) | 45.0         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,20 +52,20 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.082 |        3 |       --- |             --- |
-| Slice Logic              |     0.133 |    54729 |       --- |             --- |
-|   LUT as Logic           |     0.105 |    19396 |     53200 |           36.46 |
-|   Register               |     0.015 |    29331 |    106400 |           27.57 |
-|   CARRY4                 |     0.012 |     2050 |     13300 |           15.41 |
+| Clocks                   |     0.075 |        3 |       --- |             --- |
+| Slice Logic              |     0.098 |    57785 |       --- |             --- |
+|   LUT as Logic           |     0.075 |    20428 |     53200 |           38.40 |
+|   Register               |     0.011 |    31357 |    106400 |           29.47 |
+|   CARRY4                 |     0.011 |     2050 |     13300 |           15.41 |
 |   F7/F8 Muxes            |    <0.001 |      256 |     53200 |            0.48 |
 |   LUT as Distributed RAM |    <0.001 |       10 |     17400 |            0.06 |
 |   LUT as Shift Register  |    <0.001 |      165 |     17400 |            0.95 |
-|   Others                 |     0.000 |      459 |       --- |             --- |
-| Signals                  |     0.252 |    40181 |       --- |             --- |
-| I/O                      |    <0.001 |        4 |       125 |            3.20 |
+|   Others                 |     0.000 |      460 |       --- |             --- |
+| Signals                  |     0.162 |    42216 |       --- |             --- |
+| I/O                      |     0.000 |        4 |       125 |            3.20 |
 | PS7                      |     1.260 |        1 |       --- |             --- |
-| Static Power             |     0.150 |          |           |                 |
-| Total                    |     1.877 |          |           |                 |
+| Static Power             |     0.143 |          |           |                 |
+| Total                    |     1.738 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,9 +75,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.483 |       0.467 |      0.016 |
-| Vccaux    |       1.800 |     0.016 |       0.000 |      0.016 |
-| Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
+| Vccint    |       1.000 |     0.350 |       0.335 |      0.015 |
+| Vccaux    |       1.800 |     0.015 |       0.000 |      0.015 |
+| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -88,7 +88,7 @@ Table of Contents
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccpint   |       1.000 |     0.683 |       0.651 |      0.032 |
+| Vccpint   |       1.000 |     0.681 |       0.651 |      0.031 |
 | Vccpaux   |       1.800 |     0.036 |       0.026 |      0.010 |
 | Vccpll    |       1.800 |     0.017 |       0.014 |      0.003 |
 | Vcco_ddr  |       1.500 |     0.354 |       0.352 |      0.002 |
@@ -151,9 +151,9 @@ Table of Contents
 +-------------------------------------------------------------------------------------+-----------+
 | Name                                                                                | Power (W) |
 +-------------------------------------------------------------------------------------+-----------+
-| rsa_project_wrapper                                                                 |     1.728 |
-|   rsa_project_i                                                                     |     1.727 |
-|     Interface_Cell                                                                  |     0.047 |
+| rsa_project_wrapper                                                                 |     1.595 |
+|   rsa_project_i                                                                     |     1.595 |
+|     Interface_Cell                                                                  |     0.045 |
 |       ARCACHE                                                                       |     0.000 |
 |       ARUSER                                                                        |     0.000 |
 |       axi_dma_0                                                                     |     0.003 |
@@ -227,7 +227,7 @@ Table of Contents
 |             GEN_RESET_FOR_S2MM.RESET_I                                              |    <0.001 |
 |             REG_HRD_RST                                                             |    <0.001 |
 |             REG_HRD_RST_OUT                                                         |    <0.001 |
-|       axi_interconnect_0                                                            |     0.005 |
+|       axi_interconnect_0                                                            |     0.004 |
 |         s00_couplers                                                                |     0.004 |
 |           auto_pc                                                                   |     0.004 |
 |             inst                                                                    |     0.004 |
@@ -260,7 +260,7 @@ Table of Contents
 |               gen_decerr.decerr_slave_inst                                          |    <0.001 |
 |               splitter_ar                                                           |    <0.001 |
 |               splitter_aw                                                           |    <0.001 |
-|       axi_mem_intercon                                                              |     0.004 |
+|       axi_mem_intercon                                                              |     0.003 |
 |         m00_couplers                                                                |     0.001 |
 |           auto_pc                                                                   |     0.001 |
 |             inst                                                                    |     0.001 |
@@ -353,9 +353,9 @@ Table of Contents
 |       axis_dwidth_converter_0                                                       |     0.003 |
 |         inst                                                                        |     0.003 |
 |           gen_upsizer_conversion.axisc_upsizer_0                                    |     0.003 |
-|       axis_dwidth_converter_1                                                       |     0.032 |
-|         inst                                                                        |     0.032 |
-|           gen_downsizer_conversion.axisc_downsizer_0                                |     0.032 |
+|       axis_dwidth_converter_1                                                       |     0.031 |
+|         inst                                                                        |     0.031 |
+|           gen_downsizer_conversion.axisc_downsizer_0                                |     0.031 |
 |       command_interface_0                                                           |    <0.001 |
 |         inst                                                                        |    <0.001 |
 |           command_interface_S00_AXI_inst                                            |    <0.001 |
@@ -368,49 +368,49 @@ Table of Contents
 |             SEQ_COUNTER                                                             |    <0.001 |
 |     processing_system7_0                                                            |     1.261 |
 |       inst                                                                          |     1.261 |
-|     rsa_wrapper_0                                                                   |     0.419 |
-|       inst                                                                          |     0.419 |
-|         mont_exp                                                                    |     0.407 |
-|           multi_0                                                                   |     0.156 |
-|             adder_B                                                                 |     0.076 |
-|               adder_0                                                               |     0.004 |
-|               genblk1[1].adder_i                                                    |     0.007 |
-|               genblk1[2].adder_i                                                    |     0.007 |
-|               genblk1[3].adder_i                                                    |     0.008 |
-|               genblk1[4].adder_i                                                    |     0.007 |
-|               genblk1[5].adder_i                                                    |     0.009 |
-|               genblk1[6].adder_i                                                    |     0.006 |
-|               genblk1[7].adder_i                                                    |     0.009 |
-|               genblk1[8].adder_i                                                    |     0.006 |
-|             adder_M                                                                 |     0.055 |
-|               adder_0                                                               |     0.008 |
-|               genblk1[1].adder_i                                                    |     0.003 |
-|               genblk1[2].adder_i                                                    |     0.009 |
-|               genblk1[3].adder_i                                                    |     0.004 |
-|               genblk1[4].adder_i                                                    |     0.008 |
-|               genblk1[5].adder_i                                                    |     0.004 |
+|     rsa_wrapper_0                                                                   |     0.289 |
+|       inst                                                                          |     0.289 |
+|         mont_exp                                                                    |     0.277 |
+|           multi_0                                                                   |     0.130 |
+|             adder_B                                                                 |     0.051 |
+|               adder_0                                                               |     0.002 |
+|               genblk1[1].adder_i                                                    |     0.005 |
+|               genblk1[2].adder_i                                                    |     0.004 |
+|               genblk1[3].adder_i                                                    |     0.003 |
+|               genblk1[4].adder_i                                                    |     0.005 |
+|               genblk1[5].adder_i                                                    |     0.003 |
+|               genblk1[6].adder_i                                                    |     0.005 |
+|               genblk1[7].adder_i                                                    |     0.007 |
+|               genblk1[8].adder_i                                                    |     0.005 |
+|             adder_M                                                                 |     0.057 |
+|               adder_0                                                               |     0.007 |
+|               genblk1[1].adder_i                                                    |     0.004 |
+|               genblk1[2].adder_i                                                    |     0.008 |
+|               genblk1[3].adder_i                                                    |     0.005 |
+|               genblk1[4].adder_i                                                    |     0.009 |
+|               genblk1[5].adder_i                                                    |     0.003 |
 |               genblk1[6].adder_i                                                    |     0.008 |
-|               genblk1[7].adder_i                                                    |     0.004 |
-|               genblk1[8].adder_i                                                    |     0.004 |
-|           multi_1                                                                   |     0.182 |
-|             adder_B                                                                 |     0.075 |
-|               adder_0                                                               |     0.004 |
-|               genblk1[1].adder_i                                                    |     0.007 |
-|               genblk1[2].adder_i                                                    |     0.007 |
-|               genblk1[3].adder_i                                                    |     0.008 |
-|               genblk1[4].adder_i                                                    |     0.007 |
-|               genblk1[5].adder_i                                                    |     0.008 |
-|               genblk1[6].adder_i                                                    |     0.007 |
-|               genblk1[7].adder_i                                                    |     0.008 |
-|               genblk1[8].adder_i                                                    |     0.008 |
+|               genblk1[7].adder_i                                                    |     0.005 |
+|               genblk1[8].adder_i                                                    |     0.005 |
+|           multi_1                                                                   |     0.139 |
+|             adder_B                                                                 |     0.053 |
+|               adder_0                                                               |     0.003 |
+|               genblk1[1].adder_i                                                    |     0.006 |
+|               genblk1[2].adder_i                                                    |     0.002 |
+|               genblk1[3].adder_i                                                    |     0.006 |
+|               genblk1[4].adder_i                                                    |     0.002 |
+|               genblk1[5].adder_i                                                    |     0.006 |
+|               genblk1[6].adder_i                                                    |     0.006 |
+|               genblk1[7].adder_i                                                    |     0.007 |
+|               genblk1[8].adder_i                                                    |     0.005 |
 |             adder_M                                                                 |     0.053 |
-|               adder_0                                                               |     0.006 |
+|               adder_0                                                               |     0.007 |
 |               genblk1[1].adder_i                                                    |     0.003 |
 |               genblk1[2].adder_i                                                    |     0.008 |
 |               genblk1[3].adder_i                                                    |     0.004 |
-|               genblk1[4].adder_i                                                    |     0.008 |
-|               genblk1[5].adder_i                                                    |     0.004 |
-|               genblk1[6].adder_i                                                    |     0.008 |
+|               genblk1[4].adder_i                                                    |     0.009 |
+|               genblk1[5].adder_i                                                    |     0.003 |
+|               genblk1[6].adder_i                                                    |     0.007 |
 |               genblk1[7].adder_i                                                    |     0.004 |
 |               genblk1[8].adder_i                                                    |     0.005 |
 +-------------------------------------------------------------------------------------+-----------+

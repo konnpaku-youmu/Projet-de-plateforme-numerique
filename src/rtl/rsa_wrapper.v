@@ -268,6 +268,6 @@ module rsa_wrapper
     // The four LEDs on the board are used as debug signals.
     // Here they are used to check the state transition.
 
-    assign leds             = {1'b0,r_state};
+    assign leds             = 3'h7;
 
 endmodule
