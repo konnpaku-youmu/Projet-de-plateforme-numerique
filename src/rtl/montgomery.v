@@ -159,13 +159,12 @@ module montgomery (
     always @(posedge clk) begin
         if (~resetn || start)
             subDone      <= 1'b0;
-        else if (adder_m_result[1027] == 1'b1)
+        else if (adder_m_result[1027] == 1'b1 && adder_m_done)
             subDone      <= 1'b1;
     end
     
     assign result = regC_sub[1023:0];
     assign done = subDone;
-
 endmodule
 
 module montgomery_exp (

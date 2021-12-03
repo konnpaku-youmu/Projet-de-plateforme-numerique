@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date         : Fri Dec  3 14:29:29 2021
+| Date         : Fri Dec  3 14:46:31 2021
 | Host         : archHome running 64-bit Arch Linux
 | Command      : report_utilization -file hweval_adder_utilization_synth.rpt -pb hweval_adder_utilization_synth.pb
 | Design       : hweval_adder
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             | 3125 |     0 |     53200 |  5.87 |
-|   LUT as Logic          | 3125 |     0 |     53200 |  5.87 |
+| Slice LUTs*             | 3109 |     0 |     53200 |  5.84 |
+|   LUT as Logic          | 3109 |     0 |     53200 |  5.84 |
 |   LUT as Memory         |    0 |     0 |     17400 |  0.00 |
-| Slice Registers         | 4154 |     0 |    106400 |  3.90 |
-|   Register as Flip Flop | 4154 |     0 |    106400 |  3.90 |
+| Slice Registers         | 4113 |     0 |    106400 |  3.87 |
+|   Register as Flip Flop | 4113 |     0 |    106400 |  3.87 |
 |   Register as Latch     |    0 |     0 |    106400 |  0.00 |
 | F7 Muxes                |    0 |     0 |     26600 |  0.00 |
 | F8 Muxes                |    0 |     0 |     13300 |  0.00 |
@@ -57,7 +57,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 3     |          Yes |         Set |            - |
-| 4151  |          Yes |       Reset |            - |
+| 4110  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -146,17 +146,17 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     | 4151 |        Flop & Latch |
-| LUT3     | 1590 |                 LUT |
-| LUT4     |  560 |                 LUT |
-| CARRY4   |  523 |          CarryLogic |
-| LUT6     |  482 |                 LUT |
-| LUT5     |  481 |                 LUT |
-| LUT1     |   11 |                 LUT |
+| FDRE     | 4110 |        Flop & Latch |
+| LUT3     | 1546 |                 LUT |
+| CARRY4   |  521 |          CarryLogic |
+| LUT5     |  519 |                 LUT |
+| LUT6     |  505 |                 LUT |
+| LUT4     |  505 |                 LUT |
+| LUT2     |   21 |                 LUT |
+| LUT1     |   13 |                 LUT |
 | FDSE     |    3 |        Flop & Latch |
 | IBUF     |    2 |                  IO |
 | OBUF     |    1 |                  IO |
-| LUT2     |    1 |                 LUT |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 

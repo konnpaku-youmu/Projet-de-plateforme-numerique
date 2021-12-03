@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Fri Dec  3 14:28:50 2021
-# Process ID: 1954087
+# Start of session at: Fri Dec  3 14:45:51 2021
+# Process ID: 2073648
 # Current directory: /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.runs/synth_3
 # Command line: vivado -log hweval_adder.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source hweval_adder.tcl
 # Log file: /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.runs/synth_3/hweval_adder.vds
@@ -15,21 +15,19 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 1954149 
+INFO: Helper process launched with PID 2073687 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1278.207 ; gain = 86.723 ; free physical = 949 ; free virtual = 25687
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1278.207 ; gain = 86.723 ; free physical = 939 ; free virtual = 25597
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'hweval_adder' [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/hweval_adder.v:3]
 INFO: [Synth 8-6157] synthesizing module 'mpadder' [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/adder.v:49]
 INFO: [Synth 8-6157] synthesizing module 'carry_sel_adder' [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/adder.v:7]
 INFO: [Synth 8-6155] done synthesizing module 'carry_sel_adder' (1#1) [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/adder.v:7]
-INFO: [Synth 8-6157] synthesizing module 'carry_sel_adder_msb' [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/adder.v:28]
-INFO: [Synth 8-6155] done synthesizing module 'carry_sel_adder_msb' (2#1) [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/adder.v:28]
-INFO: [Synth 8-6155] done synthesizing module 'mpadder' (3#1) [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/adder.v:49]
-INFO: [Synth 8-6155] done synthesizing module 'hweval_adder' (4#1) [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/hweval_adder.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'mpadder' (2#1) [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/adder.v:49]
+INFO: [Synth 8-6155] done synthesizing module 'hweval_adder' (3#1) [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/hweval_adder.v:3]
 WARNING: [Synth 8-3331] design mpadder has unconnected port resetn
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1322.832 ; gain = 131.348 ; free physical = 958 ; free virtual = 25696
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1322.832 ; gain = 131.348 ; free physical = 930 ; free virtual = 25588
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -42,10 +40,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1322.832 ; gain = 131.348 ; free physical = 958 ; free virtual = 25697
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1322.832 ; gain = 131.348 ; free physical = 930 ; free virtual = 25587
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1322.832 ; gain = 131.348 ; free physical = 958 ; free virtual = 25697
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1322.832 ; gain = 131.348 ; free physical = 930 ; free virtual = 25587
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -63,22 +61,22 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1721.816 ; gain = 0.000 ; free physical = 671 ; free virtual = 25411
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1721.809 ; gain = 0.000 ; free physical = 739 ; free virtual = 25393
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:19 . Memory (MB): peak = 1721.816 ; gain = 530.332 ; free physical = 764 ; free virtual = 25503
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:19 . Memory (MB): peak = 1721.809 ; gain = 530.324 ; free physical = 833 ; free virtual = 25487
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:19 . Memory (MB): peak = 1721.816 ; gain = 530.332 ; free physical = 763 ; free virtual = 25503
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:19 . Memory (MB): peak = 1721.809 ; gain = 530.324 ; free physical = 833 ; free virtual = 25487
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:19 . Memory (MB): peak = 1721.816 ; gain = 530.332 ; free physical = 763 ; free virtual = 25502
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:19 . Memory (MB): peak = 1721.809 ; gain = 530.324 ; free physical = 833 ; free virtual = 25486
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'hweval_adder'
 INFO: [Synth 8-5544] ROM "start" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
@@ -94,7 +92,7 @@ INFO: [Synth 8-5544] ROM "state0" won't be mapped to Block RAM because address s
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'hweval_adder'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:19 . Memory (MB): peak = 1721.816 ; gain = 530.332 ; free physical = 756 ; free virtual = 25496
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:20 . Memory (MB): peak = 1721.809 ; gain = 530.324 ; free physical = 827 ; free virtual = 25482
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -109,22 +107,20 @@ INFO: [Synth 8-3538] Detected potentially large (wide) register in_b_reg [/home/
 INFO: [Synth 8-3538] Detected potentially large (wide) register in_a_reg [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/hweval_adder.v:21]
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input    113 Bit       Adders := 18    
-	   2 Input     20 Bit       Adders := 2     
+	   2 Input     85 Bit       Adders := 24    
+	   3 Input     20 Bit       Adders := 1     
 +---XORs : 
 	   2 Input   1027 Bit         XORs := 2     
 	   2 Input      1 Bit         XORs := 1     
 +---Registers : 
 	             1027 Bit    Registers := 2     
-	              112 Bit    Registers := 18    
-	               19 Bit    Registers := 2     
-	                1 Bit    Registers := 23    
+	               84 Bit    Registers := 24    
+	                1 Bit    Registers := 27    
 +---Muxes : 
-	   2 Input    112 Bit        Muxes := 9     
-	   2 Input     19 Bit        Muxes := 1     
+	   2 Input     84 Bit        Muxes := 12    
 	   3 Input      3 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 14    
+	   2 Input      1 Bit        Muxes := 16    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -148,25 +144,17 @@ Detailed RTL Component Info :
 Module carry_sel_adder 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input    113 Bit       Adders := 2     
+	   2 Input     85 Bit       Adders := 2     
 +---Registers : 
-	              112 Bit    Registers := 2     
+	               84 Bit    Registers := 2     
 	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input    112 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
-Module carry_sel_adder_msb 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     20 Bit       Adders := 2     
-+---Registers : 
-	               19 Bit    Registers := 2     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input     19 Bit        Muxes := 1     
+	   2 Input     84 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
 Module mpadder 
 Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     20 Bit       Adders := 1     
 +---XORs : 
 	   2 Input   1027 Bit         XORs := 1     
 	   2 Input      1 Bit         XORs := 1     
@@ -190,7 +178,7 @@ Start Cross Boundary and Area Optimization
 Warning: Parallel synthesis criteria is not met 
 WARNING: [Synth 8-3331] design mpadder has unconnected port resetn
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:21 . Memory (MB): peak = 1721.816 ; gain = 530.332 ; free physical = 741 ; free virtual = 25484
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:22 . Memory (MB): peak = 1721.809 ; gain = 530.324 ; free physical = 816 ; free virtual = 25474
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -202,13 +190,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:28 . Memory (MB): peak = 1721.816 ; gain = 530.332 ; free physical = 616 ; free virtual = 25359
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:28 . Memory (MB): peak = 1721.809 ; gain = 530.324 ; free physical = 687 ; free virtual = 25345
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:29 . Memory (MB): peak = 1721.816 ; gain = 530.332 ; free physical = 611 ; free virtual = 25355
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:29 . Memory (MB): peak = 1721.809 ; gain = 530.324 ; free physical = 674 ; free virtual = 25332
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -220,7 +208,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:30 . Memory (MB): peak = 1721.816 ; gain = 530.332 ; free physical = 613 ; free virtual = 25356
+Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:31 . Memory (MB): peak = 1721.809 ; gain = 530.324 ; free physical = 666 ; free virtual = 25324
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -244,7 +232,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:31 . Memory (MB): peak = 1721.816 ; gain = 530.332 ; free physical = 612 ; free virtual = 25356
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:31 . Memory (MB): peak = 1721.809 ; gain = 530.324 ; free physical = 666 ; free virtual = 25324
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -257,7 +245,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:31 . Memory (MB): peak = 1721.816 ; gain = 530.332 ; free physical = 612 ; free virtual = 25356
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:31 . Memory (MB): peak = 1721.809 ; gain = 530.324 ; free physical = 667 ; free virtual = 25325
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -269,25 +257,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:31 . Memory (MB): peak = 1721.816 ; gain = 530.332 ; free physical = 613 ; free virtual = 25357
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:31 . Memory (MB): peak = 1721.809 ; gain = 530.324 ; free physical = 667 ; free virtual = 25325
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:31 . Memory (MB): peak = 1721.816 ; gain = 530.332 ; free physical = 613 ; free virtual = 25356
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:31 . Memory (MB): peak = 1721.809 ; gain = 530.324 ; free physical = 667 ; free virtual = 25325
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:31 . Memory (MB): peak = 1721.816 ; gain = 530.332 ; free physical = 612 ; free virtual = 25355
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:31 . Memory (MB): peak = 1721.809 ; gain = 530.324 ; free physical = 666 ; free virtual = 25325
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:31 . Memory (MB): peak = 1721.816 ; gain = 530.332 ; free physical = 612 ; free virtual = 25356
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:31 . Memory (MB): peak = 1721.809 ; gain = 530.324 ; free physical = 667 ; free virtual = 25325
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -304,44 +292,46 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     1|
-|2     |CARRY4 |   523|
-|3     |LUT1   |    11|
-|4     |LUT2   |     1|
-|5     |LUT3   |  1590|
-|6     |LUT4   |   560|
-|7     |LUT5   |   481|
-|8     |LUT6   |   482|
-|9     |FDRE   |  4151|
+|2     |CARRY4 |   521|
+|3     |LUT1   |    13|
+|4     |LUT2   |    21|
+|5     |LUT3   |  1546|
+|6     |LUT4   |   505|
+|7     |LUT5   |   519|
+|8     |LUT6   |   505|
+|9     |FDRE   |  4110|
 |10    |FDSE   |     3|
 |11    |IBUF   |     2|
 |12    |OBUF   |     1|
 +------+-------+------+
 
 Report Instance Areas: 
-+------+-------------------------+--------------------+------+
-|      |Instance                 |Module              |Cells |
-+------+-------------------------+--------------------+------+
-|1     |top                      |                    |  7806|
-|2     |  dut                    |mpadder             |  5728|
-|3     |    adder_0              |carry_sel_adder     |   851|
-|4     |    adder_msb            |carry_sel_adder_msb |   104|
-|5     |    \genblk1[1].adder_i  |carry_sel_adder_0   |   396|
-|6     |    \genblk1[2].adder_i  |carry_sel_adder_1   |   852|
-|7     |    \genblk1[3].adder_i  |carry_sel_adder_2   |   396|
-|8     |    \genblk1[4].adder_i  |carry_sel_adder_3   |   848|
-|9     |    \genblk1[5].adder_i  |carry_sel_adder_4   |   396|
-|10    |    \genblk1[6].adder_i  |carry_sel_adder_5   |   846|
-|11    |    \genblk1[7].adder_i  |carry_sel_adder_6   |   396|
-|12    |    \genblk1[8].adder_i  |carry_sel_adder_7   |   640|
-+------+-------------------------+--------------------+------+
++------+--------------------------+-------------------+------+
+|      |Instance                  |Module             |Cells |
++------+--------------------------+-------------------+------+
+|1     |top                       |                   |  7747|
+|2     |  dut                     |mpadder            |  5631|
+|3     |    adder_0               |carry_sel_adder    |   637|
+|4     |    \genblk1[10].adder_i  |carry_sel_adder_0  |   655|
+|5     |    \genblk1[11].adder_i  |carry_sel_adder_1  |   298|
+|6     |    \genblk1[1].adder_i   |carry_sel_adder_2  |   298|
+|7     |    \genblk1[2].adder_i   |carry_sel_adder_3  |   637|
+|8     |    \genblk1[3].adder_i   |carry_sel_adder_4  |   298|
+|9     |    \genblk1[4].adder_i   |carry_sel_adder_5  |   637|
+|10    |    \genblk1[5].adder_i   |carry_sel_adder_6  |   298|
+|11    |    \genblk1[6].adder_i   |carry_sel_adder_7  |   637|
+|12    |    \genblk1[7].adder_i   |carry_sel_adder_8  |   298|
+|13    |    \genblk1[8].adder_i   |carry_sel_adder_9  |   637|
+|14    |    \genblk1[9].adder_i   |carry_sel_adder_10 |   298|
++------+--------------------------+-------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:31 . Memory (MB): peak = 1721.816 ; gain = 530.332 ; free physical = 611 ; free virtual = 25355
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:31 . Memory (MB): peak = 1721.809 ; gain = 530.324 ; free physical = 667 ; free virtual = 25325
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1721.816 ; gain = 131.348 ; free physical = 669 ; free virtual = 25412
-Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:31 . Memory (MB): peak = 1721.816 ; gain = 530.332 ; free physical = 669 ; free virtual = 25412
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1721.809 ; gain = 131.348 ; free physical = 727 ; free virtual = 25385
+Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:32 . Memory (MB): peak = 1721.809 ; gain = 530.324 ; free physical = 727 ; free virtual = 25385
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 525 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 523 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -349,11 +339,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-30 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+28 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:33 . Memory (MB): peak = 1721.816 ; gain = 542.062 ; free physical = 659 ; free virtual = 25403
+synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:33 . Memory (MB): peak = 1721.809 ; gain = 542.055 ; free physical = 719 ; free virtual = 25377
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint '/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.runs/synth_3/hweval_adder.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file hweval_adder_utilization_synth.rpt -pb hweval_adder_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.10 . Memory (MB): peak = 1721.816 ; gain = 0.000 ; free physical = 650 ; free virtual = 25395
-INFO: [Common 17-206] Exiting Vivado at Fri Dec  3 14:29:29 2021...
+report_utilization: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.10 . Memory (MB): peak = 1721.809 ; gain = 0.000 ; free physical = 716 ; free virtual = 25375
+INFO: [Common 17-206] Exiting Vivado at Fri Dec  3 14:46:31 2021...

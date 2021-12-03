@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date         : Fri Dec  3 14:30:18 2021
+| Date         : Fri Dec  3 14:47:22 2021
 | Host         : archHome running 64-bit Arch Linux
 | Command      : report_control_sets -verbose -file hweval_adder_control_sets_placed.rpt
 | Design       : hweval_adder
@@ -24,7 +24,7 @@ Table of Contents
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
 | Number of unique control sets                            |     3 |
-| Unused register locations in slices containing registers |     6 |
+| Unused register locations in slices containing registers |     8 |
 +----------------------------------------------------------+-------+
 
 
@@ -45,12 +45,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |            4164 |          534 |
+| No           | No                    | No                     |            4082 |          527 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |               6 |            1 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |            4136 |          579 |
+| Yes          | Yes                   | No                     |            4136 |          548 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -61,8 +61,8 @@ Table of Contents
 |  Clock Signal  | Enable Signal |       Set/Reset Signal      | Slice Load Count | Bel Load Count |
 +----------------+---------------+-----------------------------+------------------+----------------+
 |  clk_IBUF_BUFG |               | FSM_onehot_state[2]_i_1_n_0 |                1 |              6 |
-|  clk_IBUF_BUFG | subtract      | FSM_onehot_state[2]_i_1_n_0 |              579 |           4136 |
-|  clk_IBUF_BUFG |               |                             |              534 |           4164 |
+|  clk_IBUF_BUFG |               |                             |              527 |           4082 |
+|  clk_IBUF_BUFG | in_a          | FSM_onehot_state[2]_i_1_n_0 |              548 |           4136 |
 +----------------+---------------+-----------------------------+------------------+----------------+
 
 

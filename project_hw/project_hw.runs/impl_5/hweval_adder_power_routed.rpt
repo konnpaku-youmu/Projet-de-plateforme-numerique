@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date             : Fri Dec  3 14:30:41 2021
+| Date             : Fri Dec  3 14:47:46 2021
 | Host             : archHome running 64-bit Arch Linux
 | Command          : report_power -file hweval_adder_power_routed.rpt -pb hweval_adder_power_summary_routed.pb -rpx hweval_adder_power_routed.rpx
 | Design           : hweval_adder
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.195        |
+| Total On-Chip Power (W)  | 0.199        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.088        |
+| Dynamic (W)              | 0.091        |
 | Device Static (W)        | 0.107        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 82.8         |
-| Junction Temperature (C) | 27.2         |
+| Max Ambient (C)          | 82.7         |
+| Junction Temperature (C) | 27.3         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,15 +53,15 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.015 |        3 |       --- |             --- |
-| Slice Logic    |     0.039 |     7823 |       --- |             --- |
-|   LUT as Logic |     0.032 |     3124 |     53200 |            5.87 |
-|   CARRY4       |     0.004 |      523 |     13300 |            3.93 |
-|   Register     |     0.003 |     4153 |    106400 |            3.90 |
-|   Others       |     0.000 |       23 |       --- |             --- |
-| Signals        |     0.032 |     5723 |       --- |             --- |
+| Slice Logic    |     0.039 |     7768 |       --- |             --- |
+|   LUT as Logic |     0.033 |     3108 |     53200 |            5.84 |
+|   CARRY4       |     0.004 |      521 |     13300 |            3.92 |
+|   Register     |     0.003 |     4112 |    106400 |            3.86 |
+|   Others       |     0.000 |       27 |       --- |             --- |
+| Signals        |     0.036 |     5674 |       --- |             --- |
 | I/O            |    <0.001 |        3 |       125 |            2.40 |
 | Static Power   |     0.107 |          |           |                 |
-| Total          |     0.195 |          |           |                 |
+| Total          |     0.199 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,8 +71,8 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.094 |       0.087 |      0.008 |
-| Vccaux    |       1.800 |     0.010 |       0.000 |      0.010 |
+| Vccint    |       1.000 |     0.098 |       0.091 |      0.008 |
+| Vccaux    |       1.800 |     0.011 |       0.000 |      0.010 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
@@ -144,21 +144,23 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+------------------------+-----------+
-| Name                   | Power (W) |
-+------------------------+-----------+
-| hweval_adder           |     0.088 |
-|   dut                  |     0.071 |
-|     adder_0            |     0.010 |
-|     adder_msb          |     0.001 |
-|     genblk1[1].adder_i |     0.004 |
-|     genblk1[2].adder_i |     0.012 |
-|     genblk1[3].adder_i |     0.004 |
-|     genblk1[4].adder_i |     0.012 |
-|     genblk1[5].adder_i |     0.004 |
-|     genblk1[6].adder_i |     0.012 |
-|     genblk1[7].adder_i |     0.004 |
-|     genblk1[8].adder_i |     0.007 |
-+------------------------+-----------+
++-------------------------+-----------+
+| Name                    | Power (W) |
++-------------------------+-----------+
+| hweval_adder            |     0.091 |
+|   dut                   |     0.075 |
+|     adder_0             |     0.008 |
+|     genblk1[10].adder_i |     0.009 |
+|     genblk1[11].adder_i |     0.003 |
+|     genblk1[1].adder_i  |     0.003 |
+|     genblk1[2].adder_i  |     0.010 |
+|     genblk1[3].adder_i  |     0.003 |
+|     genblk1[4].adder_i  |     0.010 |
+|     genblk1[5].adder_i  |     0.003 |
+|     genblk1[6].adder_i  |     0.010 |
+|     genblk1[7].adder_i  |     0.003 |
+|     genblk1[8].adder_i  |     0.010 |
+|     genblk1[9].adder_i  |     0.003 |
++-------------------------+-----------+
 
 
