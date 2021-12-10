@@ -3,6 +3,9 @@
 
 # TCL: /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/tcl/constraints.tcl
 
+# IP: ip/adder_DSP/adder_DSP.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==adder_DSP || ORIG_REF_NAME==adder_DSP} -quiet] -quiet
+
 # Block Designs: bd/rsa_project/rsa_project.bd
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==rsa_project || ORIG_REF_NAME==rsa_project} -quiet] -quiet
 
@@ -11,6 +14,9 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==rsa_project_pro
 
 # IP: bd/rsa_project/ip/rsa_project_rsa_wrapper_0_0/rsa_project_rsa_wrapper_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==rsa_project_rsa_wrapper_0_0 || ORIG_REF_NAME==rsa_project_rsa_wrapper_0_0} -quiet] -quiet
+
+# IP: ip/adder_DSP/adder_DSP.xci
+#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==adder_DSP || ORIG_REF_NAME==adder_DSP} -quiet] -quiet
 
 # IP: bd/rsa_project/ip/rsa_project_ARCACHE_0/rsa_project_ARCACHE_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==rsa_project_ARCACHE_0 || ORIG_REF_NAME==rsa_project_ARCACHE_0} -quiet] -quiet

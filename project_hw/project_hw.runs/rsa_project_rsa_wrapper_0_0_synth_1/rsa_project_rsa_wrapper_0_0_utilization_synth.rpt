@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date         : Fri Dec  3 01:32:58 2021
+| Date         : Fri Dec 10 22:15:48 2021
 | Host         : archHome running 64-bit Arch Linux
 | Command      : report_utilization -file rsa_project_rsa_wrapper_0_0_utilization_synth.rpt -pb rsa_project_rsa_wrapper_0_0_utilization_synth.pb
 | Design       : rsa_project_rsa_wrapper_0_0
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+-------+-------+-----------+-------+
 |        Site Type        |  Used | Fixed | Available | Util% |
 +-------------------------+-------+-------+-----------+-------+
-| Slice LUTs*             | 17935 |     0 |     53200 | 33.71 |
-|   LUT as Logic          | 17935 |     0 |     53200 | 33.71 |
+| Slice LUTs*             | 18141 |     0 |     53200 | 34.10 |
+|   LUT as Logic          | 18141 |     0 |     53200 | 34.10 |
 |   LUT as Memory         |     0 |     0 |     17400 |  0.00 |
-| Slice Registers         | 26515 |     0 |    106400 | 24.92 |
-|   Register as Flip Flop | 26515 |     0 |    106400 | 24.92 |
+| Slice Registers         | 26923 |     0 |    106400 | 25.30 |
+|   Register as Flip Flop | 26923 |     0 |    106400 | 25.30 |
 |   Register as Latch     |     0 |     0 |    106400 |  0.00 |
 | F7 Muxes                |     0 |     0 |     26600 |  0.00 |
 | F8 Muxes                |     0 |     0 |     13300 |  0.00 |
@@ -57,7 +57,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 2     |          Yes |         Set |            - |
-| 26513 |          Yes |       Reset |            - |
+| 26921 |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -77,11 +77,12 @@ Table of Contents
 3. DSP
 ------
 
-+-----------+------+-------+-----------+-------+
-| Site Type | Used | Fixed | Available | Util% |
-+-----------+------+-------+-----------+-------+
-| DSPs      |    0 |     0 |       220 |  0.00 |
-+-----------+------+-------+-----------+-------+
++----------------+------+-------+-----------+-------+
+|    Site Type   | Used | Fixed | Available | Util% |
++----------------+------+-------+-----------+-------+
+| DSPs           |   72 |     0 |       220 | 32.73 |
+|   DSP48E1 only |   72 |       |           |       |
++----------------+------+-------+-----------+-------+
 
 
 4. IO and GT Specific
@@ -146,14 +147,15 @@ Table of Contents
 +----------+-------+---------------------+
 | Ref Name |  Used | Functional Category |
 +----------+-------+---------------------+
-| FDRE     | 26513 |        Flop & Latch |
-| LUT5     |  9020 |                 LUT |
-| LUT3     |  5109 |                 LUT |
-| LUT4     |  3161 |                 LUT |
-| LUT6     |  3136 |                 LUT |
-| CARRY4   |  2016 |          CarryLogic |
-| LUT1     |    39 |                 LUT |
-| LUT2     |    35 |                 LUT |
+| FDRE     | 26921 |        Flop & Latch |
+| LUT5     |  8761 |                 LUT |
+| LUT3     |  5599 |                 LUT |
+| LUT4     |  3151 |                 LUT |
+| LUT6     |  2439 |                 LUT |
+| CARRY4   |  1344 |          CarryLogic |
+| LUT2     |   771 |                 LUT |
+| DSP48E1  |    72 |    Block Arithmetic |
+| LUT1     |    33 |                 LUT |
 | FDSE     |     2 |        Flop & Latch |
 +----------+-------+---------------------+
 

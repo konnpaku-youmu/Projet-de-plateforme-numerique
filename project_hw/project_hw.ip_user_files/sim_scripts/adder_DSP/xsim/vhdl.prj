@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../../project_hw.srcs/sources_1/ip/adder_DSP/sim/adder_DSP.vhd" \
+
+nosort

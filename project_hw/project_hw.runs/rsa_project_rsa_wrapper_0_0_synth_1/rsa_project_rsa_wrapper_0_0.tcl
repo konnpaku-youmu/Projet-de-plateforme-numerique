@@ -17,7 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
 set_msg_config -id {HDL-1065} -limit 10000
 set_msg_config  -ruleid {1}  -id {Synth 8-327}  -new_severity {ERROR} 
 set_msg_config  -ruleid {10}  -id {IP_Flow 19-2207}  -new_severity {INFO} 
@@ -54,7 +53,10 @@ read_verilog -library xil_defaultlib {
   /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/montgomery.v
   /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/rsa_wrapper.v
 }
+read_ip -quiet /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.srcs/sources_1/ip/adder_DSP/adder_DSP.xci
+
 read_ip -quiet /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.srcs/sources_1/bd/rsa_project/ip/rsa_project_rsa_wrapper_0_0/rsa_project_rsa_wrapper_0_0.xci
+set_property used_in_implementation false [get_files -all /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.srcs/sources_1/bd/rsa_project/ip/rsa_project_rsa_wrapper_0_0/rsa_project_rsa_wrapper_0_0_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -64,6 +66,8 @@ read_ip -quiet /home/yz/Projects/Digital_Platform_Design/design_package/hw_proje
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc dont_touch.xdc
+set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 0
 
 set cached_ip [config_ip_cache -export -no_bom -use_project_ipc -dir /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.runs/rsa_project_rsa_wrapper_0_0_synth_1 -new_name rsa_project_rsa_wrapper_0_0 -ip [get_ips rsa_project_rsa_wrapper_0_0]]

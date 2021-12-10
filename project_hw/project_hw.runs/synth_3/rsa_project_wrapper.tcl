@@ -17,7 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
 set_msg_config -id {HDL-1065} -limit 10000
 set_msg_config  -ruleid {1}  -id {Synth 8-327}  -new_severity {ERROR} 
 set_msg_config  -ruleid {10}  -id {IP_Flow 19-2207}  -new_severity {INFO} 
@@ -51,6 +50,7 @@ set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.srcs/sources_1/imports/hdl/rsa_project_wrapper.v
 add_files /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.srcs/sources_1/bd/rsa_project/rsa_project.bd
 set_property used_in_implementation false [get_files -all /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.srcs/sources_1/bd/rsa_project/ip/rsa_project_processing_system7_0_0/rsa_project_processing_system7_0_0.xdc]
+set_property used_in_implementation false [get_files -all /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.srcs/sources_1/bd/rsa_project/ip/rsa_project_rsa_wrapper_0_0/rsa_project_rsa_wrapper_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.srcs/sources_1/bd/rsa_project/ip/rsa_project_axi_dma_0_0/rsa_project_axi_dma_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.srcs/sources_1/bd/rsa_project/ip/rsa_project_axi_dma_0_0/rsa_project_axi_dma_0_0.xdc]
 set_property used_in_implementation false [get_files -all /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.srcs/sources_1/bd/rsa_project/ip/rsa_project_axi_dma_0_0/rsa_project_axi_dma_0_0_clocks.xdc]
