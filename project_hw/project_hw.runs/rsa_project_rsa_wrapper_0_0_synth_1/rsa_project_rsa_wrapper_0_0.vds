@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Fri Dec 10 22:12:50 2021
-# Process ID: 969246
+# Start of session at: Sat Dec 11 00:54:14 2021
+# Process ID: 2098063
 # Current directory: /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.runs/rsa_project_rsa_wrapper_0_0_synth_1
 # Command line: vivado -log rsa_project_rsa_wrapper_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source rsa_project_rsa_wrapper_0_0.tcl
 # Log file: /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.runs/rsa_project_rsa_wrapper_0_0_synth_1/rsa_project_rsa_wrapper_0_0.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 969261 
+INFO: Helper process launched with PID 2098081 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1331.047 ; gain = 83.723 ; free physical = 9954 ; free virtual = 32069
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1331.043 ; gain = 83.723 ; free physical = 3884 ; free virtual = 27685
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'rsa_project_rsa_wrapper_0_0' [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.srcs/sources_1/bd/rsa_project/ip/rsa_project_rsa_wrapper_0_0/synth/rsa_project_rsa_wrapper_0_0.v:58]
 INFO: [Synth 8-6157] synthesizing module 'rsa_wrapper' [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/rsa_wrapper.v:3]
@@ -37,10 +37,8 @@ INFO: [Synth 8-6157] synthesizing module 'rsa_wrapper' [/home/yz/Projects/Digita
 INFO: [Synth 8-226] default block is never used [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/rsa_wrapper.v:58]
 INFO: [Synth 8-6157] synthesizing module 'montgomery_exp' [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/montgomery.v:171]
 INFO: [Synth 8-6157] synthesizing module 'montgomery' [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/montgomery.v:3]
-INFO: [Synth 8-6157] synthesizing module 'mpadder' [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/adder.v:53]
-INFO: [Synth 8-6157] synthesizing module 'carry_sel_adder' [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/adder.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'carry_sel_adder' (1#1) [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/adder.v:6]
-INFO: [Synth 8-6157] synthesizing module 'carry_sel_adder_dsp' [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/adder.v:27]
+INFO: [Synth 8-6157] synthesizing module 'mpadder' [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/adder.v:55]
+INFO: [Synth 8-6157] synthesizing module 'carry_sel_adder_dsp' [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/adder.v:29]
 INFO: [Synth 8-638] synthesizing module 'adder_DSP' [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.srcs/sources_1/ip/adder_DSP/synth/adder_DSP.vhd:70]
 	Parameter C_VERBOSITY bound to: 0 - type: integer 
 	Parameter C_XDEVICEFAMILY bound to: zynq - type: string 
@@ -69,11 +67,13 @@ INFO: [Synth 8-638] synthesizing module 'adder_DSP' [/home/yz/Projects/Digital_P
 	Parameter C_HAS_SSET bound to: 0 - type: integer 
 	Parameter C_HAS_SINIT bound to: 0 - type: integer 
 INFO: [Synth 8-3491] module 'c_addsub_v12_0_12' declared at '/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.srcs/sources_1/ip/adder_DSP/hdl/c_addsub_v12_0_vh_rfs.vhd:7026' bound to instance 'U0' of component 'c_addsub_v12_0_12' [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.srcs/sources_1/ip/adder_DSP/synth/adder_DSP.vhd:139]
-INFO: [Synth 8-256] done synthesizing module 'adder_DSP' (9#1) [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.srcs/sources_1/ip/adder_DSP/synth/adder_DSP.vhd:70]
-INFO: [Synth 8-6155] done synthesizing module 'carry_sel_adder_dsp' (10#1) [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/adder.v:27]
-INFO: [Synth 8-226] default block is never used [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/adder.v:102]
-WARNING: [Synth 8-6090] variable 'result' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/adder.v:127]
-INFO: [Synth 8-6155] done synthesizing module 'mpadder' (11#1) [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/adder.v:53]
+INFO: [Synth 8-256] done synthesizing module 'adder_DSP' (8#1) [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.srcs/sources_1/ip/adder_DSP/synth/adder_DSP.vhd:70]
+INFO: [Synth 8-6155] done synthesizing module 'carry_sel_adder_dsp' (9#1) [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/adder.v:29]
+INFO: [Synth 8-6157] synthesizing module 'carry_sel_adder' [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/adder.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'carry_sel_adder' (10#1) [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/adder.v:8]
+INFO: [Synth 8-226] default block is never used [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/adder.v:108]
+WARNING: [Synth 8-6090] variable 'result' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/adder.v:133]
+INFO: [Synth 8-6155] done synthesizing module 'mpadder' (11#1) [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/adder.v:55]
 WARNING: [Synth 8-689] width (1028) of port connection 'in_a' does not match port width (1027) of module 'mpadder' [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/montgomery.v:82]
 WARNING: [Synth 8-689] width (1028) of port connection 'in_a' does not match port width (1027) of module 'mpadder' [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/montgomery.v:123]
 INFO: [Synth 8-6155] done synthesizing module 'montgomery' (12#1) [/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/src/rtl/montgomery.v:3]
@@ -120,7 +120,7 @@ WARNING: [Synth 8-3331] design c_addsub_v12_0_12_viv has unconnected port SCLR
 WARNING: [Synth 8-3331] design c_addsub_v12_0_12_viv has unconnected port SSET
 WARNING: [Synth 8-3331] design c_addsub_v12_0_12_viv has unconnected port SINIT
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1410.672 ; gain = 163.348 ; free physical = 9943 ; free virtual = 32060
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1409.668 ; gain = 162.348 ; free physical = 3882 ; free virtual = 27682
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -133,12 +133,12 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1410.672 ; gain = 163.348 ; free physical = 9950 ; free virtual = 32068
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1409.668 ; gain = 162.348 ; free physical = 3890 ; free virtual = 27689
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1410.672 ; gain = 163.348 ; free physical = 9950 ; free virtual = 32068
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1409.668 ; gain = 162.348 ; free physical = 3890 ; free virtual = 27689
 ---------------------------------------------------------------------------------
-INFO: [Netlist 29-17] Analyzing 72 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 88 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -154,98 +154,115 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.88 ; elapsed = 00:00:00.20 . Memory (MB): peak = 1907.703 ; gain = 9.000 ; free physical = 9471 ; free virtual = 31631
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.98 ; elapsed = 00:00:00.22 . Memory (MB): peak = 1926.699 ; gain = 9.000 ; free physical = 3412 ; free virtual = 27212
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:26 . Memory (MB): peak = 1907.703 ; gain = 660.379 ; free physical = 9711 ; free virtual = 31877
+Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:28 . Memory (MB): peak = 1926.699 ; gain = 679.379 ; free physical = 3676 ; free virtual = 27473
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:26 . Memory (MB): peak = 1907.703 ; gain = 660.379 ; free physical = 9711 ; free virtual = 31877
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:28 . Memory (MB): peak = 1926.699 ; gain = 679.379 ; free physical = 3676 ; free virtual = 27473
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/adder_dsp_0/adder_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/adder_dsp_0/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/adder_dsp_1/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/adder_dsp_1/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/adder_dsp_2/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/adder_dsp_2/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/adder_dsp_3/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/adder_dsp_3/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/adder_dsp_4/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/adder_dsp_4/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/adder_dsp_5/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/adder_dsp_5/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/adder_dsp_6/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/adder_dsp_6/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/adder_dsp_7/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/adder_dsp_7/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/adder_dsp_8/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/adder_dsp_8/adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/\genblk1[10].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/\genblk1[10].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/\genblk1[1].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/\genblk1[1].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/\genblk1[2].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/\genblk1[2].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/\genblk1[3].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/\genblk1[3].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/\genblk1[4].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/\genblk1[4].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/\genblk1[5].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/\genblk1[5].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/\genblk1[6].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/\genblk1[6].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/\genblk1[7].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/\genblk1[7].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/\genblk1[8].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/\genblk1[8].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/\genblk1[9].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_B/\genblk1[9].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/adder_dsp_0/adder_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/adder_dsp_0/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/adder_dsp_1/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/adder_dsp_1/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/adder_dsp_2/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/adder_dsp_2/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/adder_dsp_3/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/adder_dsp_3/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/adder_dsp_4/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/adder_dsp_4/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/adder_dsp_5/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/adder_dsp_5/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/adder_dsp_6/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/adder_dsp_6/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/adder_dsp_7/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/adder_dsp_7/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/adder_dsp_8/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/adder_dsp_8/adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/\genblk1[10].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/\genblk1[10].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/\genblk1[1].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/\genblk1[1].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/\genblk1[2].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/\genblk1[2].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/\genblk1[3].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/\genblk1[3].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/\genblk1[4].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/\genblk1[4].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/\genblk1[5].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/\genblk1[5].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/\genblk1[6].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/\genblk1[6].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/\genblk1[7].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/\genblk1[7].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/\genblk1[8].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/\genblk1[8].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/\genblk1[9].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_0/adder_M/\genblk1[9].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/adder_dsp_0/adder_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/adder_dsp_0/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/adder_dsp_1/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/adder_dsp_1/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/adder_dsp_2/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/adder_dsp_2/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/adder_dsp_3/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/adder_dsp_3/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/adder_dsp_4/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/adder_dsp_4/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/adder_dsp_5/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/adder_dsp_5/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/adder_dsp_6/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/adder_dsp_6/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/adder_dsp_7/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/adder_dsp_7/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/adder_dsp_8/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/adder_dsp_8/adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/\genblk1[10].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/\genblk1[10].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/\genblk1[1].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/\genblk1[1].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/\genblk1[2].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/\genblk1[2].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/\genblk1[3].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/\genblk1[3].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/\genblk1[4].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/\genblk1[4].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/\genblk1[5].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/\genblk1[5].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/\genblk1[6].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/\genblk1[6].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/\genblk1[7].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/\genblk1[7].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/\genblk1[8].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/\genblk1[8].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/\genblk1[9].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_B/\genblk1[9].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/adder_dsp_0/adder_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/adder_dsp_0/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/adder_dsp_1/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/adder_dsp_1/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/adder_dsp_2/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/adder_dsp_2/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/adder_dsp_3/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/adder_dsp_3/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/adder_dsp_4/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/adder_dsp_4/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/adder_dsp_5/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/adder_dsp_5/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/adder_dsp_6/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/adder_dsp_6/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/adder_dsp_7/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/adder_dsp_7/adder_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/adder_dsp_8/adder_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/adder_dsp_8/adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/\genblk1[10].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/\genblk1[10].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/\genblk1[1].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/\genblk1[1].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/\genblk1[2].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/\genblk1[2].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/\genblk1[3].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/\genblk1[3].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/\genblk1[4].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/\genblk1[4].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/\genblk1[5].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/\genblk1[5].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/\genblk1[6].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/\genblk1[6].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/\genblk1[7].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/\genblk1[7].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/\genblk1[8].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/\genblk1[8].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/\genblk1[9].adder_dsp_i /adder_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/mont_exp/multi_1/adder_M/\genblk1[9].adder_dsp_i /adder_1. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for inst. (constraint file  /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.runs/rsa_project_rsa_wrapper_0_0_synth_1/dont_touch.xdc, line 12).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:26 . Memory (MB): peak = 1907.703 ; gain = 660.379 ; free physical = 9697 ; free virtual = 31863
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:28 . Memory (MB): peak = 1926.699 ; gain = 679.379 ; free physical = 3658 ; free virtual = 27455
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'r_state_reg' in module 'rsa_wrapper'
 INFO: [Synth 8-802] inferred FSM for state register 'param_cnt_reg' in module 'rsa_wrapper'
+INFO: [Synth 8-5545] ROM "next_state" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5544] ROM "start" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "encrpyt_mode" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "exp_resetn" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
@@ -284,20 +301,19 @@ INFO: [Synth 8-3354] encoded FSM with state register 'param_cnt_reg' using encod
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'r_state_reg' using encoding 'one-hot' in module 'rsa_wrapper'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:27 . Memory (MB): peak = 1907.703 ; gain = 660.379 ; free physical = 9677 ; free virtual = 31845
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 1926.699 ; gain = 679.379 ; free physical = 3625 ; free virtual = 27433
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+---------------------------+------------+----------+
-|      |RTL Partition              |Replication |Instances |
-+------+---------------------------+------------+----------+
-|1     |montgomery__xdcDup__1__GB0 |           1|     18561|
-|2     |mpadder__xdcDup__2         |           1|      9257|
-|3     |montgomery__GB0            |           1|     18561|
-|4     |mpadder                    |           1|      9257|
-|5     |montgomery_exp__GC0        |           1|     13381|
-|6     |rsa_wrapper__GC0           |           1|      5344|
-+------+---------------------------+------------+----------+
++------+----------------------+------------+----------+
+|      |RTL Partition         |Replication |Instances |
++------+----------------------+------------+----------+
+|1     |montgomery            |           1|     26872|
+|2     |montgomery_exp__GB1   |           1|     10241|
+|3     |montgomery__xdcDup__1 |           1|     26872|
+|4     |montgomery_exp__GB3   |           1|      3140|
+|5     |rsa_wrapper__GC0      |           1|      5469|
++------+----------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -366,6 +382,7 @@ WARNING: [Synth 8-3332] Sequential element (adder_dsp_0/S1_reg[2]) is unused and
 WARNING: [Synth 8-3332] Sequential element (adder_dsp_0/S1_reg[1]) is unused and will be removed from module mpadder__xdcDup__1.
 WARNING: [Synth 8-3332] Sequential element (adder_dsp_0/S1_reg[0]) is unused and will be removed from module mpadder__xdcDup__1.
 WARNING: [Synth 8-3332] Sequential element (adder_dsp_0/C1_reg) is unused and will be removed from module mpadder__xdcDup__1.
+WARNING: [Synth 8-3332] Sequential element (regC_sub_reg[1027]) is unused and will be removed from module montgomery__xdcDup__1.
 WARNING: [Synth 8-3332] Sequential element (adder_dsp_0/S1_reg[40]) is unused and will be removed from module mpadder__xdcDup__3.
 WARNING: [Synth 8-3332] Sequential element (adder_dsp_0/S1_reg[39]) is unused and will be removed from module mpadder__xdcDup__3.
 WARNING: [Synth 8-3332] Sequential element (adder_dsp_0/S1_reg[38]) is unused and will be removed from module mpadder__xdcDup__3.
@@ -408,51 +425,49 @@ WARNING: [Synth 8-3332] Sequential element (adder_dsp_0/S1_reg[2]) is unused and
 WARNING: [Synth 8-3332] Sequential element (adder_dsp_0/S1_reg[1]) is unused and will be removed from module mpadder__xdcDup__3.
 WARNING: [Synth 8-3332] Sequential element (adder_dsp_0/S1_reg[0]) is unused and will be removed from module mpadder__xdcDup__3.
 WARNING: [Synth 8-3332] Sequential element (adder_dsp_0/C1_reg) is unused and will be removed from module mpadder__xdcDup__3.
+WARNING: [Synth 8-3332] Sequential element (regC_sub_reg[1027]) is unused and will be removed from module montgomery.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:00:46 . Memory (MB): peak = 1907.703 ; gain = 660.379 ; free physical = 9573 ; free virtual = 31762
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:45 ; elapsed = 00:00:52 . Memory (MB): peak = 1926.699 ; gain = 679.379 ; free physical = 3530 ; free virtual = 27354
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+---------------------------+------------+----------+
-|      |RTL Partition              |Replication |Instances |
-+------+---------------------------+------------+----------+
-|1     |montgomery__xdcDup__1__GB0 |           1|     24601|
-|2     |mpadder__xdcDup__2         |           1|      8279|
-|3     |montgomery__GB0            |           1|     24601|
-|4     |mpadder                    |           1|      8279|
-|5     |montgomery_exp__GC0        |           1|     23619|
-|6     |rsa_wrapper__GC0           |           1|      5225|
-+------+---------------------------+------------+----------+
++------+----------------------+------------+----------+
+|      |RTL Partition         |Replication |Instances |
++------+----------------------+------------+----------+
+|1     |montgomery            |           1|     32652|
+|2     |montgomery_exp__GB1   |           1|     20480|
+|3     |montgomery__xdcDup__1 |           1|     32652|
+|4     |montgomery_exp__GB3   |           1|      3137|
+|5     |rsa_wrapper__GC0      |           1|      5248|
++------+----------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:46 ; elapsed = 00:00:55 . Memory (MB): peak = 1907.703 ; gain = 660.379 ; free physical = 9426 ; free virtual = 31621
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:52 ; elapsed = 00:01:01 . Memory (MB): peak = 1926.699 ; gain = 679.379 ; free physical = 3382 ; free virtual = 27209
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:42 ; elapsed = 00:01:52 . Memory (MB): peak = 1983.688 ; gain = 736.363 ; free physical = 9243 ; free virtual = 31441
+Finished Timing Optimization : Time (s): cpu = 00:01:21 ; elapsed = 00:01:30 . Memory (MB): peak = 2017.965 ; gain = 770.645 ; free physical = 2560 ; free virtual = 26558
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+---------------------------+------------+----------+
-|      |RTL Partition              |Replication |Instances |
-+------+---------------------------+------------+----------+
-|1     |montgomery__xdcDup__1__GB0 |           1|     24601|
-|2     |mpadder__xdcDup__2         |           1|      8279|
-|3     |mpadder                    |           1|      8279|
-|4     |rsa_wrapper_GT0            |           1|     24601|
-|5     |rsa_wrapper_GT1            |           1|     28844|
-+------+---------------------------+------------+----------+
++------+----------------------+------------+----------+
+|      |RTL Partition         |Replication |Instances |
++------+----------------------+------------+----------+
+|1     |montgomery            |           1|     32652|
+|2     |montgomery__xdcDup__1 |           1|     32652|
+|3     |rsa_wrapper_GT0       |           1|     28865|
++------+----------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-3332] Sequential element (mont_exp/multi_0/regC_Q_reg[1027]) is unused and will be removed from module rsa_wrapper.
 WARNING: [Synth 8-3332] Sequential element (mont_exp/multi_1/regC_Q_reg[1027]) is unused and will be removed from module rsa_wrapper.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:01 ; elapsed = 00:02:11 . Memory (MB): peak = 2019.148 ; gain = 771.824 ; free physical = 9305 ; free virtual = 31501
+Finished Technology Mapping : Time (s): cpu = 00:01:44 ; elapsed = 00:01:54 . Memory (MB): peak = 2051.199 ; gain = 803.879 ; free physical = 2608 ; free virtual = 26642
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -476,7 +491,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:04 ; elapsed = 00:02:14 . Memory (MB): peak = 2019.148 ; gain = 771.824 ; free physical = 9299 ; free virtual = 31495
+Finished IO Insertion : Time (s): cpu = 00:01:48 ; elapsed = 00:01:57 . Memory (MB): peak = 2051.199 ; gain = 803.879 ; free physical = 2525 ; free virtual = 26554
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -489,7 +504,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:04 ; elapsed = 00:02:14 . Memory (MB): peak = 2019.148 ; gain = 771.824 ; free physical = 9299 ; free virtual = 31495
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:48 ; elapsed = 00:01:57 . Memory (MB): peak = 2051.199 ; gain = 803.879 ; free physical = 2525 ; free virtual = 26554
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -501,25 +516,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:11 ; elapsed = 00:02:20 . Memory (MB): peak = 2019.148 ; gain = 771.824 ; free physical = 9294 ; free virtual = 31490
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:55 ; elapsed = 00:02:05 . Memory (MB): peak = 2051.199 ; gain = 803.879 ; free physical = 2534 ; free virtual = 26576
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:11 ; elapsed = 00:02:20 . Memory (MB): peak = 2019.148 ; gain = 771.824 ; free physical = 9294 ; free virtual = 31490
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:55 ; elapsed = 00:02:05 . Memory (MB): peak = 2051.199 ; gain = 803.879 ; free physical = 2539 ; free virtual = 26576
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:14 ; elapsed = 00:02:24 . Memory (MB): peak = 2019.148 ; gain = 771.824 ; free physical = 9293 ; free virtual = 31489
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:57 ; elapsed = 00:02:06 . Memory (MB): peak = 2051.199 ; gain = 803.879 ; free physical = 2534 ; free virtual = 26567
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:14 ; elapsed = 00:02:24 . Memory (MB): peak = 2019.148 ; gain = 771.824 ; free physical = 9293 ; free virtual = 31489
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:57 ; elapsed = 00:02:06 . Memory (MB): peak = 2051.199 ; gain = 803.879 ; free physical = 2533 ; free virtual = 26566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -535,25 +550,25 @@ Report Cell Usage:
 +------+--------+------+
 |      |Cell    |Count |
 +------+--------+------+
-|1     |CARRY4  |  1344|
-|2     |DSP48E1 |    72|
-|3     |LUT1    |    33|
-|4     |LUT2    |   771|
+|1     |CARRY4  |  1176|
+|2     |DSP48E1 |    88|
+|3     |LUT1    |    29|
+|4     |LUT2    |   954|
 |5     |LUT3    |  5599|
-|6     |LUT4    |  3151|
-|7     |LUT5    |  8761|
-|8     |LUT6    |  2439|
-|9     |FDRE    | 26921|
+|6     |LUT4    |  3166|
+|7     |LUT5    |  8763|
+|8     |LUT6    |  2236|
+|9     |FDRE    | 26905|
 |10    |FDSE    |     2|
 +------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:14 ; elapsed = 00:02:24 . Memory (MB): peak = 2019.148 ; gain = 771.824 ; free physical = 9293 ; free virtual = 31489
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:57 ; elapsed = 00:02:06 . Memory (MB): peak = 2051.199 ; gain = 803.879 ; free physical = 2533 ; free virtual = 26566
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 86 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:01 ; elapsed = 00:02:05 . Memory (MB): peak = 2019.148 ; gain = 274.793 ; free physical = 9368 ; free virtual = 31564
-Synthesis Optimization Complete : Time (s): cpu = 00:02:14 ; elapsed = 00:02:24 . Memory (MB): peak = 2019.156 ; gain = 771.824 ; free physical = 9367 ; free virtual = 31563
+Synthesis finished with 0 errors, 0 critical warnings and 88 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:42 ; elapsed = 00:01:47 . Memory (MB): peak = 2051.199 ; gain = 286.848 ; free physical = 2599 ; free virtual = 26632
+Synthesis Optimization Complete : Time (s): cpu = 00:01:57 ; elapsed = 00:02:07 . Memory (MB): peak = 2051.207 ; gain = 803.879 ; free physical = 2599 ; free virtual = 26632
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 1416 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 1264 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -561,16 +576,16 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-51 Infos, 128 Warnings, 0 Critical Warnings and 0 Errors encountered.
+52 Infos, 130 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:22 ; elapsed = 00:02:31 . Memory (MB): peak = 2051.164 ; gain = 815.570 ; free physical = 9382 ; free virtual = 31582
+synth_design: Time (s): cpu = 00:02:06 ; elapsed = 00:02:15 . Memory (MB): peak = 2083.215 ; gain = 847.625 ; free physical = 2655 ; free virtual = 26691
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint '/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.runs/rsa_project_rsa_wrapper_0_0_synth_1/rsa_project_rsa_wrapper_0_0.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 2075.176 ; gain = 24.012 ; free physical = 9386 ; free virtual = 31591
-INFO: [Coretcl 2-1174] Renamed 576 cell refs.
+write_checkpoint: Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 2107.227 ; gain = 24.012 ; free physical = 2740 ; free virtual = 26790
+INFO: [Coretcl 2-1174] Renamed 692 cell refs.
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint '/home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.runs/rsa_project_rsa_wrapper_0_0_synth_1/rsa_project_rsa_wrapper_0_0.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 2075.176 ; gain = 0.000 ; free physical = 9345 ; free virtual = 31578
+write_checkpoint: Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 2107.227 ; gain = 0.000 ; free physical = 2536 ; free virtual = 26643
 INFO: [runtcl-4] Executing : report_utilization -file rsa_project_rsa_wrapper_0_0_utilization_synth.rpt -pb rsa_project_rsa_wrapper_0_0_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.31 ; elapsed = 00:00:00.34 . Memory (MB): peak = 2075.176 ; gain = 0.000 ; free physical = 9341 ; free virtual = 31574
-INFO: [Common 17-206] Exiting Vivado at Fri Dec 10 22:15:52 2021...
+report_utilization: Time (s): cpu = 00:00:00.37 ; elapsed = 00:00:00.40 . Memory (MB): peak = 2107.227 ; gain = 0.000 ; free physical = 2531 ; free virtual = 26637
+INFO: [Common 17-206] Exiting Vivado at Sat Dec 11 00:57:03 2021...

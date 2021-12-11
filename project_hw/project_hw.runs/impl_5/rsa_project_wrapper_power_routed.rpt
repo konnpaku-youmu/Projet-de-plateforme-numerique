@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date             : Fri Dec 10 23:02:43 2021
+| Date             : Sat Dec 11 01:02:28 2021
 | Host             : archHome running 64-bit Arch Linux
 | Command          : report_power -file rsa_project_wrapper_power_routed.rpt -pb rsa_project_wrapper_power_summary_routed.pb -rpx rsa_project_wrapper_power_routed.rpx
 | Design           : rsa_project_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.726        |
+| Total On-Chip Power (W)  | 1.776        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.583        |
-| Device Static (W)        | 0.142        |
+| Dynamic (W)              | 1.629        |
+| Device Static (W)        | 0.147        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 65.1         |
-| Junction Temperature (C) | 44.9         |
+| Max Ambient (C)          | 64.5         |
+| Junction Temperature (C) | 45.5         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,20 +53,20 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.072 |        3 |       --- |             --- |
-| Slice Logic              |     0.086 |    57907 |       --- |             --- |
-|   LUT as Logic           |     0.068 |    20422 |     53200 |           38.39 |
-|   Register               |     0.011 |    31703 |    106400 |           29.80 |
-|   CARRY4                 |     0.007 |     1378 |     13300 |           10.36 |
+| Slice Logic              |     0.093 |    57766 |       --- |             --- |
+|   LUT as Logic           |     0.072 |    20378 |     53200 |           38.30 |
+|   Register               |     0.013 |    31697 |    106400 |           29.79 |
+|   CARRY4                 |     0.007 |     1210 |     13300 |            9.10 |
 |   F7/F8 Muxes            |    <0.001 |      256 |     53200 |            0.48 |
 |   LUT as Distributed RAM |    <0.001 |       10 |     17400 |            0.06 |
 |   LUT as Shift Register  |    <0.001 |      165 |     17400 |            0.95 |
-|   Others                 |     0.000 |      654 |       --- |             --- |
-| Signals                  |     0.133 |    45141 |       --- |             --- |
-| DSPs                     |     0.032 |       70 |       220 |           31.82 |
-| I/O                      |     0.000 |        4 |       125 |            3.20 |
+|   Others                 |     0.000 |      694 |       --- |             --- |
+| Signals                  |     0.146 |    45665 |       --- |             --- |
+| DSPs                     |     0.054 |       86 |       220 |           39.09 |
+| I/O                      |     0.005 |        4 |       125 |            3.20 |
 | PS7                      |     1.260 |        1 |       --- |             --- |
-| Static Power             |     0.142 |          |           |                 |
-| Total                    |     1.726 |          |           |                 |
+| Static Power             |     0.147 |          |           |                 |
+| Total                    |     1.776 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,9 +76,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.339 |       0.323 |      0.015 |
-| Vccaux    |       1.800 |     0.015 |       0.000 |      0.015 |
-| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
+| Vccint    |       1.000 |     0.380 |       0.364 |      0.015 |
+| Vccaux    |       1.800 |     0.016 |       0.000 |      0.016 |
+| Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -89,7 +89,7 @@ Table of Contents
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccpint   |       1.000 |     0.681 |       0.651 |      0.031 |
+| Vccpint   |       1.000 |     0.682 |       0.651 |      0.031 |
 | Vccpaux   |       1.800 |     0.036 |       0.026 |      0.010 |
 | Vccpll    |       1.800 |     0.017 |       0.014 |      0.003 |
 | Vcco_ddr  |       1.500 |     0.354 |       0.352 |      0.002 |
@@ -152,9 +152,9 @@ Table of Contents
 +---------------------------------------------------------------------------------------+-----------+
 | Name                                                                                  | Power (W) |
 +---------------------------------------------------------------------------------------+-----------+
-| rsa_project_wrapper                                                                   |     1.583 |
-|   rsa_project_i                                                                       |     1.583 |
-|     Interface_Cell                                                                    |     0.044 |
+| rsa_project_wrapper                                                                   |     1.629 |
+|   rsa_project_i                                                                       |     1.624 |
+|     Interface_Cell                                                                    |     0.043 |
 |       ARCACHE                                                                         |     0.000 |
 |       ARUSER                                                                          |     0.000 |
 |       axi_dma_0                                                                       |     0.003 |
@@ -354,9 +354,9 @@ Table of Contents
 |       axis_dwidth_converter_0                                                         |     0.003 |
 |         inst                                                                          |     0.003 |
 |           gen_upsizer_conversion.axisc_upsizer_0                                      |     0.003 |
-|       axis_dwidth_converter_1                                                         |     0.031 |
-|         inst                                                                          |     0.031 |
-|           gen_downsizer_conversion.axisc_downsizer_0                                  |     0.031 |
+|       axis_dwidth_converter_1                                                         |     0.029 |
+|         inst                                                                          |     0.029 |
+|           gen_downsizer_conversion.axisc_downsizer_0                                  |     0.029 |
 |       command_interface_0                                                             |    <0.001 |
 |         inst                                                                          |    <0.001 |
 |           command_interface_S00_AXI_inst                                              |    <0.001 |
@@ -369,12 +369,12 @@ Table of Contents
 |             SEQ_COUNTER                                                               |    <0.001 |
 |     processing_system7_0                                                              |     1.261 |
 |       inst                                                                            |     1.261 |
-|     rsa_wrapper_0                                                                     |     0.278 |
-|       inst                                                                            |     0.278 |
-|         mont_exp                                                                      |     0.267 |
-|           multi_0                                                                     |     0.128 |
-|             adder_B                                                                   |     0.047 |
-|               adder_dsp_0                                                             |     0.001 |
+|     rsa_wrapper_0                                                                     |     0.321 |
+|       inst                                                                            |     0.321 |
+|         mont_exp                                                                      |     0.309 |
+|           multi_0                                                                     |     0.156 |
+|             adder_B                                                                   |     0.071 |
+|               adder_dsp_0                                                             |     0.002 |
 |                 adder_0                                                               |    <0.001 |
 |                   U0                                                                  |    <0.001 |
 |                     xst_addsub                                                        |    <0.001 |
@@ -382,22 +382,7 @@ Table of Contents
 |                         addsub_usecase.i_addsub                                       |    <0.001 |
 |                           i_synth_option.i_synth_model                                |    <0.001 |
 |                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               adder_dsp_1                                                             |     0.002 |
-|                 adder_0                                                               |    <0.001 |
-|                   U0                                                                  |    <0.001 |
-|                     xst_addsub                                                        |    <0.001 |
-|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
-|                         addsub_usecase.i_addsub                                       |    <0.001 |
-|                           i_synth_option.i_synth_model                                |    <0.001 |
-|                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|                 adder_1                                                               |    <0.001 |
-|                   U0                                                                  |    <0.001 |
-|                     xst_addsub                                                        |    <0.001 |
-|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
-|                         addsub_usecase.i_addsub                                       |    <0.001 |
-|                           i_synth_option.i_synth_model                                |    <0.001 |
-|                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               adder_dsp_2                                                             |     0.001 |
+|               genblk1[10].adder_dsp_i                                                 |     0.003 |
 |                 adder_0                                                               |    <0.001 |
 |                   U0                                                                  |    <0.001 |
 |                     xst_addsub                                                        |    <0.001 |
@@ -412,7 +397,7 @@ Table of Contents
 |                         addsub_usecase.i_addsub                                       |    <0.001 |
 |                           i_synth_option.i_synth_model                                |    <0.001 |
 |                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               adder_dsp_3                                                             |     0.002 |
+|               genblk1[1].adder_dsp_i                                                  |     0.003 |
 |                 adder_0                                                               |    <0.001 |
 |                   U0                                                                  |    <0.001 |
 |                     xst_addsub                                                        |    <0.001 |
@@ -427,7 +412,7 @@ Table of Contents
 |                         addsub_usecase.i_addsub                                       |    <0.001 |
 |                           i_synth_option.i_synth_model                                |    <0.001 |
 |                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               adder_dsp_4                                                             |     0.001 |
+|               genblk1[2].adder_dsp_i                                                  |     0.003 |
 |                 adder_0                                                               |    <0.001 |
 |                   U0                                                                  |    <0.001 |
 |                     xst_addsub                                                        |    <0.001 |
@@ -442,7 +427,7 @@ Table of Contents
 |                         addsub_usecase.i_addsub                                       |    <0.001 |
 |                           i_synth_option.i_synth_model                                |    <0.001 |
 |                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               adder_dsp_5                                                             |     0.002 |
+|               genblk1[3].adder_dsp_i                                                  |     0.003 |
 |                 adder_0                                                               |    <0.001 |
 |                   U0                                                                  |    <0.001 |
 |                     xst_addsub                                                        |    <0.001 |
@@ -457,7 +442,7 @@ Table of Contents
 |                         addsub_usecase.i_addsub                                       |    <0.001 |
 |                           i_synth_option.i_synth_model                                |    <0.001 |
 |                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               adder_dsp_6                                                             |     0.001 |
+|               genblk1[4].adder_dsp_i                                                  |     0.003 |
 |                 adder_0                                                               |    <0.001 |
 |                   U0                                                                  |    <0.001 |
 |                     xst_addsub                                                        |    <0.001 |
@@ -472,7 +457,7 @@ Table of Contents
 |                         addsub_usecase.i_addsub                                       |    <0.001 |
 |                           i_synth_option.i_synth_model                                |    <0.001 |
 |                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               adder_dsp_7                                                             |     0.002 |
+|               genblk1[5].adder_dsp_i                                                  |     0.003 |
 |                 adder_0                                                               |    <0.001 |
 |                   U0                                                                  |    <0.001 |
 |                     xst_addsub                                                        |    <0.001 |
@@ -487,7 +472,7 @@ Table of Contents
 |                         addsub_usecase.i_addsub                                       |    <0.001 |
 |                           i_synth_option.i_synth_model                                |    <0.001 |
 |                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               adder_dsp_8                                                             |     0.002 |
+|               genblk1[6].adder_dsp_i                                                  |     0.003 |
 |                 adder_0                                                               |    <0.001 |
 |                   U0                                                                  |    <0.001 |
 |                     xst_addsub                                                        |    <0.001 |
@@ -502,14 +487,58 @@ Table of Contents
 |                         addsub_usecase.i_addsub                                       |    <0.001 |
 |                           i_synth_option.i_synth_model                                |    <0.001 |
 |                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               genblk1[1].adder_i                                                      |     0.003 |
-|               genblk1[2].adder_i                                                      |     0.004 |
-|               genblk1[3].adder_i                                                      |     0.002 |
-|               genblk1[4].adder_i                                                      |     0.004 |
-|               genblk1[5].adder_i                                                      |     0.003 |
-|               genblk1[6].adder_i                                                      |     0.004 |
-|               genblk1[7].adder_i                                                      |     0.003 |
-|             adder_M                                                                   |     0.059 |
+|               genblk1[7].adder_dsp_i                                                  |     0.003 |
+|                 adder_0                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|                 adder_1                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|               genblk1[8].adder_dsp_i                                                  |     0.003 |
+|                 adder_0                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|                 adder_1                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|               genblk1[9].adder_dsp_i                                                  |     0.003 |
+|                 adder_0                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|                 adder_1                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|               genblk2[1].adder_i                                                      |     0.006 |
+|               genblk2[2].adder_i                                                      |     0.004 |
+|               genblk2[3].adder_i                                                      |     0.006 |
+|               genblk2[4].adder_i                                                      |     0.004 |
+|               genblk2[5].adder_i                                                      |     0.007 |
+|               genblk2[6].adder_i                                                      |     0.007 |
+|             adder_M                                                                   |     0.058 |
 |               adder_dsp_0                                                             |     0.003 |
 |                 adder_0                                                               |    <0.001 |
 |                   U0                                                                  |    <0.001 |
@@ -525,7 +554,22 @@ Table of Contents
 |                         addsub_usecase.i_addsub                                       |    <0.001 |
 |                           i_synth_option.i_synth_model                                |    <0.001 |
 |                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               adder_dsp_1                                                             |     0.003 |
+|               genblk1[10].adder_dsp_i                                                 |     0.003 |
+|                 adder_0                                                               |     0.001 |
+|                   U0                                                                  |     0.001 |
+|                     xst_addsub                                                        |     0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |     0.001 |
+|                         addsub_usecase.i_addsub                                       |     0.001 |
+|                           i_synth_option.i_synth_model                                |     0.001 |
+|                             opt_vx7.i_uniwrap                                         |     0.001 |
+|                 adder_1                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|               genblk1[1].adder_dsp_i                                                  |     0.003 |
 |                 adder_0                                                               |    <0.001 |
 |                   U0                                                                  |    <0.001 |
 |                     xst_addsub                                                        |    <0.001 |
@@ -540,7 +584,7 @@ Table of Contents
 |                         addsub_usecase.i_addsub                                       |    <0.001 |
 |                           i_synth_option.i_synth_model                                |    <0.001 |
 |                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               adder_dsp_2                                                             |     0.003 |
+|               genblk1[2].adder_dsp_i                                                  |     0.003 |
 |                 adder_0                                                               |    <0.001 |
 |                   U0                                                                  |    <0.001 |
 |                     xst_addsub                                                        |    <0.001 |
@@ -555,14 +599,14 @@ Table of Contents
 |                         addsub_usecase.i_addsub                                       |    <0.001 |
 |                           i_synth_option.i_synth_model                                |    <0.001 |
 |                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               adder_dsp_3                                                             |     0.003 |
-|                 adder_0                                                               |    <0.001 |
-|                   U0                                                                  |    <0.001 |
-|                     xst_addsub                                                        |    <0.001 |
-|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
-|                         addsub_usecase.i_addsub                                       |    <0.001 |
-|                           i_synth_option.i_synth_model                                |    <0.001 |
-|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|               genblk1[3].adder_dsp_i                                                  |     0.003 |
+|                 adder_0                                                               |     0.001 |
+|                   U0                                                                  |     0.001 |
+|                     xst_addsub                                                        |     0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |     0.001 |
+|                         addsub_usecase.i_addsub                                       |     0.001 |
+|                           i_synth_option.i_synth_model                                |     0.001 |
+|                             opt_vx7.i_uniwrap                                         |     0.001 |
 |                 adder_1                                                               |    <0.001 |
 |                   U0                                                                  |    <0.001 |
 |                     xst_addsub                                                        |    <0.001 |
@@ -570,67 +614,7 @@ Table of Contents
 |                         addsub_usecase.i_addsub                                       |    <0.001 |
 |                           i_synth_option.i_synth_model                                |    <0.001 |
 |                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               adder_dsp_4                                                             |     0.003 |
-|                 adder_0                                                               |    <0.001 |
-|                   U0                                                                  |    <0.001 |
-|                     xst_addsub                                                        |    <0.001 |
-|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
-|                         addsub_usecase.i_addsub                                       |    <0.001 |
-|                           i_synth_option.i_synth_model                                |    <0.001 |
-|                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|                 adder_1                                                               |    <0.001 |
-|                   U0                                                                  |    <0.001 |
-|                     xst_addsub                                                        |    <0.001 |
-|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
-|                         addsub_usecase.i_addsub                                       |    <0.001 |
-|                           i_synth_option.i_synth_model                                |    <0.001 |
-|                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               adder_dsp_5                                                             |     0.003 |
-|                 adder_0                                                               |    <0.001 |
-|                   U0                                                                  |    <0.001 |
-|                     xst_addsub                                                        |    <0.001 |
-|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
-|                         addsub_usecase.i_addsub                                       |    <0.001 |
-|                           i_synth_option.i_synth_model                                |    <0.001 |
-|                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|                 adder_1                                                               |    <0.001 |
-|                   U0                                                                  |    <0.001 |
-|                     xst_addsub                                                        |    <0.001 |
-|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
-|                         addsub_usecase.i_addsub                                       |    <0.001 |
-|                           i_synth_option.i_synth_model                                |    <0.001 |
-|                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               adder_dsp_6                                                             |     0.003 |
-|                 adder_0                                                               |    <0.001 |
-|                   U0                                                                  |    <0.001 |
-|                     xst_addsub                                                        |    <0.001 |
-|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
-|                         addsub_usecase.i_addsub                                       |    <0.001 |
-|                           i_synth_option.i_synth_model                                |    <0.001 |
-|                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|                 adder_1                                                               |    <0.001 |
-|                   U0                                                                  |    <0.001 |
-|                     xst_addsub                                                        |    <0.001 |
-|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
-|                         addsub_usecase.i_addsub                                       |    <0.001 |
-|                           i_synth_option.i_synth_model                                |    <0.001 |
-|                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               adder_dsp_7                                                             |     0.003 |
-|                 adder_0                                                               |    <0.001 |
-|                   U0                                                                  |    <0.001 |
-|                     xst_addsub                                                        |    <0.001 |
-|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
-|                         addsub_usecase.i_addsub                                       |    <0.001 |
-|                           i_synth_option.i_synth_model                                |    <0.001 |
-|                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|                 adder_1                                                               |    <0.001 |
-|                   U0                                                                  |    <0.001 |
-|                     xst_addsub                                                        |    <0.001 |
-|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
-|                         addsub_usecase.i_addsub                                       |    <0.001 |
-|                           i_synth_option.i_synth_model                                |    <0.001 |
-|                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               adder_dsp_8                                                             |     0.003 |
+|               genblk1[4].adder_dsp_i                                                  |     0.003 |
 |                 adder_0                                                               |     0.001 |
 |                   U0                                                                  |     0.001 |
 |                     xst_addsub                                                        |     0.001 |
@@ -645,24 +629,7 @@ Table of Contents
 |                         addsub_usecase.i_addsub                                       |     0.001 |
 |                           i_synth_option.i_synth_model                                |     0.001 |
 |                             opt_vx7.i_uniwrap                                         |     0.001 |
-|               genblk1[1].adder_i                                                      |     0.003 |
-|               genblk1[2].adder_i                                                      |     0.005 |
-|               genblk1[3].adder_i                                                      |     0.002 |
-|               genblk1[4].adder_i                                                      |     0.006 |
-|               genblk1[5].adder_i                                                      |     0.002 |
-|               genblk1[6].adder_i                                                      |     0.005 |
-|               genblk1[7].adder_i                                                      |     0.003 |
-|           multi_1                                                                     |     0.131 |
-|             adder_B                                                                   |     0.038 |
-|               adder_dsp_0                                                             |    <0.001 |
-|                 adder_0                                                               |    <0.001 |
-|                   U0                                                                  |    <0.001 |
-|                     xst_addsub                                                        |    <0.001 |
-|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
-|                         addsub_usecase.i_addsub                                       |    <0.001 |
-|                           i_synth_option.i_synth_model                                |    <0.001 |
-|                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               adder_dsp_1                                                             |    <0.001 |
+|               genblk1[5].adder_dsp_i                                                  |     0.003 |
 |                 adder_0                                                               |    <0.001 |
 |                   U0                                                                  |    <0.001 |
 |                     xst_addsub                                                        |    <0.001 |
@@ -677,7 +644,7 @@ Table of Contents
 |                         addsub_usecase.i_addsub                                       |    <0.001 |
 |                           i_synth_option.i_synth_model                                |    <0.001 |
 |                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               adder_dsp_2                                                             |     0.002 |
+|               genblk1[6].adder_dsp_i                                                  |     0.003 |
 |                 adder_0                                                               |    <0.001 |
 |                   U0                                                                  |    <0.001 |
 |                     xst_addsub                                                        |    <0.001 |
@@ -692,7 +659,7 @@ Table of Contents
 |                         addsub_usecase.i_addsub                                       |    <0.001 |
 |                           i_synth_option.i_synth_model                                |    <0.001 |
 |                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               adder_dsp_3                                                             |     0.001 |
+|               genblk1[7].adder_dsp_i                                                  |     0.003 |
 |                 adder_0                                                               |    <0.001 |
 |                   U0                                                                  |    <0.001 |
 |                     xst_addsub                                                        |    <0.001 |
@@ -707,7 +674,7 @@ Table of Contents
 |                         addsub_usecase.i_addsub                                       |    <0.001 |
 |                           i_synth_option.i_synth_model                                |    <0.001 |
 |                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               adder_dsp_4                                                             |     0.002 |
+|               genblk1[8].adder_dsp_i                                                  |     0.003 |
 |                 adder_0                                                               |    <0.001 |
 |                   U0                                                                  |    <0.001 |
 |                     xst_addsub                                                        |    <0.001 |
@@ -722,7 +689,38 @@ Table of Contents
 |                         addsub_usecase.i_addsub                                       |    <0.001 |
 |                           i_synth_option.i_synth_model                                |    <0.001 |
 |                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               adder_dsp_5                                                             |     0.001 |
+|               genblk1[9].adder_dsp_i                                                  |     0.003 |
+|                 adder_0                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|                 adder_1                                                               |     0.001 |
+|                   U0                                                                  |     0.001 |
+|                     xst_addsub                                                        |     0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |     0.001 |
+|                         addsub_usecase.i_addsub                                       |     0.001 |
+|                           i_synth_option.i_synth_model                                |     0.001 |
+|                             opt_vx7.i_uniwrap                                         |     0.001 |
+|               genblk2[1].adder_i                                                      |     0.005 |
+|               genblk2[2].adder_i                                                      |     0.002 |
+|               genblk2[3].adder_i                                                      |     0.005 |
+|               genblk2[4].adder_i                                                      |     0.002 |
+|               genblk2[5].adder_i                                                      |     0.005 |
+|               genblk2[6].adder_i                                                      |     0.002 |
+|           multi_1                                                                     |     0.145 |
+|             adder_B                                                                   |     0.071 |
+|               adder_dsp_0                                                             |     0.002 |
+|                 adder_0                                                               |     0.001 |
+|                   U0                                                                  |     0.001 |
+|                     xst_addsub                                                        |     0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |     0.001 |
+|                         addsub_usecase.i_addsub                                       |     0.001 |
+|                           i_synth_option.i_synth_model                                |     0.001 |
+|                             opt_vx7.i_uniwrap                                         |     0.001 |
+|               genblk1[10].adder_dsp_i                                                 |     0.003 |
 |                 adder_0                                                               |    <0.001 |
 |                   U0                                                                  |    <0.001 |
 |                     xst_addsub                                                        |    <0.001 |
@@ -737,7 +735,7 @@ Table of Contents
 |                         addsub_usecase.i_addsub                                       |    <0.001 |
 |                           i_synth_option.i_synth_model                                |    <0.001 |
 |                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               adder_dsp_6                                                             |     0.002 |
+|               genblk1[1].adder_dsp_i                                                  |     0.003 |
 |                 adder_0                                                               |    <0.001 |
 |                   U0                                                                  |    <0.001 |
 |                     xst_addsub                                                        |    <0.001 |
@@ -752,7 +750,7 @@ Table of Contents
 |                         addsub_usecase.i_addsub                                       |    <0.001 |
 |                           i_synth_option.i_synth_model                                |    <0.001 |
 |                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               adder_dsp_7                                                             |     0.002 |
+|               genblk1[2].adder_dsp_i                                                  |     0.003 |
 |                 adder_0                                                               |    <0.001 |
 |                   U0                                                                  |    <0.001 |
 |                     xst_addsub                                                        |    <0.001 |
@@ -767,7 +765,7 @@ Table of Contents
 |                         addsub_usecase.i_addsub                                       |    <0.001 |
 |                           i_synth_option.i_synth_model                                |    <0.001 |
 |                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               adder_dsp_8                                                             |     0.002 |
+|               genblk1[3].adder_dsp_i                                                  |     0.003 |
 |                 adder_0                                                               |    <0.001 |
 |                   U0                                                                  |    <0.001 |
 |                     xst_addsub                                                        |    <0.001 |
@@ -782,105 +780,104 @@ Table of Contents
 |                         addsub_usecase.i_addsub                                       |    <0.001 |
 |                           i_synth_option.i_synth_model                                |    <0.001 |
 |                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               genblk1[1].adder_i                                                      |     0.003 |
-|               genblk1[2].adder_i                                                      |     0.004 |
-|               genblk1[3].adder_i                                                      |     0.003 |
-|               genblk1[4].adder_i                                                      |    <0.001 |
-|               genblk1[5].adder_i                                                      |    <0.001 |
-|               genblk1[6].adder_i                                                      |     0.001 |
-|               genblk1[7].adder_i                                                      |     0.003 |
-|             adder_M                                                                   |     0.063 |
+|               genblk1[4].adder_dsp_i                                                  |     0.003 |
+|                 adder_0                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|                 adder_1                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|               genblk1[5].adder_dsp_i                                                  |     0.003 |
+|                 adder_0                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|                 adder_1                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|               genblk1[6].adder_dsp_i                                                  |     0.003 |
+|                 adder_0                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|                 adder_1                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|               genblk1[7].adder_dsp_i                                                  |     0.003 |
+|                 adder_0                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|                 adder_1                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|               genblk1[8].adder_dsp_i                                                  |     0.003 |
+|                 adder_0                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|                 adder_1                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|               genblk1[9].adder_dsp_i                                                  |     0.003 |
+|                 adder_0                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|                 adder_1                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|               genblk2[1].adder_i                                                      |     0.006 |
+|               genblk2[2].adder_i                                                      |     0.003 |
+|               genblk2[3].adder_i                                                      |     0.008 |
+|               genblk2[4].adder_i                                                      |     0.003 |
+|               genblk2[5].adder_i                                                      |     0.007 |
+|               genblk2[6].adder_i                                                      |     0.004 |
+|             adder_M                                                                   |     0.056 |
 |               adder_dsp_0                                                             |     0.003 |
-|                 adder_0                                                               |    <0.001 |
-|                   U0                                                                  |    <0.001 |
-|                     xst_addsub                                                        |    <0.001 |
-|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
-|                         addsub_usecase.i_addsub                                       |    <0.001 |
-|                           i_synth_option.i_synth_model                                |    <0.001 |
-|                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|                 adder_1                                                               |    <0.001 |
-|                   U0                                                                  |    <0.001 |
-|                     xst_addsub                                                        |    <0.001 |
-|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
-|                         addsub_usecase.i_addsub                                       |    <0.001 |
-|                           i_synth_option.i_synth_model                                |    <0.001 |
-|                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               adder_dsp_1                                                             |     0.003 |
-|                 adder_0                                                               |    <0.001 |
-|                   U0                                                                  |    <0.001 |
-|                     xst_addsub                                                        |    <0.001 |
-|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
-|                         addsub_usecase.i_addsub                                       |    <0.001 |
-|                           i_synth_option.i_synth_model                                |    <0.001 |
-|                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|                 adder_1                                                               |    <0.001 |
-|                   U0                                                                  |    <0.001 |
-|                     xst_addsub                                                        |    <0.001 |
-|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
-|                         addsub_usecase.i_addsub                                       |    <0.001 |
-|                           i_synth_option.i_synth_model                                |    <0.001 |
-|                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               adder_dsp_2                                                             |     0.003 |
-|                 adder_0                                                               |    <0.001 |
-|                   U0                                                                  |    <0.001 |
-|                     xst_addsub                                                        |    <0.001 |
-|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
-|                         addsub_usecase.i_addsub                                       |    <0.001 |
-|                           i_synth_option.i_synth_model                                |    <0.001 |
-|                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|                 adder_1                                                               |    <0.001 |
-|                   U0                                                                  |    <0.001 |
-|                     xst_addsub                                                        |    <0.001 |
-|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
-|                         addsub_usecase.i_addsub                                       |    <0.001 |
-|                           i_synth_option.i_synth_model                                |    <0.001 |
-|                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               adder_dsp_3                                                             |     0.003 |
-|                 adder_0                                                               |    <0.001 |
-|                   U0                                                                  |    <0.001 |
-|                     xst_addsub                                                        |    <0.001 |
-|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
-|                         addsub_usecase.i_addsub                                       |    <0.001 |
-|                           i_synth_option.i_synth_model                                |    <0.001 |
-|                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|                 adder_1                                                               |    <0.001 |
-|                   U0                                                                  |    <0.001 |
-|                     xst_addsub                                                        |    <0.001 |
-|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
-|                         addsub_usecase.i_addsub                                       |    <0.001 |
-|                           i_synth_option.i_synth_model                                |    <0.001 |
-|                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               adder_dsp_4                                                             |     0.003 |
-|                 adder_0                                                               |    <0.001 |
-|                   U0                                                                  |    <0.001 |
-|                     xst_addsub                                                        |    <0.001 |
-|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
-|                         addsub_usecase.i_addsub                                       |    <0.001 |
-|                           i_synth_option.i_synth_model                                |    <0.001 |
-|                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|                 adder_1                                                               |    <0.001 |
-|                   U0                                                                  |    <0.001 |
-|                     xst_addsub                                                        |    <0.001 |
-|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
-|                         addsub_usecase.i_addsub                                       |    <0.001 |
-|                           i_synth_option.i_synth_model                                |    <0.001 |
-|                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               adder_dsp_5                                                             |     0.004 |
-|                 adder_0                                                               |    <0.001 |
-|                   U0                                                                  |    <0.001 |
-|                     xst_addsub                                                        |    <0.001 |
-|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
-|                         addsub_usecase.i_addsub                                       |    <0.001 |
-|                           i_synth_option.i_synth_model                                |    <0.001 |
-|                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|                 adder_1                                                               |    <0.001 |
-|                   U0                                                                  |    <0.001 |
-|                     xst_addsub                                                        |    <0.001 |
-|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
-|                         addsub_usecase.i_addsub                                       |    <0.001 |
-|                           i_synth_option.i_synth_model                                |    <0.001 |
-|                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               adder_dsp_6                                                             |     0.004 |
 |                 adder_0                                                               |     0.001 |
 |                   U0                                                                  |     0.001 |
 |                     xst_addsub                                                        |     0.001 |
@@ -895,22 +892,7 @@ Table of Contents
 |                         addsub_usecase.i_addsub                                       |     0.001 |
 |                           i_synth_option.i_synth_model                                |     0.001 |
 |                             opt_vx7.i_uniwrap                                         |     0.001 |
-|               adder_dsp_7                                                             |     0.004 |
-|                 adder_0                                                               |     0.001 |
-|                   U0                                                                  |     0.001 |
-|                     xst_addsub                                                        |     0.001 |
-|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |     0.001 |
-|                         addsub_usecase.i_addsub                                       |     0.001 |
-|                           i_synth_option.i_synth_model                                |     0.001 |
-|                             opt_vx7.i_uniwrap                                         |     0.001 |
-|                 adder_1                                                               |     0.001 |
-|                   U0                                                                  |     0.001 |
-|                     xst_addsub                                                        |     0.001 |
-|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |     0.001 |
-|                         addsub_usecase.i_addsub                                       |     0.001 |
-|                           i_synth_option.i_synth_model                                |     0.001 |
-|                             opt_vx7.i_uniwrap                                         |     0.001 |
-|               adder_dsp_8                                                             |     0.003 |
+|               genblk1[10].adder_dsp_i                                                 |     0.003 |
 |                 adder_0                                                               |    <0.001 |
 |                   U0                                                                  |    <0.001 |
 |                     xst_addsub                                                        |    <0.001 |
@@ -925,13 +907,147 @@ Table of Contents
 |                         addsub_usecase.i_addsub                                       |    <0.001 |
 |                           i_synth_option.i_synth_model                                |    <0.001 |
 |                             opt_vx7.i_uniwrap                                         |    <0.001 |
-|               genblk1[1].adder_i                                                      |     0.004 |
-|               genblk1[2].adder_i                                                      |     0.005 |
-|               genblk1[3].adder_i                                                      |     0.002 |
-|               genblk1[4].adder_i                                                      |     0.006 |
-|               genblk1[5].adder_i                                                      |     0.002 |
-|               genblk1[6].adder_i                                                      |     0.005 |
-|               genblk1[7].adder_i                                                      |     0.003 |
+|               genblk1[1].adder_dsp_i                                                  |     0.003 |
+|                 adder_0                                                               |     0.001 |
+|                   U0                                                                  |     0.001 |
+|                     xst_addsub                                                        |     0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |     0.001 |
+|                         addsub_usecase.i_addsub                                       |     0.001 |
+|                           i_synth_option.i_synth_model                                |     0.001 |
+|                             opt_vx7.i_uniwrap                                         |     0.001 |
+|                 adder_1                                                               |     0.001 |
+|                   U0                                                                  |     0.001 |
+|                     xst_addsub                                                        |     0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |     0.001 |
+|                         addsub_usecase.i_addsub                                       |     0.001 |
+|                           i_synth_option.i_synth_model                                |     0.001 |
+|                             opt_vx7.i_uniwrap                                         |     0.001 |
+|               genblk1[2].adder_dsp_i                                                  |     0.003 |
+|                 adder_0                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|                 adder_1                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|               genblk1[3].adder_dsp_i                                                  |     0.003 |
+|                 adder_0                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|                 adder_1                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|               genblk1[4].adder_dsp_i                                                  |     0.003 |
+|                 adder_0                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|                 adder_1                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|               genblk1[5].adder_dsp_i                                                  |     0.003 |
+|                 adder_0                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|                 adder_1                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|               genblk1[6].adder_dsp_i                                                  |     0.003 |
+|                 adder_0                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|                 adder_1                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|               genblk1[7].adder_dsp_i                                                  |     0.003 |
+|                 adder_0                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|                 adder_1                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|               genblk1[8].adder_dsp_i                                                  |     0.003 |
+|                 adder_0                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|                 adder_1                                                               |    <0.001 |
+|                   U0                                                                  |    <0.001 |
+|                     xst_addsub                                                        |    <0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |    <0.001 |
+|                         addsub_usecase.i_addsub                                       |    <0.001 |
+|                           i_synth_option.i_synth_model                                |    <0.001 |
+|                             opt_vx7.i_uniwrap                                         |    <0.001 |
+|               genblk1[9].adder_dsp_i                                                  |     0.003 |
+|                 adder_0                                                               |     0.001 |
+|                   U0                                                                  |     0.001 |
+|                     xst_addsub                                                        |     0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |     0.001 |
+|                         addsub_usecase.i_addsub                                       |     0.001 |
+|                           i_synth_option.i_synth_model                                |     0.001 |
+|                             opt_vx7.i_uniwrap                                         |     0.001 |
+|                 adder_1                                                               |     0.001 |
+|                   U0                                                                  |     0.001 |
+|                     xst_addsub                                                        |     0.001 |
+|                       xbip_addsub.i_a_b_nogrowth.not_unsigned_max_width.i_xbip_addsub |     0.001 |
+|                         addsub_usecase.i_addsub                                       |     0.001 |
+|                           i_synth_option.i_synth_model                                |     0.001 |
+|                             opt_vx7.i_uniwrap                                         |     0.001 |
+|               genblk2[1].adder_i                                                      |     0.005 |
+|               genblk2[2].adder_i                                                      |     0.002 |
+|               genblk2[3].adder_i                                                      |     0.005 |
+|               genblk2[4].adder_i                                                      |     0.002 |
+|               genblk2[5].adder_i                                                      |     0.005 |
+|               genblk2[6].adder_i                                                      |     0.002 |
 +---------------------------------------------------------------------------------------+-----------+
 
 

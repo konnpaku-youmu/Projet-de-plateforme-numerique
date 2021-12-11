@@ -77,7 +77,7 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
-  open_checkpoint rsa_project_wrapper_postroute_physopt.dcp
+  open_checkpoint rsa_project_wrapper_routed.dcp
   set_property webtalk.parent_dir /home/yz/Projects/Digital_Platform_Design/design_package/hw_project/project_hw/project_hw.cache/wt [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
   catch { write_mem_info -force rsa_project_wrapper.mmi }
